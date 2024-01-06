@@ -6,8 +6,8 @@ import { LayoutComponent } from './Components/layout/layout.component';
 import { HomeComponent } from './Pages/home/home.component';
 import { CollageComponent } from './Pages/collage/collage.component';
 import { CourseComponent } from './Pages/course/course.component';
-import { PlyrComponent } from './Components/plyr/plyr.component';
 import { StudentComponent } from './Pages/student/student.component';
+import { LessonComponent } from './Pages/lesson/lesson.component';
 
 const routes: Routes = [
   { path: "", redirectTo: 'splash', pathMatch: 'full' },
@@ -17,9 +17,9 @@ const routes: Routes = [
     path: "", component: LayoutComponent,
     children: [
       { path: "home", component: HomeComponent },
-      { path: "collage/:id", component: CollageComponent },
+      { path: "universities/:id", component: CollageComponent },
       { path: "course/:id", component: CourseComponent },
-      { path: "lesson/:id", component: PlyrComponent },
+      { path: "lesson", component: LessonComponent },
       {
         path: "profile", component: StudentComponent,
         children: []

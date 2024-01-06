@@ -1,0 +1,206 @@
+<header>
+    <!-- related datainside heaer section -->
+    <div class="header-container" [ngStyle]="{'background-image': 'url(' + data.header.background + ')'}">
+        <div class="data">
+            <h1>{{data.header.address}}</h1>
+            <a href="">{{data.header.linkTitle}}</a>
+        </div>
+    </div>
+</header>
+
+<!-- main -->
+<main>
+    <section class="collage">
+        <div class="row">
+            <div class="form-local">
+                <h2>{{data.mainForm.address}}</h2>
+                <select name="collage" id="collage-1">
+                    <option  value="0" disabled selected>اختر الجامعة</option>
+                    <option *ngFor="let university of universities" [value]='university.id'>{{university.name}}</option>
+                </select>
+
+                <select name="collage" id="collage-2">
+                    <option value="0" disabled selected>اختر الكلية</option>
+                    <option *ngFor="let collage of data.mainForm.collages" [value]='collage.value'>{{collage.name}}</option>
+                </select>
+
+                <select name="collage" id="collage-3">
+                    <option value="0" disabled selected>المادة</option>
+                    <option *ngFor="let course of data.mainForm.courses" [value]='course.value'>{{course.name}}</option>
+                </select>
+                <button type="submit" class="submit">إحجز الان</button>
+            </div>
+            <div class="cards">
+                <div class="cr"></div>
+                <div class="cr">
+                    <div class="features--insider">
+                    </div>
+                    <a [href]="data.mainForm.telegram.link"> {{data.mainForm.telegram.title}}</a>
+                </div>
+                <div class="cr">
+                    <h2>ليش منصة المختار</h2>
+                    
+                    <div class="features--insider">
+                        <p>نعمل معك خطوة بخطوة للحصول على A+,</p>
+                        <p>الكورسات متاحة على المنصة وكذلك على التليجرام</p>
+                        <p>الرد على كافة الاستفسارات</p>
+                    </div>
+                    <a href="#">تواصل مع المشرفين</a>
+                </div>
+                <div class="cr"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="almokhtar--special-showing">
+        <div class="sign--1">
+            <p class="top"> كورسات علمية </p>
+            <p class="bottom">شروحات مميزة</p>
+        </div>
+        <div class="sign--2">
+            <p class="">كورسات <br> المختار</p>
+        </div>
+        <div class="sign--3">
+            <p class="top">كورسات دينية </p>
+            <p class="bottom">تطور مستمر</p>
+        </div>
+    </div>
+    <h2>الدورات</h2>
+    <section class="modules">
+
+        <div class="module">
+            <div class="module--preview">
+                <img [src]="'assets/images/about-5.jpg'" alt="">
+            </div>
+            <div class="module--data">
+                <h4 class="module--header">جماعة الاميرة نورة - كلية الطب</h4>
+                <p class="module--title">بلوك MSK </p>
+                <span class="marked--text">السعر 50 ريال</span> <br>
+                <span class="light--text"> ويشمل العملى والنظرى </span>
+            </div>
+        </div>
+        <div class="module flex--column-reverse">
+            <div class="module--data">
+                <h2 class="module--header">عنوان وصفى</h2>
+                <p class="module--title">نص وصفى للمحتوى بغرض تجرب الخط والابعاد عل هذا الجزء من الموقع ورؤية التناسق
+                </p>
+                <span class="marked--text">نص مميز وصفى</span> <br>
+                <span class="light--text">خط رفيع مميز للتجربة</span>
+            </div>
+            <div class="module--preview">
+                <img [src]="'assets/images/about-4.jpg'" alt="">
+            </div>
+        </div>
+        <div class="module">
+            <div class="module--preview">
+                <img [src]="'assets/images/creative-thinking-3473913-3119215.png'" alt="">
+            </div>
+            <div class="module--data">
+                <h2 class="module--header">عنوان وصفى</h2>
+                <p class="module--title">نص وصفى للمحتوى بغرض تجرب الخط والابعاد عل هذا الجزء من الموقع ورؤية التناسق
+                </p>
+                <span class="marked--text">نص مميز وصفى</span> <br>
+                <span class="light--text">خط رفيع مميز للتجربة</span>
+            </div>
+        </div>
+        <div class="module flex--column-reverse">
+            <div class="module--data">
+                <h2 class="module--header">عنوان وصفى</h2>
+                <p class="module--title">نص وصفى للمحتوى بغرض تجرب الخط والابعاد عل هذا الجزء من الموقع ورؤية التناسق
+                </p>
+                <span class="marked--text">نص مميز وصفى</span> <br>
+                <span class="light--text">خط رفيع مميز للتجربة</span>
+            </div>
+            <div class="module--preview">
+                <img [src]="'assets/images/f1805608-34b9-4165-95f4-8ba1849f57b6.jpeg'" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="modules">
+        <div class="module">
+            <div class="module--preview">
+                <img [src]="'assets/images/about-5.jpg'" alt="">
+            </div>
+            <div class="module--data">
+                <h2 class="module--header">عنوان وصفى</h2>
+                <p class="module--title">نص وصفى للمحتوى بغرض تجرب الخط والابعاد عل هذا الجزء من الموقع ورؤية التناسق
+                </p>
+                <span class="marked--text">نص مميز وصفى</span> <br>
+                <span class="light--text">خط رفيع مميز للتجربة</span>
+            </div>
+        </div>
+        <div class="module flex--column-reverse">
+            <div class="module--data">
+                <h2 class="module--header">عنوان وصفى</h2>
+                <p class="module--title">نص وصفى للمحتوى بغرض تجرب الخط والابعاد عل هذا الجزء من الموقع ورؤية التناسق
+                </p>
+                <span class="marked--text">نص مميز وصفى</span> <br>
+                <span class="light--text">خط رفيع مميز للتجربة</span>
+            </div>
+            <div class="module--preview">
+                <img [src]="'assets/images/about-4.jpg'" alt="">
+            </div>
+        </div>
+        <div class="module">
+            <div class="module--preview">
+                <img [src]="'assets/images/creative-thinking-3473913-3119215.png'" alt="">
+            </div>
+            <div class="module--data">
+                <h2 class="module--header">عنوان وصفى</h2>
+                <p class="module--title">نص وصفى للمحتوى بغرض تجرب الخط والابعاد عل هذا الجزء من الموقع ورؤية التناسق
+                </p>
+                <span class="marked--text">نص مميز وصفى</span> <br>
+                <span class="light--text">خط رفيع مميز للتجربة</span>
+            </div>
+        </div>
+        <div class="module flex--column-reverse">
+            <div class="module--data">
+                <h2 class="module--header">عنوان وصفى</h2>
+                <p class="module--title">نص وصفى للمحتوى بغرض تجرب الخط والابعاد عل هذا الجزء من الموقع ورؤية التناسق
+                </p>
+                <span class="marked--text">نص مميز وصفى</span> <br>
+                <span class="light--text">خط رفيع مميز للتجربة</span>
+            </div>
+            <div class="module--preview">
+                <img [src]="'assets/images/f1805608-34b9-4165-95f4-8ba1849f57b6.jpeg'" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="how--to-start">
+        <h2>كيف تبدأ ؟</h2>
+        <div class="steps">
+            <div class="step step--1">
+                <p class="step--number">1</p>
+                <img [src]="'assets/images/man.webp'" alt="">
+                <br>
+                <h3>إنشاء حساب</h3>
+                <p>قم بالتسجيل واضافة بياناتك للإنضمام للمنصة</p>
+            </div>
+
+            <div class="step step--2">
+                <p class="step--number">2</p>
+                <img [src]="'assets/images/seo.webp'" alt="">
+                <br>
+                <h3>إختيار المقرر</h3>
+                <p>اختار المقرر والمحاضرة سواء كانت مدفوعة أو مجانية</p>
+            </div>
+
+            <div class="step step--3">
+                <p class="step--number">3</p>
+                <img [src]="'assets/images/man.webp'" alt="">
+                <h3>إنطلق!</h3>
+                <p>تابع محضرات ودروس المقرر وذاكر أولاً بأول</p>
+            </div>
+
+            <div class="step step--4">
+                <p class="step--number">4</p>
+                <img [src]="'assets/images/discussion.webp'" alt="">
+                <br>
+                <h3>ناقش!</h3>
+                <p>انضم لجروب المناقشة للإجابة عن أي أسئلة لديك</p>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- still working on it -->

@@ -1,0 +1,72 @@
+.about--container .address{
+    display: block;
+    height: 140px;
+    border-radius: 25%;
+    padding: 49px 14px;
+    font-family: foda;
+    font-size: 3rem;
+    text-align: center;
+    color: #25d366;
+    /* background-color: #25d366; */
+}
+
+.about--container .title,.about--container .copyright, .about--container .author {
+    padding: 14px 0;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.pages {
+    padding-top: 127px;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.section {
+    width: 45%;
+    min-width: 270px;
+    padding: 7px 49px 27px 21px;
+}
+
+.section.border {
+    border-right: 2px solid #25d366;
+}
+
+.universities--container a{
+    display: inline-flex;
+    align-items: center;
+    min-width: 170px;
+    padding: 0 0 0 35px;
+    margin: 21px 0 0;
+    font-size: 1.3rem;
+    border-radius: 21px;
+    transition: background 400ms;
+}
+
+.universities--container a:hover{
+    background-color: #25d366;
+    color: #fff;
+}
+
+.universities--container mat-icon {
+    width: 49px;
+    height: 49px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 0 21px;
+    background-color: #25d366;
+    color: #fff;
+    /* padding: 14px; */
+    border-radius: 50%;
+}
+.lessons--container a {
+    display: block;
+    text-align: center;
+    padding: 21px;
+    margin: 14px 0 0;
+    font-size: 1.3rem;
+    transition: background 400ms;
+}

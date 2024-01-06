@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './lesson.component.css'
 })
 export class LessonComponent {
-
+  lessonName:string = 'اسم الدرس'
 }

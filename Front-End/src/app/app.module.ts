@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms'; // Import this for using ngModel
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PlyrComponent } from './Components/plyr/plyr.component';
 import { SwipperComponent } from './Components/swipper/swipper.component';
 import { LayoutComponent } from './Components/layout/layout.component';
 import { LoginComponent } from './Components/login/login.component';
@@ -19,11 +20,11 @@ import { CourseComponent } from './Pages/course/course.component';
 import { LessonComponent } from './Pages/lesson/lesson.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormatTimePipe } from './Pipes/format-time.pipe';
+import { VideoPlayerComponent } from './Components/video-player/video-player.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PlyrComponent,
     SwipperComponent,
     LayoutComponent,
     LoginComponent,
@@ -37,14 +38,18 @@ import { FormatTimePipe } from './Pipes/format-time.pipe';
     CollageComponent,
     CourseComponent,
     LessonComponent,
-    FormatTimePipe
+    FormatTimePipe,
+    VideoPlayerComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
-})
-export class AppModule { }
+}) 
+export class AppModule {}

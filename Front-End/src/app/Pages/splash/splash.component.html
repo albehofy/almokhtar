@@ -1,1 +1,16 @@
-<p>splash works!</p>
+<section class="pages">
+    <div class="section about--container">
+        <h1 class="address">المختار</h1>
+        <p class="title">منصة تعليمية متخصصة فى شرح مناهج الجامعات السعودية</p>
+        <p class="copyright">جميع الحقوق محفوظة لمنصة المختار&copy;2021</p>
+        <p class="author">تم تطويرة بواسطة <a href="www.linkedin.com">Mohamed Reda</a></p>
+    </div>
+    <div class="section border universities--container">
+        <a href="#" routerLink="/home"> <mat-icon>home</mat-icon>الرئيسية</a> <br>
+        <div *ngFor="let university of universities; let index = index"> <a href="#" [routerLink]="['/universities', university.name]" > <mat-icon>home</mat-icon>{{university.name}}</a></div>
+        <!-- <a href="#" routerLink="/university"> <mat-icon>home</mat-icon>جامعة تبوك</a> <br>
+        <a href="#" routerLink="/university"> <mat-icon>home</mat-icon>جامعة الملك عبدالعزيز </a> <br>
+        <a href="#" routerLink="/university"> <mat-icon>home</mat-icon>جامعة ام القرى</a> <br> -->
+        <a href="#" routerLink= "/request-new-course"> <mat-icon>home</mat-icon>طلب اضافة جامعة جديدة </a> <br>
+    </div>
+</section>

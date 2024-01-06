@@ -1,4 +1,127 @@
 /* You can add global styles to this file, and also import other style files */
+/* #c5ccf9  blue */
+@font-face {
+    font-family: "HONORSansArabicUI";
+    src: url("/assets/fonts/HONORSansArabicUI-L.ttf");
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@font-face {
+    font-family: "IBMPlexSansArabic";
+    src: url("/assets/fonts/IBMPlexSansArabic-Regular.ttf");
+}
+
+@font-face {
+    font-family: Lalezar;
+    src: url('/assets/fonts/Lalezar-Regular.ttf');
+}
+
+@font-face {
+    font-family: "ArefRuqaa";
+    src: url("/assets/fonts/ArefRuqaa-Bold-1.ttf");
+}
+
+@font-face {
+    font-family: "foda";
+    src: url("/assets/fonts/Foda-Free-Font.ttf");
+}
+
+@font-face {
+    font-family: Kufam;
+    src: url('/assets/fonts/Kufam-MediumItalic.ttf');
+}
+
+
+:root{
+    --color-primary: #7380ec;
+    --color-danger: #ff7782;
+    --color-success: #41f1b6;
+    --color-warning: #ffbb55;
+    --color-white: #fff;
+    --color-info: #7d8da1;
+    --color-dark: #363949;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --color-dark-varient: #677483;
+    --color-background: #f6f6f9;
+    
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 1.2rem;
+
+    --card-padding: 1.8rem;
+    --box-shadow: 0 2rem 3rem var(--color-light)    
+}
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'IBMPlexSansArabic';
+    text-align: right;    
+    overflow-x: hidden;
+    direction: rtl;
+    scroll-behavior: smooth;
+
+}
+
+html,
+button {
+    direction: rtl;
+    font-family: 'IBMPlexSansArabic';
+    text-align: right;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Modal Form Registeration */
+label:not(.lesson--controller-field) {
+    display: block;
+    margin-top: 14px;
+}
+
+input:not(.lesson--controller-field),
+select:not(.lesson--controller-field) {
+    width: 95%;
+    padding: 7px;
+    margin-top: 7px;
+    font-size: 18px;
+    border-radius: 3px;
+    border: 1px solid #25D366;
+    outline: 1px solid transparent;
+}
+
+input:not(.lesson--controller-field):focus {
+    border: 1px solid #FF0000;
+}
+
+.submit:not(.lesson--controller-field) {
+    display: block;
+    border: 1px solid #fff;
+    outline-color: transparent;
+    padding: 14px 7px;
+    width: 95%;
+    min-width: 270px;
+    margin: 14px auto;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #25D366;
+    color: #fff;
+}
