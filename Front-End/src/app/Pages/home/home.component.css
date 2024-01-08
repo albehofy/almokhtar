@@ -1,7 +1,7 @@
 .header-container {
     min-height: calc(100vh + 201px);
     /* margin-top: 35px; */
-    /* background-image: url(''); */
+    background-image: url('/assets/images/slider-2.jpg');
     /* margin-top: 112px; */
     background-color: #FFF;
     color: #141414;
@@ -27,6 +27,12 @@
     font-size: 2.9em;
     font-family: foda;
     margin-bottom: 45px;
+    /* padding: 7px 0;
+    margin: 35px auto;
+    font-family: ArefRuqaa;
+    border: 5px outset #25D366;
+    text-align: center;
+    border-radius: 7px; */
 }
 
 .header-container .data a {
@@ -40,6 +46,11 @@
     text-decoration: none;
 }
 
+/* .header-container p {
+    padding: 21px 0;
+    text-align: center;
+    font-size: 1.7em;
+} */
 .subsribe,
 .subsribe-md {
     font-size: 21px;
@@ -53,6 +64,7 @@
     background-color: #25D366;
     color: #FFF;
     cursor: pointer;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, #038387 0px 8px 16px -8px; */
 }
 
 .header-container img {
@@ -80,6 +92,7 @@
 
 /* main */
 main {
+    /* padding: 21px; */
     min-height: 100vh;
 
 }
@@ -238,6 +251,110 @@ margin: 7px 0;
     color: #000;
 }
 
+/*
+.collage {
+    min-height: 50vh;
+    padding: 21px;
+    background-color: #ddd;
+    display: flex;
+}
+.card {
+    margin: 21px;
+    background-color: #FFF;
+}
+.card .card-image-top {
+    height: 250px;
+    width: 100%;
+}
+
+.card .card-image-top img {
+    width: 100%;
+    height: 100%;
+}
+.card .card-header {
+    height: 71px;
+    padding: 21px 0;
+    text-align: center;
+}
+.card-footer {
+    padding: 0 0 21px 0;    
+    text-align: center;
+} */
+/* 
+.penfits {
+    transform: translateY(-75px);
+    min-height: 50vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.penfits>div {
+    width: 30%;
+}
+
+.penfits .almokhtar--medical {
+    min-width: 200px;
+    padding: 21px 31px;
+
+
+.penfits .almokhtar--medical h2 {
+    display: inline-flex;
+    font-weight: 600;
+    font-size: 1.7em;
+}
+
+.penfits .almokhtar--medical h2,
+.penfits .almokhtar--medical p {
+    margin-bottom: 21px;
+}
+
+.penfits .almokhtar--medical p {
+    text-align: right;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.penfits .almokhtar--medical button {
+    background-color: #25d366;
+    color: #fff;
+    border: 1px solid transparent;
+    font-size: 1.2em;
+    padding: 7px 21px;
+    margin: auto;
+    display: flex;
+}
+
+.penfits .almokhtar--brand {
+    width: 270px;
+    height: 270px;
+    margin: auto;
+    background-color: #25D366;
+    color: #fff;
+    font-family: foda;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.penfits .sign {
+    margin: 14px auto;
+    padding: 14px;
+    text-align: center;
+    border-radius: 8px;
+    color: #000;
+}
+.penfits .sign--1 {
+    background-color: #baffc9;
+}
+
+.penfits .sign--2 {
+    background-color: #ede5ff;
+}  */
+
 .modules {
     display: flex;
 }
@@ -278,8 +395,9 @@ margin: 7px 0;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     transition: all 500ms ease;
 }
-
-
+/* .almokhtar--special-showing  .sign--2:hover {
+    transform: scale(1.2);
+} */
 .sign--1{
     z-index: -1;
     margin-left: -42px;
@@ -315,8 +433,13 @@ margin: 7px 0;
 .sign--3 p.bottom {
     background-color: #fcc9f749;
 }
-
+/* .module {
+    background-color: #fcc741;
+    height: 50px;
+    transform: translateY(-220px);
+} */
 .module {
+    /* height: 90vh; */
     width: 25%;
     cursor: pointer;
     text-align: center;
@@ -375,7 +498,7 @@ margin: 7px 0;
     height: 175px;
     width: 175px;display: flex;
     align-items: center;
-    text-align: center;
+    justify-content: center;
     background-color: #57f190;
     color: #FFF;
     padding: 21px 21px;

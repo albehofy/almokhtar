@@ -91,13 +91,13 @@ a {
 }
 
 /* Modal Form Registeration */
-label:not(.lesson--controller-field) {
+label{
     display: block;
     margin-top: 14px;
 }
 
-input:not(.lesson--controller-field),
-select:not(.lesson--controller-field) {
+input,
+select {
     width: 95%;
     padding: 7px;
     margin-top: 7px;
@@ -107,11 +107,11 @@ select:not(.lesson--controller-field) {
     outline: 1px solid transparent;
 }
 
-input:not(.lesson--controller-field):focus {
+input:focus {
     border: 1px solid #FF0000;
 }
 
-.submit:not(.lesson--controller-field) {
+.submit {
     display: block;
     border: 1px solid #fff;
     outline-color: transparent;

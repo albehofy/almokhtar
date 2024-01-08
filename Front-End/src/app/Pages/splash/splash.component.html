@@ -7,10 +7,9 @@
     </div>
     <div class="section border universities--container">
         <a href="#" routerLink="/home"> <mat-icon>home</mat-icon>الرئيسية</a> <br>
-        <div *ngFor="let university of universities; let index = index"> <a href="#" [routerLink]="['/universities', university.name]" > <mat-icon>home</mat-icon>{{university.name}}</a></div>
-        <!-- <a href="#" routerLink="/university"> <mat-icon>home</mat-icon>جامعة تبوك</a> <br>
-        <a href="#" routerLink="/university"> <mat-icon>home</mat-icon>جامعة الملك عبدالعزيز </a> <br>
-        <a href="#" routerLink="/university"> <mat-icon>home</mat-icon>جامعة ام القرى</a> <br> -->
-        <a href="#" routerLink= "/request-new-course"> <mat-icon>home</mat-icon>طلب اضافة جامعة جديدة </a> <br>
+        <div *ngFor="let university of universities; let index = index" > 
+        <a href="#" [routerLink]="['/universities', university.id]" *ngIf="university.name !=''"> <mat-icon>home</mat-icon>{{university.name}}</a></div>
+        <a href="#" routerLink= "/request-new-course"> <mat-icon>home</mat-icon>طلب اضافة جامعة جديدة </a> 
+        <br>
     </div>
 </section>

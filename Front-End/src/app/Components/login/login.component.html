@@ -1,1 +1,28 @@
-<p>login works!</p>
+<div class="container">
+    <div *ngIf="show" class="loading-spinner">
+      <svg class="spinner" viewBox="0 0 50 50">
+        <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="4"></circle>
+      </svg>
+    </div>
+      <h1 mat-dialog-title class="dialog--title">تسجيل الدخول </h1>
+    
+      <div mat-dialog-content>
+        <form [formGroup]="loginForm" class="form">
+          <div class="seprator">
+            <mat-form-field class="form-field">
+              <mat-label>رقم الجوال</mat-label>
+              <input type="tel" class="form--input" id="loginPhone" name="loginPhone" formControlName="loginPhone" matInput required (blur)="gettingloginValue()">
+            </mat-form-field>
+          </div>
+          <div class="seprator" required>
+            <mat-form-field class="form-field">
+              <mat-label>كلمة السر</mat-label>
+              <input type="password" class="form--input" id="loginPassword" name="loginPassword" formControlName="loginPassword" matInput required (blur)="gettingloginValue()">
+            </mat-form-field>
+          </div> 
+        </form>
+      </div>
+      <div mat-dialog-actions class="mat-dialog-actions">
+        <button mat-button class="cancel" (click)="closeLoginDialog()">إلغاء</button>
+        <button type="submit" mat-raised-button class="adding--new-user" (click)="login()" value="تسجيل">موافقة</button> </div>
+    </div>

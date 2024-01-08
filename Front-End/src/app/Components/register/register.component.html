@@ -1,1 +1,53 @@
-<p>register works!</p>
+<div class="container">
+    <div *ngIf="show" class="loading-spinner">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="50" height="50" class="rotating-loading-icon">
+        <circle cx="50" cy="50" r="40" stroke="#007bff" stroke-width="4" fill="none">
+          <animateTransform
+            attributeName="transform"
+            attributeType="XML"
+            type="rotate"
+            from="0 50 50"
+            to="360 50 50"
+            dur="1s"
+            repeatCount="indefinite"
+          />
+          <animate attributeName="stroke-dasharray" values="1 200;90 150;1 200" dur="1s" repeatCount="indefinite" />
+          <animate attributeName="stroke-dashoffset" values="0 -40; -40 -80; 0 -120" dur="1s" repeatCount="indefinite" />
+        </circle>
+      </svg>
+    </div>
+    <h1 mat-dialog-title class="dialog--title">تسجيل حساب جديد </h1>
+    <div mat-dialog-content>
+      <form [formGroup]="registerForm" class="form">
+        <div class="seprator">
+          <mat-form-field class="form-field">
+            <mat-label>الاسم</mat-label>
+            <input type="text" class="form--input" id="fullName" name="fullName" formControlName="fullName" matInput required (blur)="gettingFormValues()">
+          </mat-form-field>
+        </div>
+         <div class="seprator">
+          <mat-form-field class="form-field">
+            <mat-label>رقم الجوال</mat-label>
+            <input type="text" class="form--input" id="phoneNumber" name="phoneNumber" formControlName="phoneNumber" matInput required (blur)="gettingFormValues()">
+          </mat-form-field>
+        </div>
+        <div class="sperator">
+          <mat-form-field class="form-field" required>
+            <mat-label>اختر الجامعه</mat-label>
+            <mat-select class="form--input" id="university" name="university" formControlName="university" (valueChange)="gettingFormValues()">
+              <mat-option *ngFor="let university of universities" value="{{university.id}}">{{university.name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="seprator" required>
+          <mat-form-field class="form-field">
+            <mat-label>كلمة السر</mat-label>
+            <input type="password" class="form--input" id="password" name="password" formControlName="password" matInput (blur)="gettingFormValues()">
+          </mat-form-field>
+        </div> 
+      </form>
+    </div>
+    <div mat-dialog-actions class="mat-dialog-actions">
+      <button mat-button class="cancel" (click)="closeRegisterDialog()">إلغاء</button>
+      <button type="submit" mat-raised-button class="adding--new-user" (click)="onSubmit()" value="تسجيل">تسجيل</button> </div>
+  </div>

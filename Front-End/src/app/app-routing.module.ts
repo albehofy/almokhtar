@@ -8,6 +8,7 @@ import { CollageComponent } from './Pages/collage/collage.component';
 import { CourseComponent } from './Pages/course/course.component';
 import { StudentComponent } from './Pages/student/student.component';
 import { LessonComponent } from './Pages/lesson/lesson.component';
+import { UniversityComponent } from './Pages/university/university.component';
 
 const routes: Routes = [
   { path: "", redirectTo: 'splash', pathMatch: 'full' },
@@ -17,8 +18,8 @@ const routes: Routes = [
     path: "", component: LayoutComponent,
     children: [
       { path: "home", component: HomeComponent },
-      { path: "universities/:id", component: CollageComponent },
-      { path: "course/:id", component: CourseComponent },
+      { path: "universities/:id", component: UniversityComponent },
+      { path: "colleges/:id", component: CollageComponent },
       { path: "lesson", component: LessonComponent },
       {
         path: "profile", component: StudentComponent,

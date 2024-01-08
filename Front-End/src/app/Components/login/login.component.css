@@ -1,0 +1,160 @@
+.container {
+    position: relative;
+}
+
+.loading-spinner {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: #00000030;
+    z-index: 999;
+}
+
+.spinner {
+    animation: rotate 1s linear infinite;
+    width: 50px;
+    height: 50px;
+}
+
+.path {
+    stroke: #007bff;
+    /* Customize the color */
+    stroke-linecap: round;
+    animation: dash 1.5s ease-in-out infinite;
+}
+
+
+
+.mat-form-field {
+    font-size: 0.74rem;
+}
+
+.mat-form-field input {
+    font-size: 1rem;
+}
+
+.mat-form-field label.mat-form-field-label {
+    font-size: 1rem;
+    top: 1.45em;
+}
+
+.mat-form-field.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
+.mat-form-field.mat-form-field-can-float .mat-input-server:focus+.mat-form-field-label-wrapper .mat-form-field-label {
+    transform: translateY(-1.25em) scale(0.75);
+    width: 133.33333%;
+}
+
+.dialog--title {
+    padding: 21px 0;
+    text-align: center;
+    font-family: foda;
+    color: #25d366;
+}
+
+mat-dialog-content {
+    min-width: 250px;
+}
+
+.form {
+    min-width: 150px;
+    width: 90%;
+    margin: auto;
+    direction: rtl;
+    position: relative;
+}
+
+.form-field {
+    width: 100%;
+}
+
+mat-label {
+    font-family: Lalezar;
+}
+
+.form--input {
+    direction: rtl;
+    margin: 21px 0 0;
+}
+
+.mat-dialog-actions {
+    text-align: center;
+    padding: 14px;
+}
+
+.mat-dialog-actions button,
+.mat-dialog-actions .submit {
+    padding: 7px 28px;
+    font-size: 1.3rem;
+    margin: 7px 14px;
+    border: transparent;
+    outline: transparent;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.adding--new-user {
+    background-color: #25d366;
+}
+
+.cancel {
+    background-color: rgb(216, 65, 65);
+}
+
+
+input[type='submit'] {
+    width: initial;
+    display: inline;
+    padding: initial;
+    margin-top: initial;
+    font-size: initial;
+    border-radius: initial;
+    border: initial;
+    outline: initial;
+}
+
+input[type='submit']:focus {
+    border: initial
+}
+
+@media only screen and (max-width: 576px) {
+    .dialog--title {
+        padding: 14px 0;
+        text-align: center;
+        font-family: foda;
+        font-size: 1.2rem;
+        color: #25d366;
+    }
+
+    .mat-dialog-actions button {
+        padding: 7px 14px;
+        font-size: 1rem;
+    }
+}
+
+/* Loading Animation */
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1, 150;
+        stroke-dashoffset: 0;
+    }
+
+    50% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -35;
+    }
+
+    100% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -124;
+    }
+}

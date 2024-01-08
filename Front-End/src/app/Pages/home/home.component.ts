@@ -8,15 +8,46 @@ import { FetchingPublickDataService } from '../../Services/fetching-publick-data
 })
 export class HomeComponent {
   universities:Array<any> = [];
-  
+  collages:Array<any> = [];
+  courses:Array<any> = [];
+  isUniveritySelected:boolean = false; 
+  isCollageSelected:boolean = false; 
+  isCourseSelected:boolean = false; 
   constructor(private fpd:FetchingPublickDataService){
-    this.fpd.gettingcollages().subscribe(
+    this.fpd.gettingniversities().subscribe(
       {
         next: res=>{
           this.universities  = res.result.data;
+          console.log(this.universities)
+          localStorage.setItem("universites",`${this.universities}`)
         }
       }
     )
+  }
+  selectUniversity(event:any){
+    this.isUniveritySelected = true;
+    this.fpd.gettingcollages(event.target.value).subscribe(
+      {
+        next: res=>{
+          this.collages  = res.result.colleges;
+          console.log(this.collages)
+        }
+      }
+    );
+  }
+  selectCollage(event:any) {
+    this.isCollageSelected = true;
+    this.fpd.gettingCourses(event.target.value).subscribe(
+      {
+        next: res=>{
+          this.courses  = res.result.courses;
+          console.log(this.courses)
+        }
+      }
+    );
+  }
+  selectCourse(event:any){
+    this.isCourseSelected = true;
   }
   data = {
     header: {

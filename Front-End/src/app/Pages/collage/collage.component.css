@@ -1,56 +1,74 @@
-.collages {
-    background-color: #f7f7f7;
-    min-width: 250px;
-    padding: 127px 0 21px;
-}
-
-.container {
+.collage {
+    padding: 127px 0 49px;
     width: 95%;
     min-height: 450px;
     margin: 7px auto; 
-
 }
-.collage-name {
+
+.collage--name {
     position: relative;
+    margin-bottom: 49px;
     font-family: Lalezar; 
     font-size: 2.1rem;
     color: #25d366;
 }
-.collage-name::after {
+.collage--name::after {
     content: "";
-    width: 82%;
+    width: 85%;
     height: 2px;
     background-color: #25d366;
     position: absolute;
     left: 0;
     top: 50%;
 }
-.universities {
-    width: 100%;
+
+.container {
+    width: 95%;
+    margin: auto;
+    max-width:950px;
+    min-width: 280px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    column-gap: 35px;
+    row-gap: 70px;
 }
-.university {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 45%;
-    min-width: 250px;
-    padding: 49px 0;
-    margin: 21px auto;
+.course {
+    display: block;
+    width: 280px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .course-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 220px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .card-header {
+    /* background-color: #3498db;
+    color: #000; */
+    padding: 15px 0;
+    margin: 0;
     text-align: center;
-    background-color: #fff;
-    color: #000;
-    border-bottom: 7px solid #25d366;
-    border-radius: 7px;
-    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-    transition: all 200ms linear;
-}
-.university:hover {
-    background-color: #25d366;
-    color: #fff;
-    border-bottom: 7px solid #FFF;
-    transform: scale(0.98);
-}
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+  }
+  .course-data {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .course-price {
+    background-color: #f4f4f4;
+    padding: 10px;
+    text-align: center;
+  }

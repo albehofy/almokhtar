@@ -7,8 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SwipperComponent } from './Components/swipper/swipper.component';
 import { LayoutComponent } from './Components/layout/layout.component';
-import { LoginComponent } from './Components/login/login.component';
-import { RegisterComponent } from './Components/register/register.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { HomeComponent } from './Pages/home/home.component';
 import { RequestNewCourseComponent } from './Pages/request-new-course/request-new-course.component';
@@ -27,8 +25,6 @@ import { VideoPlayerComponent } from './Components/video-player/video-player.com
     AppComponent,
     SwipperComponent,
     LayoutComponent,
-    LoginComponent,
-    RegisterComponent,
     NavbarComponent,
     HomeComponent,
     RequestNewCourseComponent,

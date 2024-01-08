@@ -20,6 +20,7 @@ export class VideoPlayerComponent {
   volumeValue: number = 1;
   isVideoRate:Boolean = true;
   videorate:number = 1;
+  videoSrc = "https://back.almokhtarcourses.com/storage/initializing/sample-video.mp4";
   constructor() {
     document.addEventListener('webkitfullscreenchange', () => {
       this.isFullScreen = !this.isFullScreen;

@@ -1,9 +1,11 @@
 <header>
     <!-- related datainside heaer section -->
-    <div class="header-container" [ngStyle]="{'background-image': 'url(' + data.header.background + ')'}">
+    <div class="header-container">
         <div class="data">
-            <h1>{{data.header.address}}</h1>
-            <a href="">{{data.header.linkTitle}}</a>
+            <h1>اكاديمية المختار <br>
+                متخصصون فى شرح المناهج الجامعية
+            </h1>
+            <a href="">بادر بالحجز الان</a>
         </div>
     </div>
 </header>
@@ -14,19 +16,19 @@
         <div class="row">
             <div class="form-local">
                 <h2>{{data.mainForm.address}}</h2>
-                <select name="collage" id="collage-1">
+                <select name="university" id="university" (change)="selectUniversity($event)">
                     <option  value="0" disabled selected>اختر الجامعة</option>
                     <option *ngFor="let university of universities" [value]='university.id'>{{university.name}}</option>
                 </select>
 
-                <select name="collage" id="collage-2">
+                <select name="collage" id="collage" (change)="selectCollage($event)">
                     <option value="0" disabled selected>اختر الكلية</option>
-                    <option *ngFor="let collage of data.mainForm.collages" [value]='collage.value'>{{collage.name}}</option>
+                    <option *ngFor="let collage of collages" [value]='collage.id'>{{collage.name}}</option>
                 </select>
 
-                <select name="collage" id="collage-3">
+                <select name="course" id="course" (change)="selectCourse($event)">
                     <option value="0" disabled selected>المادة</option>
-                    <option *ngFor="let course of data.mainForm.courses" [value]='course.value'>{{course.name}}</option>
+                    <option *ngFor="let course of courses" [value]='course.id'>{{course.name}}</option>
                 </select>
                 <button type="submit" class="submit">إحجز الان</button>
             </div>
