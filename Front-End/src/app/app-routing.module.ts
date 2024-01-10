@@ -20,7 +20,8 @@ const routes: Routes = [
       { path: "home", component: HomeComponent },
       { path: "universities/:id", component: UniversityComponent },
       { path: "colleges/:id", component: CollageComponent },
-      { path: "lesson", component: LessonComponent },
+      { path: "course/:id", component: CourseComponent },
+      { path: "lesson/:id", component: LessonComponent },
       {
         path: "profile", component: StudentComponent,
         children: []

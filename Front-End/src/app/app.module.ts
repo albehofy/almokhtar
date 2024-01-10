@@ -4,6 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms'; // Import this for using ngModel
 import { AppRoutingModule } from './app-routing.module';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatCardModule} from '@angular/material/card';
+import { MatExpansionModule } from '@angular/material/expansion';//for Accordion module
+
+import { GlobalEventService } from './Services/global-event.service';
+
 import { AppComponent } from './app.component';
 import { SwipperComponent } from './Components/swipper/swipper.component';
 import { LayoutComponent } from './Components/layout/layout.component';
@@ -43,9 +49,12 @@ import { VideoPlayerComponent } from './Components/video-player/video-player.com
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    MatIconModule
+    MatIconModule,
+    MatFormFieldModule,
+    MatCardModule, 
+    MatExpansionModule
   ],
-  providers: [],
+  providers: [GlobalEventService],
   bootstrap: [AppComponent]
 }) 
 export class AppModule {}

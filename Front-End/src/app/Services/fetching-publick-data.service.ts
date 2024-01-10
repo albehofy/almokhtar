@@ -27,4 +27,7 @@ export class FetchingPublickDataService {
 gettingCourses(collage:number):Observable<any> {
   return this.http.get<any>(`${environment.basUrl}/api/${environment.version}/colleges/${collage}`, httpOptions)
 }
+gettingCourse(course:number):Observable<any> {
+  return this.http.get<any>(`${environment.basUrl}/api/${environment.version}/courses/${course}`, httpOptions)
+}
 }

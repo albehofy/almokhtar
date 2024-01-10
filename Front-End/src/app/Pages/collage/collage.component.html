@@ -2,11 +2,9 @@
     <h2 class="collage--name">{{collegeName}}</h2>
     <div class="container">
         <ng-container *ngFor="let course of courses"  class="course">
-        <a href="#" *ngIf="course.name != ''" routerLink="/course"  class="course">
-                <img class="course-image" src="https://cdn.sanity.io/images/tlr8oxjg/production/cbce8b3ffe9e0b82f5d710b56ed210546228c415-1232x690.png?w=640&q=80&fit=clip&auto=format" alt="Card Image">
-                <div class="card-header">
-                    كورس رقم 1 
-                </div>
+        <a href="#" *ngIf="course.name != ''" [routerLink]="['/course', course.id]"  class="course">
+                <img class="course-image" [src]="course.image" alt="Card Image">
+                <div class="card-header">{{course.name}}</div>
                 <div class="course-data">
                     <h4><strong>المحاضر</strong> : اسم المحاضر</h4>
                 </div>

@@ -11,7 +11,8 @@ export class CollageComponent {
   userId:number | any; 
   collegeName:string = '';
   courses:Array<any> = [{
-    name:''
+    name:'', 
+    id : 0
   }]; 
   constructor(private fpd: FetchingPublickDataService, private route: ActivatedRoute){
     this.userId = this.route.snapshot.paramMap.get('id');
@@ -21,9 +22,10 @@ export class CollageComponent {
         next: res=>{
           this.courses  = res.result.courses;
           this.collegeName = res.result.name
-          console.log(this.courses)
+          console.log(res.result)
         }
       }
     );
   }
+  
 }
