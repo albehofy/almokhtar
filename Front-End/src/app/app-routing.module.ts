@@ -9,7 +9,8 @@ import { CourseComponent } from './Pages/course/course.component';
 import { StudentComponent } from './Pages/student/student.component';
 import { LessonComponent } from './Pages/lesson/lesson.component';
 import { UniversityComponent } from './Pages/university/university.component';
-
+import { SettingsComponent } from './Pages/student/settings/settings.component';
+import { StudentInfoComponent } from './Pages/student/student-info/student-info.component';
 const routes: Routes = [
   { path: "", redirectTo: 'splash', pathMatch: 'full' },
   { path: "splash", component: SplashComponent },
@@ -24,7 +25,11 @@ const routes: Routes = [
       { path: "lesson/:id", component: LessonComponent },
       {
         path: "profile", component: StudentComponent,
-        children: []
+        children: [
+          { path: 'settings', component: SettingsComponent },
+          { path: 'student-info', component: StudentInfoComponent },
+          { path: '**', redirectTo: 'control-panel', pathMatch: 'full' },
+        ]
       }, 
       // { path: '**', component: notFounded }
 

@@ -26,7 +26,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormatTimePipe } from './Pipes/format-time.pipe';
 import { VideoPlayerComponent } from './Components/video-player/video-player.component';
 import { FooterComponent } from './Components/footer/footer.component';
-
+import { ActiveCoursesComponent } from './Pages/student/active-courses/active-courses.component';
+import { StudentInfoComponent } from './Pages/student/student-info/student-info.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +43,9 @@ import { FooterComponent } from './Components/footer/footer.component';
     LessonComponent,
     FormatTimePipe,
     VideoPlayerComponent,
-    FooterComponent
+    FooterComponent, 
+    ActiveCoursesComponent, 
+    StudentInfoComponent
   ],
   imports: [
     BrowserModule,

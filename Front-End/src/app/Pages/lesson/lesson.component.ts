@@ -7,7 +7,7 @@ import { GlobalEventService } from '../../Services/global-event.service';
   styleUrl: './lesson.component.css'
 })
 export class LessonComponent {
-  videoSrc = 'https://back.almokhtarcourses.com/storage/initializing/sample-video.mp4';
+  videoSrc = 'https://back.almokhtarcourses.com/storage/lessons/8062639af901cf9358e5989f34d395b5.mp4';
   lessonName: string = 'اسم الدرس'
   public rightClickEvent: EventEmitter<MouseEvent> = new EventEmitter<MouseEvent>();
   public f12KeyPressEvent: EventEmitter<KeyboardEvent> = new EventEmitter<KeyboardEvent>();
@@ -70,7 +70,6 @@ export class LessonComponent {
     // Assuming you have a way to detect if DevTools are open
     if (this.isDevToolsOpen()) {
       this.myVariable = false;
-      this.videoSrc=''
 
     }
   }

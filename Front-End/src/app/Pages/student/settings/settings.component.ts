@@ -43,8 +43,8 @@ export class SettingsComponent {
     password: '',
     password_confirmation: ''
   }
-  constructor(private fb: FormBuilder, private userData: GettingUserDataService, private updatingData: UpdateUserService, private updatePassword: UpdatingPsswordService, private snackbar: MatSnackBar) {
-    this.userData.fetchingApi().subscribe(res => {
+  constructor(private fb: FormBuilder, private uD: GettingUserDataService, private updatingData: UpdateUserService, private updatePassword: UpdatingPsswordService, private snackbar: MatSnackBar) {
+    this.uD.fetchingApi().subscribe(res => {
       this.result = res.result;
       console.log(this.result)
     })

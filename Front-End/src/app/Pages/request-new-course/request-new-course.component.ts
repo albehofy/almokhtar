@@ -58,33 +58,33 @@ export class RequestNewCourseComponent {
   phoneFormControl = new FormControl('', [Validators.required]);
   passwordFormControl = new FormControl('', [Validators.required]);
   courseNameFormControl = new FormControl('', [Validators.required]);
-  // getting Data From Input 
-  gettingFormValues(): void {
-    this.data = {
-      name: this.requestNewCourse.get('fullName')!.value,
-      phone: this.requestNewCourse.get('phoneNumber')!.value,
-      university_name: this.requestNewCourse.get('university_name')?.value,
-      college_name: this.requestNewCourse.get('college_name')?.value,
-      course_name: this.requestNewCourse.get('course_name')?.value,
-      files: this.files
-    }
-  }
+
   selectedFile: any = [{ name: "اضافة الملفات" }];
 
   onFileSelected(event: any): void {
-    this.selectedFile = event.target.files[0] ?? null;
+    // this.selectedFile = event.target.files[0] ?? null;
     this.allSelectedFiels = event.target.files;
-    console.log(this.allSelectedFiels); 
+    console.log(event.target.files); 
     for(let i = 0; i<this.allSelectedFiels.length; i++){
-      this.files.push(this.allSelectedFiels[i])
+      this.files.push(this.allSelectedFiels[i]); 
+      console.log(this.files)    
     }
-    console.log(this.files)
-
   }
 
+    // getting Data From Input 
+    gettingFormValues(): void {
+      this.data = {
+        name: this.requestNewCourse.get('fullName')!.value,
+        phone: this.requestNewCourse.get('phoneNumber')!.value,
+        university_name: this.requestNewCourse.get('university_name')?.value,
+        college_name: this.requestNewCourse.get('college_name')?.value,
+        course_name: this.requestNewCourse.get('course_name')?.value,
+        files: this.files
+      }
+    }
   onSubmit(): void {
     if (this.requestNewCourse.valid) {
-
+      console.log(this.data)
       this.show = false;
       // calling API if The Form Data is Valid
       this.rnc.requestingNewCourse(this.data)
