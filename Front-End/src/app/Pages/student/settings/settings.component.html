@@ -1,0 +1,60 @@
+<div class="container">
+    <h2 class="settings--header"> <span>*</span> الاعدادات العامة</h2>
+    <form  [formGroup]="edittingUserdata" class="form">
+        <div class="seprator">
+          <mat-form-field class="form-field">
+            <mat-label>الاسم</mat-label>
+            <input type="text" class="form--input" id="name" name="name" formControlName="name" matInput [(ngModel)]="result.name">
+          </mat-form-field>
+        </div>
+         <div class="seprator">
+          <mat-form-field class="form-field">
+            <mat-label>رقم الجوال</mat-label>
+            <input type="text" class="form--input" id="phone" name="phone" formControlName="phone" matInput [(ngModel)]="result.phone">
+          </mat-form-field>
+        </div>
+        <div class="sperator">
+          <mat-form-field class="form-field" required>
+            <mat-label>Select</mat-label>
+            <mat-select class="form--input" id="university" name="university" formControlName="university" [(ngModel)]="result.university">
+              <mat-option value="one">First option</mat-option>
+              <mat-option value="two">Second option</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="seprator">
+          <mat-form-field class="form-field">
+            <mat-label>البريد الالكترونى</mat-label>
+            <input type="email" class="form--input" id="email" name="email" formControlName="email" matInput [(ngModel)]="result.email">
+          </mat-form-field>
+        </div>
+        <button class="submit" (click)="updatingPersonalData()"> تحديث البيانات</button>
+      </form>
+    <h2 class="settings--header"><span>*</span>  اعدادات الامان</h2>
+    <form [formGroup]="edittingUserPass" class="form" (ngSubmit)="updatingPassword()">
+      <div class="seprator">
+          <mat-form-field class="form-field">
+            <mat-label>كلمة السر</mat-label>
+            <input type="password" class="form--input" id="oldPassword" name="oldPassword" formControlName="oldPassword" matInput required [(ngModel)]="passwordsValues.current_password">
+          </mat-form-field>
+        </div> 
+        <div class="seprator">
+            <mat-form-field class="form-field">
+              <mat-label>كلمة السر الجديدة</mat-label>
+              <input type="password" class="form--input" id="newPassword" name="newPassword" formControlName="newPassword" matInput required [(ngModel)]="passwordsValues.password">
+            </mat-form-field>
+          </div> 
+      <div class="seprator" >
+        <mat-form-field class="form-field">
+          <mat-label>تأكيد كلمة السر</mat-label>
+          <input type="password" id="confirmPassword" formControlName="confirmPassword" matInput required [(ngModel)]="passwordsValues.password_confirmation">
+        </mat-form-field>
+      </div>   
+      <!-- Display validation message if passwords don't match -->
+      <div *ngIf="edittingUserPass.hasError('passwordMismatch') && edittingUserPass.get('confirmPassword')!.dirty" class="warning">
+        Passwords do not match.
+      </div> 
+      <button type="submit" [disabled]="edittingUserPass.invalid" class="submit">Submit</button>
+
+    </form>
+</div>

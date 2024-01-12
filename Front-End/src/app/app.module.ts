@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms'; // Import this for using ngModel
 import { AppRoutingModule } from './app-routing.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';//for mat-form-field module
 import {MatCardModule} from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';//for Accordion module
 
@@ -15,7 +16,6 @@ import { SwipperComponent } from './Components/swipper/swipper.component';
 import { LayoutComponent } from './Components/layout/layout.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { HomeComponent } from './Pages/home/home.component';
-import { RequestNewCourseComponent } from './Pages/request-new-course/request-new-course.component';
 import { SplashComponent } from './Pages/splash/splash.component';
 import { StudentComponent } from './Pages/student/student.component';
 import { UniversityComponent } from './Pages/university/university.component';
@@ -25,6 +25,7 @@ import { LessonComponent } from './Pages/lesson/lesson.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormatTimePipe } from './Pipes/format-time.pipe';
 import { VideoPlayerComponent } from './Components/video-player/video-player.component';
+import { FooterComponent } from './Components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,6 @@ import { VideoPlayerComponent } from './Components/video-player/video-player.com
     LayoutComponent,
     NavbarComponent,
     HomeComponent,
-    RequestNewCourseComponent,
     SplashComponent,
     StudentComponent,
     UniversityComponent,
@@ -41,7 +41,8 @@ import { VideoPlayerComponent } from './Components/video-player/video-player.com
     CourseComponent,
     LessonComponent,
     FormatTimePipe,
-    VideoPlayerComponent
+    VideoPlayerComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +53,8 @@ import { VideoPlayerComponent } from './Components/video-player/video-player.com
     MatIconModule,
     MatFormFieldModule,
     MatCardModule, 
-    MatExpansionModule
+    MatExpansionModule, 
+    MatInputModule
   ],
   providers: [GlobalEventService],
   bootstrap: [AppComponent]

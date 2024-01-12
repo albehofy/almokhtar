@@ -256,7 +256,7 @@ input:focus {
     width: 75px;
     margin-right: 7px;
     position: absolute; 
-    top: -185px;
+    top: -205px;
     left: -150%;
     background-color: #000;
     color: #1caa50;
@@ -297,7 +297,6 @@ input:focus {
       width: 100%;
       height: auto;
       min-height: 250px;
-      
     }
     .playback-controls {
       font-size: 11px;

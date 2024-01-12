@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './student.component.css'
 })
 export class StudentComponent {
-
+  logout() {
+    throw new Error('Method not implemented.');
+    }
 }

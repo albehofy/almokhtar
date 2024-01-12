@@ -1,0 +1,43 @@
+
+footer {
+    margin: 0;
+    background-color: #03030f;
+    height: 50vh;
+    min-height: 300px;
+    color: #25D366;
+    padding-top: 35px;
+}
+
+footer h3 {
+    font-family: foda;
+    font-size: 3em;
+    text-align: center;
+    padding: 21px 0;
+}
+
+.contact-us {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-us a{
+    display: block;
+    min-width: 50px;
+    width: 65px;
+    margin: 10px;
+    color: #25D366;
+    line-height: 70px;
+    border-radius: 50%;
+    background-color: #fff;
+    text-align: center;
+    font-weight: 900;
+    text-transform: uppercase;
+
+}
+footer .copyright {
+    display: block;
+    padding: 49px 0 7px ;
+    font-family: foda;
+    text-align: center;
+}

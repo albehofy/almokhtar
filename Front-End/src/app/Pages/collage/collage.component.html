@@ -6,11 +6,9 @@
                 <img class="course-image" [src]="course.image" alt="Card Image">
                 <div class="card-header">{{course.name}}</div>
                 <div class="course-data">
-                    <h4><strong>المحاضر</strong> : اسم المحاضر</h4>
+                    <h4><strong>المحاضر</strong>{{course.instructor_name}}</h4>
                 </div>
-                <div class="course-price">
-                    سعر الكورس
-                </div>
+                <div class="course-price">{{course.price}}</div>
             </a>
         </ng-container>
     </div>    

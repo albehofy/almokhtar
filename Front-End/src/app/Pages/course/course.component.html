@@ -1,0 +1,49 @@
+<div class="course">
+  <div class="container">
+    <h2 class="course--name">كورس 1</h2>
+    <div *ngFor=" let chapter of chapters; let i = index ">
+      <div class="chapter" *ngIf="chapters[i].lessons.length > 0">
+        <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{chapter.name}}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <a href="#"  *ngFor=" let lesson of chapter.lessons" [routerLink]="['/lesson', lesson.id]" class="lesson--container">
+              <div>
+                <mat-icon>assignment</mat-icon>
+                <h2 class="lesson--name">{{lesson.name}}</h2>
+              </div>
+              <mat-icon>lock_open</mat-icon>
+            </a>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </div>
+
+    <div class="comments--continer">
+      <h3 class="comments-address">التعليقات </h3>
+      <div class="adding--new-comment">
+        <mat-form-field >
+          <mat-label>Textarea</mat-label>
+          <textarea matInput [(ngModel)]="commentValue"></textarea>
+        </mat-form-field>
+        <button (click)="submitNewComment()">اضافة التعليق</button>
+      </div>
+      <div [ngClass]="{'comments-limit': showAllcomments}">
+
+        <mat-card class="comment-card" *ngFor=" let comment of comments">
+          <mat-card-content>
+            <!-- Add your comment or review content here -->
+            <h4 class="student--name">{{comment.id}}</h4>
+            <div class="comment-title">
+              <p>{{comment.comment}}</p>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      </div>
+      <button class="submit" style="width: 75%;" (click)="commentsStatus()">{{showAllcommentsButton}}</button>
+  </div>
+</div>

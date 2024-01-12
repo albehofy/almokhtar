@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="wrapper">
+        <h2 class="student--info-header">البيانات الخاصة بالطالب</h2>
+        <div class="student--info-wrapper">
+            <div class="student--info-unit">
+                <p class="address">تاريح الانضمام </p>
+                <p class="value">{{userData.created_at}}</p>
+            </div>
+            <div class="student--info-unit">
+                <p class="address">الاسم </p>
+                <p class="value">{{userData.name}}</p>
+            </div>
+            <div class="student--info-unit">
+                <p class="address">رقم الهاتف </p>
+                <p class="value"> {{userData.phone}} </p>
+            </div>
+            <div class="student--info-unit">
+                <p class="address">البريد الالكترونى</p>
+                <p class="value">{{userData.email}}</p>
+            </div>
+            <div class="student--info-unit">
+                <p class="address">الرقم التعريفى </p>
+                <p class="value">{{userData.id}}</p>
+            </div>
+        </div>
+    </div>
+    <app-active-courses style="min-width:50%"></app-active-courses>
+</div>

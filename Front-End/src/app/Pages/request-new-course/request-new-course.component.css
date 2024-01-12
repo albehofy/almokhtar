@@ -1,0 +1,147 @@
+.container {
+    /* position: relative; */
+    width: 90%;
+    max-width: 671px;
+    min-width: 270px;
+    margin: 21px auto;
+  }
+  
+  .loading-spinner {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: #00000030;
+    z-index: 999;
+  }
+  
+  .spinner {
+    animation: rotate 1s linear infinite;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .path {
+    stroke: #007bff; /* Customize the color */
+    stroke-linecap: round;
+    animation: dash 1.5s ease-in-out infinite;
+  }
+  
+  
+  .rotating-loading-icon {
+    animation: rotate 2s linear infinite; /* Adjust the duration as needed */
+  }
+  
+  .mat-form-field {
+    font-size: 0.74rem;
+  }
+  .mat-form-field input {
+    font-size: 1rem;
+  }
+  .mat-form-field label.mat-form-field-label {
+    font-size: 1rem;
+    top: 1.45em;
+  }
+  .mat-form-field.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label, .mat-form-field.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label {
+    transform: translateY(-1.25em) scale(0.75);
+    width: 133.33333%;
+  }
+  
+  .request--title {
+      padding: 21px 0;
+      text-align: center;
+      font-family: foda;
+      color: #25d366;
+  }
+  
+  mat-dialog-content {
+    min-width: 250px;
+  }
+  
+  .form {
+    /* position: relative; */
+      min-width: 150px;
+      width: 90%;
+      margin:auto;
+      direction: rtl;
+    }
+    
+    .form-field {
+      width: 100%;
+    }
+  
+    mat-label {
+      /* font-size: 1.2rem; */
+      font-family: Lalezar;
+    }
+  
+  .form--input {
+      direction: rtl;
+      margin: 21px 0 0 ;
+      /* height: 6px; */
+  }
+  /* for select */
+  /* :host {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    } */
+  
+    .adding--new-user {
+      background-color: #25d366;
+    }
+  
+    .cancel {
+      background-color: rgb(216, 65, 65);
+    }
+  
+    
+  input[type='submit']{
+    width: initial;
+      display: inline;
+      padding: initial;
+      margin-top: initial;
+      font-size: initial;
+      border-radius: initial;
+      border: initial;
+      outline: initial;
+  }
+  
+  input[type='submit']:focus {
+      border: initial
+  }
+  .file-name {
+    margin-left: 1rem; /* or whatever margin you require */
+}
+.addingNewFile, .adding--new-user {
+    width: 100%;
+    padding: 21px 14px 21px;
+    text-align: center;
+    border: 1px solid #ddd;
+    outline: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .adding--new-user {
+    margin-top: 21px;
+    background-color: #25d366;
+    color: #fff;
+  }
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @media only screen and (max-width: 576px) {
+    .request--title{
+      padding: 14px 0;
+      text-align: center;
+      font-family: foda;
+      font-size: 1.2rem;
+      color: #25d366;
+    }
+  }

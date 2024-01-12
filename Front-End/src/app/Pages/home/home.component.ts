@@ -10,34 +10,11 @@ export class HomeComponent {
   universities:Array<any> = [];
   collages:Array<any> = [];
   courses:Array<any> = [];
-  isUniveritySelected:boolean = false; 
-  isCollageSelected:boolean = false; 
-  isCourseSelected:boolean = false; 
+  isUniveritySelected:boolean = false;
+  isCollageSelected:boolean = false;
+  isCourseSelected:boolean = false;
 
 
-  public rightClickEvent: EventEmitter<MouseEvent> = new EventEmitter<MouseEvent>();
-  public f12KeyPressEvent: EventEmitter<KeyboardEvent> = new EventEmitter<KeyboardEvent>();
-  public windowResizeEvent: EventEmitter<any> = new EventEmitter<any>();
-
-  @HostListener('window:contextmenu', ['$event'])
-  onRightClick(event: MouseEvent) {
-    event.preventDefault();
-    this.rightClickEvent.emit(event);
-  }
-
-  @HostListener('window:keydown', ['$event'])
-  onKeyDown(event: KeyboardEvent) {
-    if (event.key === 'F12' || event.key === 'ctrl+shift+i') {
-      this.f12KeyPressEvent.emit(event);
-    }
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    if (event.key === 'F12' || event.key === 'ctrl+shift+i') {
-      this.windowResizeEvent.emit(event);
-    }
-  }
 
 
   constructor(private fpd:FetchingPublickDataService){
@@ -50,6 +27,7 @@ export class HomeComponent {
       }
     )
   }
+
   selectUniversity(event:any){
     this.isUniveritySelected = true;
     this.fpd.gettingcollages(event.target.value).subscribe(
@@ -61,6 +39,7 @@ export class HomeComponent {
       }
     );
   }
+
   selectCollage(event:any) {
     this.isCollageSelected = true;
     this.fpd.gettingCourses(event.target.value).subscribe(
@@ -72,9 +51,11 @@ export class HomeComponent {
       }
     );
   }
+
   selectCourse(event:any){
     this.isCourseSelected = true;
   }
+  
   data = {
     header: {
       address: `اكاديمية المختار متخصصون فى شرح المناهج الجامعية `,
@@ -123,42 +104,5 @@ export class HomeComponent {
     }
   }
 background: any;
-myVariable: boolean = true;
-
-  ngOnInit() {
-    // تفقد عندما يتم تغيير القيمة باستخدام أدوات تفتيش
-    this.checkInspect();
-
-    // استمع لتغييرات في قيمة المتغير
-    this.myVariable = true; // قيمة الافتراضية
-    console.log(this.myVariable); // إذا كانت قيمة true
-
-    this.rightClickEvent.subscribe((event) => {
-      console.log('Right-click event globally!', event);
-      // Your custom logic for right-click goes here
-    });
-
-    this.f12KeyPressEvent.subscribe((event) => {
-      console.log('F12 key pressed globally!', event);
-      // Your custom logic for F12 key press goes here
-    });
-
-    this.windowResizeEvent.subscribe((event) => {
-      console.log('resize pressed globally!', event);
-      // Your custom logic for F12 key press goes here
-    });
-  }
-
-  checkInspect() {
-    // Assuming you have a way to detect if DevTools are open
-    if (this.isDevToolsOpen()) {
-      this.myVariable = false;
-    }
-  }
-  private isDevToolsOpen(): boolean {
-    // Your logic to detect DevTools state here
-    return false; // Placeholder, replace with actual detection
-  }
-  
   
 }

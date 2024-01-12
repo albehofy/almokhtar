@@ -1,0 +1,99 @@
+.student--welcome {
+    margin-top: 97px;
+    padding: 21px 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 1px solid #25D366;
+}
+
+.student--welcome .student--avatar {
+    width: 120px;
+    height: 120px;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 35px;
+    background-color: #25D366;
+    font-family: Lalezar;
+    user-select: none;
+    color: #fff;
+}
+
+.student--welcome .student--info {
+    font-family: HONORSansArabicUI;
+    margin-top: 14px;
+    font-size: 1.2em;
+}
+
+.student--welcome .welcome--span {
+    font-weight: 900;
+}
+
+.student--welcome .student--name {
+    font-size: 1.4em;
+}
+
+.student--welcome .student--id {
+    padding: 7px 0;
+    text-align: center;
+    font-weight: 900;
+}
+.navbar--container{
+    background-color: #f6f6f9;
+}
+.navbar.active {
+    box-shadow: 0 2rem 3rem #848bc82e;
+}
+
+.navbar {
+    width: 100%;
+    max-width: 971px;
+    min-width: 270px;
+    margin: auto;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+    padding: 0 3rem;
+}
+
+.navbar a {
+    display: flex;
+    margin-left: 2rem;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    height: 3.7rem;
+    transition: all 300ms ease;
+    padding: 0 2rem;
+    
+}
+
+.navbar a:hover {
+    padding-top: 1.5rem;
+}
+
+.navbar a.active {
+    background: #bfe7c22e;
+    color: #25D366;
+}
+
+.navbar a.active::before {
+    content: "";
+    background-color: #25D366;
+    position: absolute;
+    height: 5px;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+@media only screen and (max-width: 446px) {
+    .student--welcome {
+    margin-top: 149px;
+    }
+}

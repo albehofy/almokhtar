@@ -1,4 +1,7 @@
 /* lesson style */
-.lesson--name {
-    padding: 21px 0;
+.lessons-container {
+    padding: 127px 0 49px;
+    width: 95%;
+    min-height: 450px;
+    margin: 7px auto; 
 }

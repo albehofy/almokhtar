@@ -1,0 +1,60 @@
+.active--courses-header {
+    padding: 35px 0;
+    font-family: foda;
+    color: #25d366;
+    text-align: center;
+}
+.courses--container {
+    min-width: 100%;
+    margin: 49px 21px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.no--courses {
+    display: block;
+    height: 200px;
+    margin: 0 auto;
+}
+
+/* active--courses-container */
+.active--courses-container {
+    padding: 21px;
+}
+
+.active--courses-container .course--wrapper {
+    width: 100%;
+    /* max-width: 500px; */
+    padding: 49px 21px;
+    margin: 21px auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    background-color: #efe;
+    cursor: pointer; 
+}
+
+.active--courses-container .course--name {
+    min-width: 250px;
+    text-align: center;
+}
+
+.active--courses-container .expired--date {
+   text-align: center;
+}
+
+    @media only screen and (max-width: 520px) {
+        .active--courses-container .course--date {
+        padding-top: 21px;
+     }
+}
+
+@media only screen and (max-width: 431px) {
+    .active--courses-container .course--date {
+        padding-top: 21px;
+     }
+}

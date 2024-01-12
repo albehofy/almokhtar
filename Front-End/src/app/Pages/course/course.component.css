@@ -1,0 +1,156 @@
+.course {
+    min-height: 450px;
+    padding: 127px 0 49px;
+    margin: 7px auto; 
+    background-color: #f7f7f7;
+}
+
+.course--name {
+    position: relative;
+    margin-bottom: 49px;
+    font-family: Lalezar; 
+    font-size: 2.1rem;
+    color: #25d366;
+}
+.course--name::after {
+    content: "";
+    width: 85%;
+    height: 2px;
+    background-color: #25d366;
+    position: absolute;
+    left: 0;
+    top: 50%;
+}
+
+.container {
+    width: 95%;
+    margin: auto;
+    max-width:950px;
+    min-width: 280px;
+}
+
+/* .course-content {
+    padding: 0 20px 49px;
+    margin: 137px auto 49px;
+    min-width: 270px;
+
+} */
+/* .address {
+    padding: 21px;
+    color: #3498db;
+  } */
+
+.chapter,.comments--continer {
+    width: 85%;
+    min-width: 270px;
+    margin: 0 auto;
+}
+
+mat-expansion-panel-header {
+    height: 75px;
+    font-weight: 600;
+    font-family: foda;
+    font-size: 1.7rem;
+    border-bottom: 1px solid #ddd;
+}
+mat-panel-title {
+    color: #3498db;
+
+}
+
+.lesson--container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 21px;
+    border-bottom: 1px solid #ddd;
+}
+.lesson--container:first-of-type{
+    margin-top: 21px;
+}
+.lesson--container:last-of-type{
+    border-bottom: transparent;
+}
+.lesson--container >div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+mat-icon {
+    display: block;
+    font-size: 21px;
+    font-weight: 500;
+}
+.lesson--name {
+    padding-right: 7px;
+    font-size: 1.2rem;
+    font-family: IBMPlexSansArabic;
+    font-weight: 500;
+}
+
+.comments-address {
+    font-size: 2.1rem;
+    padding: 49px 0 21px;
+    text-align: center;
+    color: #25d366;
+    font-family: foda;
+}
+
+.adding--new-comment {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    color: #25d366;
+    margin: 21px auto;
+    padding: 21px 14px!important;
+}
+.adding--new-comment button {
+    height: 57px;
+    /* width: 114px; */
+    margin: 7px auto;
+    padding:7px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    border: 1px solid #fff;
+    background-color: #25d366; 
+    cursor: pointer;
+    /* border-radius: 8px; */
+}
+.comments--continer mat-form-field{
+    width: 80%;
+    margin:  auto;
+}
+.comment-card {
+    width: 100%;
+    height: 142px;
+    margin: 14px auto;
+  }
+  .student--name {
+    padding: 7px 21px 14px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .comment-title {
+    padding: 14px 7px;
+  }
+  
+  .comments-limit {
+    max-height: 470px;
+    overflow-y: hidden;
+  }
+
+@media only screen and (max-width: 571px) {
+    .adding--new-comment {
+        flex-direction: column;
+        margin: auto;
+    }
+    .adding--new-comment button {
+        width: 70%;
+        margin: 0 auto;
+    }
+    .comments--continer mat-form-field{
+        width: 100%;
+        margin:  auto;
+    }
+}

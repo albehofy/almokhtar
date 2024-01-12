@@ -1,0 +1,87 @@
+.container {
+    width: 92%;
+    min-width: 260px;
+    margin: 21px auto;
+}
+
+.settings--header {
+    margin: 49px 0 0;
+    padding: 21px;
+    color: #25d366;
+}
+
+.settings--header span {
+    display: inline-block;
+    color: #ff0000;
+    font-size: 1.2rem;
+    padding: 7px;
+}
+
+/* Styling From */
+.form {
+    min-width: 250px;
+    width: 60%;
+    margin: auto;
+    direction: rtl;
+}
+
+.form-field {
+    width: 100%;
+}
+
+mat-label {
+    /* font-size: 1.2rem; */
+    font-family: Lalezar;
+}
+
+.form--input {
+    direction: rtl;
+    margin: 21px 0 0;
+    /* height: 6px; */
+}
+
+
+.submit {
+    padding: 7px 28px;
+    font-size: 1.3rem;
+    margin: 7px 14px;
+    border: transparent;
+    outline: transparent;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.adding--new-user {
+    background-color: #25d366;
+}
+
+.cancel {
+    background-color: rgb(216, 65, 65);
+}
+
+
+input[type='submit'] {
+    width: initial;
+    display: inline;
+    padding: initial;
+    margin-top: initial;
+    font-size: initial;
+    border-radius: initial;
+    border: initial;
+    outline: initial;
+}
+
+input[type='submit']:focus {
+    border: initial
+}
+
+@media only screen and (max-width: 791px) {
+    .form {
+        width: 75%;
+    }
+}
+@media only screen and (max-width: 576px) {
+    .form{
+        width: 91%;
+    }
+}

@@ -1,1 +1,62 @@
-<p>request-new-course works!</p>
+<div class="container">
+    <div *ngIf="show" class="loading-spinner">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="50" height="50"
+            class="rotating-loading-icon">
+            <circle cx="50" cy="50" r="40" stroke="#007bff" stroke-width="4" fill="none">
+                <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 50 50"
+                    to="360 50 50" dur="1s" repeatCount="indefinite" />
+                <animate attributeName="stroke-dasharray" values="1 200;90 150;1 200" dur="1s"
+                    repeatCount="indefinite" />
+                <animate attributeName="stroke-dashoffset" values="0 -40; -40 -80; 0 -120" dur="1s"
+                    repeatCount="indefinite" />
+            </circle>
+        </svg>
+    </div>
+    <h1 class="request--title">طلب اضافة كورس جديد</h1>
+    <form [formGroup]="requestNewCourse" class="form">
+        <div class="seprator">
+            <mat-form-field class="form-field">
+                <mat-label>الاسم</mat-label>
+                <input type="text" class="form--input" id="fullName" name="fullName" formControlName="fullName" matInput
+                    required (blur)="gettingFormValues()">
+            </mat-form-field>
+        </div>
+        <div class="seprator">
+            <mat-form-field class="form-field">
+                <mat-label>رقم الجوال</mat-label>
+                <input type="text" class="form--input" id="phoneNumber" name="phoneNumber" formControlName="phoneNumber"
+                    matInput required (blur)="gettingFormValues()">
+            </mat-form-field>
+        </div>
+        <div class="sperator">
+            <mat-form-field class="form-field" required>
+                <mat-label>الجامعة</mat-label>
+                <input type="text" class="form--input" id="university_name" name="university_name"
+                    formControlName="university_name" matInput required (blur)="gettingFormValues()">
+            </mat-form-field>
+        </div>
+        <div class="sperator">
+            <mat-form-field class="form-field" required>
+                <mat-label>الكلية</mat-label>
+                <input type="text" class="form--input" id="college_name" name="college_name"
+                    formControlName="college_name" matInput required (blur)="gettingFormValues()">
+            </mat-form-field>
+        </div>
+        <div class="sperator">
+            <mat-form-field class="form-field" required>
+                <mat-label>اسم المادة</mat-label>
+                <input type="text" class="form--input" id="course_name" name="course_name" formControlName="course_name"
+                    matInput required (blur)="gettingFormValues()">
+            </mat-form-field>
+        </div>
+
+        <div class="sperator">
+            <button type="button" class="addingNewFile" (click)="fileInput.click()">{{selectedFile.name|| "اضافة
+                الملفات"}}</button>
+            <input hidden (change)="onFileSelected($event)" #fileInput type="file" accept=".pdf, .jpg, .png, jpeg"
+                multiple class="form--input" id="files" name="files" formControlName="files" required
+                (change)="gettingFormValues()">
+        </div>
+        <button type="submit" class="adding--new-user" (click)="onSubmit()" value="تسجيل">ارسال البيانات</button>
+    </form>
+</div>

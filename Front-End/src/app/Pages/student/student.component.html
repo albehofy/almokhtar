@@ -1,1 +1,37 @@
-<p>student works!</p>
+<header class = "student--welcome">
+    <p class="student--avatar">محمد</p>
+    <div class="student--info">
+        <span class="welcome--span">مرحبا</span>,
+        <p class="student--name">
+            محمد رضا محمد أحمد
+        </p>
+        <p class="student--id">29902271203932</p>
+    </div>
+</header>
+<section class="user--panel">
+    <div class="navbar--container">
+        <div class="navbar">
+            <a href="" routerLink="control-panel" routerLinkActive="active">
+                <mat-icon>view_quilt</mat-icon>
+                </a>
+                <a href="" routerLink="student-info" routerLinkActive="active">
+                    <mat-icon>person</mat-icon>
+                    </a>
+                    <a href="" routerLink="settings" routerLinkActive="active">
+                        <mat-icon
+                        >settings</mat-icon>
+                    </a>
+                    <a href="" routerLink="/home" routerLinkActive="active" (click)="logout()">
+                        <mat-icon
+                        aria-hidden="false"
+                        aria-label="logout icon"
+                        fontIcon="logout"
+                        [ariaSetSize]="50"
+                        
+                      ></mat-icon>            </a>
+        </div>
+    </div>
+    <div class="app--control-panel">
+        <router-outlet></router-outlet>
+    </div>
+</section>

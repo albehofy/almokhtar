@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-video-player',
@@ -10,6 +10,7 @@ export class VideoPlayerComponent {
   @ViewChild('volume', { static: true }) volume?: ElementRef;
   @ViewChild('progress', { static: true }) progress?: ElementRef;
 
+  @Input() videoSrc = ''
   isvideoNotStart = true;
   videoControlsVisible: boolean = false;
   isvideoPlay: boolean = false;
@@ -20,7 +21,6 @@ export class VideoPlayerComponent {
   volumeValue: number = 1;
   isVideoRate:Boolean = true;
   videorate:number = 1;
-  videoSrc = "https://rr4---sn-hpa7knll.c.drive.google.com/videoplayback?expire=1704845127&ei=F7WdZdihE7241bYPi-aNgAs&ip=156.217.154.112&id=4c4ee815f8912127&itag=18&source=webdrive&requiressl=yes&xpc=EghonaK1InoBAQ==&mh=f9&mm=32&mn=sn-hpa7knll&ms=su&mv=m&mvi=4&pl=19&ttl=transient&susc=dr&driveid=1B9rzA4N2ryH9SB0MlhENbpkvBH4Rp_RR&app=explorer&eaua=MLbuuyQ8g5M&mime=video/mp4&vprv=1&prv=1&dur=4461.087&lmt=1704832190280360&mt=1704834038&subapp=DRIVE_WEB_FILE_VIEWER&txp=0006224&sparams=expire,ei,ip,id,itag,source,requiressl,xpc,ttl,susc,driveid,app,eaua,mime,vprv,prv,dur,lmt&sig=AJfQdSswRgIhAJ2NhUG-30eYvkuddKbuwdcOBR5EZ4Qg815BPXyCkSzQAiEA-8kbzwCElpSodMV8_THDM054bs9wenLZvN8CNDXF_uw=&lsparams=mh,mm,mn,ms,mv,mvi,pl&lsig=AAO5W4owRQIgICIOZVZPUsF9_Uw6tniVqBKdr7W1VAm1T3Iex5awOg8CIQCGCXDoSkBwRvkmw2snqYLeFILcnpEXkzFtanttx4XwCA==&cpn=EA0kDXd-xKb-WEVW&c=WEB_EMBEDDED_PLAYER&cver=1.20240107.00.00";
   constructor() {
     document.addEventListener('webkitfullscreenchange', () => {
       this.isFullScreen = !this.isFullScreen;
