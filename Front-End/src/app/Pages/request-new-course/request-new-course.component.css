@@ -1,6 +1,6 @@
 .container {
-    /* position: relative; */
-    width: 90%;
+  padding: 127px 0 49px;
+  width: 90%;
     max-width: 671px;
     min-width: 270px;
     margin: 21px auto;

@@ -91,7 +91,9 @@ export class RegisterComponent {
       .subscribe({
         next: () => {
       this.show = false;
-          this.snackbar.open('تم انشاء السحاب بنجاح', 'ok', { 'duration': 3000 })
+          this.snackbar.open('تم انشاء السحاب بنجاح', 'ok', { 'duration': 3000 }); 
+          this.ref.close()
+
         },
         error: (e) => {
       this.show = false;

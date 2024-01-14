@@ -1,4 +1,5 @@
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { LessonDataService } from '../../Services/lesson-data.service';
 
 @Component({
   selector: 'app-video-player',
@@ -10,7 +11,10 @@ export class VideoPlayerComponent {
   @ViewChild('volume', { static: true }) volume?: ElementRef;
   @ViewChild('progress', { static: true }) progress?: ElementRef;
 
-  @Input() videoSrc = ''
+  @Input()  lesson ={
+    name:  '', 
+    videoSrc: '' 
+  }
   isvideoNotStart = true;
   videoControlsVisible: boolean = false;
   isvideoPlay: boolean = false;
@@ -21,10 +25,16 @@ export class VideoPlayerComponent {
   volumeValue: number = 1;
   isVideoRate:Boolean = true;
   videorate:number = 1;
-  constructor() {
+  constructor(private lds: LessonDataService) {
+    this.lds.lessonSrc$.subscribe(res => {
+      this.lesson.videoSrc = res; 
+      console.log(this.lesson.videoSrc)
+    })
+    console.log(this.lds.lessonSrc$)
     document.addEventListener('webkitfullscreenchange', () => {
       this.isFullScreen = !this.isFullScreen;
     });
+    console.log(this.lesson)
 
     document.addEventListener('mozfullscreenchange', () => {
       this.isFullScreen = !this.isFullScreen;
@@ -34,11 +44,13 @@ export class VideoPlayerComponent {
       this.isFullScreen = !this.isFullScreen;
     });
   }
+
   playerControlsVisibility = (visibility: boolean) => {
     if(!this.isvideoNotStart){
       this.videoControlsVisible = visibility
     }
   };
+  
   playControlMethod = () => {
     this.isvideoNotStart = false;
       if (this.isvideoPlay) {
@@ -51,6 +63,7 @@ export class VideoPlayerComponent {
         this.isvideoPlay = true;
     }
   }
+  
   toggleFullscreen() {
     const videoWrapper: HTMLElement = this.video?.nativeElement.parentElement;
 
@@ -93,6 +106,7 @@ export class VideoPlayerComponent {
     this.isvideoPlay = true;
     video.play();
   }
+  
   rewind() {
     const video = this.video?.nativeElement;
 
@@ -118,6 +132,7 @@ export class VideoPlayerComponent {
         volume.value = 0;
       }
     }
+    
     gettingVolumeValue(evevnt:any){
       const video = this.video?.nativeElement;
       const volumeValue = evevnt.target.value;
@@ -130,6 +145,7 @@ export class VideoPlayerComponent {
       }
       video.volume = volumeValue
     }
+    
     updateDration(event:any){
       const video = this.video?.nativeElement
       const progress = event.target.value
@@ -138,23 +154,29 @@ export class VideoPlayerComponent {
       console.log("hello from the other side!")
     }
 
-
     updateTimeDisplay(){
       const video = this.video?.nativeElement; 
       const progress = this.progress?.nativeElement
       this.currentTime = video.currentTime;
+      const precentag = video.duration / 4
+      if(this.currentTime == precentag) {
+        console.log(precentag)
+      }
       this.totalTime = video.duration;
       progress.value = (video.currentTime / video.duration) * 100;
     }
+
     updateTotalTime(){
       const video = this.video?.nativeElement; 
       this.totalTime = video.duration;
     }
+
     playbackRate(videoRate:number){
     const video = this.video?.nativeElement;
       video.playbackRate = videoRate; 
       this.videorate = videoRate
     }
+
     showRateControls(){
       this.isVideoRate = !this.isVideoRate;
     }

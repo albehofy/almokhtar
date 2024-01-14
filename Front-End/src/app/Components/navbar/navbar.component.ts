@@ -11,11 +11,12 @@ import { DialogService } from '../../Services/dialog.service';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  isUserActive: boolean = false;
-
+  isUserActive = JSON.parse(localStorage.getItem('isUserActive') || '{}')
   constructor(private dialog: MatDialog, private loginService: LoginService, private dialogService: DialogService) {
+    this.isUserActive = JSON.parse(localStorage.getItem('isUserActive') || '{}')
     this.dialogService.isDialogOpen$.subscribe(res => {
       this.isUserActive = res;
+      this.isUserActive =  JSON.parse(localStorage.getItem('isUserActive') || '{}')
     })
   }
   openRegisterDialog(enterAnimationDuration: string, exitAnimationDuration: string) {

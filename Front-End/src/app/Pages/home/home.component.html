@@ -5,7 +5,7 @@
             <h1>اكاديمية المختار <br>
                 متخصصون فى شرح المناهج الجامعية
             </h1>
-            <a href="">بادر بالحجز الان</a>
+            <button mat-raised-button (click)="openMessageDialog('500','500')">كيفية الحجز</button>
         </div>
     </div>
 </header>
@@ -15,9 +15,9 @@
     <section class="collage">
         <div class="row">
             <div class="form-local">
-                <h2>{{data.mainForm.address}}</h2>
+                <h2>سجل معنا الان</h2>
                 <select name="university" id="university" (change)="selectUniversity($event)">
-                    <option  value="0" disabled selected>اختر الجامعة</option>
+                    <option value="0" disabled selected>اختر الجامعة</option>
                     <option *ngFor="let university of universities" [value]='university.id'>{{university.name}}</option>
                 </select>
 
@@ -27,29 +27,30 @@
                 </select>
 
                 <select name="course" id="course" (change)="selectCourse($event)">
-                    <option value="0" disabled selected>المادة</option>
+                    <option value="0" selected>المادة</option>
                     <option *ngFor="let course of courses" [value]='course.id'>{{course.name}}</option>
                 </select>
-                <button type="submit" class="submit">إحجز الان</button>
+                <button type="submit" class="submit" (click)="openSubscripeDialog('500','500')">إحجز الان</button>
             </div>
+
             <div class="cards">
                 <div class="cr"></div>
                 <div class="cr">
-                    <div class="features--insider">
-                    </div>
-                    <a [href]="data.mainForm.telegram.link"> {{data.mainForm.telegram.title}}</a>
-                </div>
-                <div class="cr">
                     <h2>ليش منصة المختار</h2>
-                    
+
                     <div class="features--insider">
                         <p>نعمل معك خطوة بخطوة للحصول على A+,</p>
                         <p>الكورسات متاحة على المنصة وكذلك على التليجرام</p>
                         <p>الرد على كافة الاستفسارات</p>
                     </div>
-                    <a href="#">تواصل مع المشرفين</a>
+                    <a [href]="links.telegram">بادر بالحجز الان</a>
                 </div>
-                <div class="cr"></div>
+                <div class="cr" style="width: 100%; height: 25%;align-self: center; margin: 0;padding: 0;">
+
+                    <a [href]="links.telegram"
+                        style="width: 100%;height: 100%;display: flex;align-items: center; justify-content: center;margin: 0;border: 1px solid #ddd;">
+                        تواصل مع المشرفين </a>
+                </div>
             </div>
         </div>
     </section>
@@ -67,109 +68,120 @@
             <p class="bottom">تطور مستمر</p>
         </div>
     </div>
-    <h2>الدورات</h2>
+    <h2 class="courses-header-home">الدورات</h2>
+    
     <section class="modules">
+        
+        <div [routerLink]="['/course', Preferred[0].id]" class="module">
+            <div class="module--preview">
+                <img [src]="Preferred[0].image" alt="">
+            </div>
+            <div class="module--data">
+                <h4 class="module--header">{{Preferred[0].name}}</h4>
+                <h4 class="module--header">{{Preferred[0].university.name}} - {{Preferred[0].college.name}}</h4>
+                <p class="module--title">{{Preferred[0].name}}</p>
+                <span class="marked--text">{{Preferred[0].price}} ريال </span> <br>
+                <span class="light--text"> {{Preferred[0].description}}</span>
+            </div>
+        </div>
+        <div [routerLink]="['/course', Preferred[1].id]" class="module flex--column-reverse">
 
-        <div class="module">
-            <div class="module--preview">
-                <img [src]="'assets/images/about-5.jpg'" alt="">
-            </div>
             <div class="module--data">
-                <h4 class="module--header">جماعة الاميرة نورة - كلية الطب</h4>
-                <p class="module--title">بلوك MSK </p>
-                <span class="marked--text">السعر 50 ريال</span> <br>
-                <span class="light--text"> ويشمل العملى والنظرى </span>
-            </div>
-        </div>
-        <div class="module flex--column-reverse">
-            <div class="module--data">
-                <h2 class="module--header">عنوان وصفى</h2>
-                <p class="module--title">نص وصفى للمحتوى بغرض تجرب الخط والابعاد عل هذا الجزء من الموقع ورؤية التناسق
-                </p>
-                <span class="marked--text">نص مميز وصفى</span> <br>
-                <span class="light--text">خط رفيع مميز للتجربة</span>
+                <h4 class="module--header">{{Preferred[1].name}}</h4>
+                <h4 class="module--header">{{Preferred[1].university.name}} - {{Preferred[1].college.name}}</h4>
+                <p class="module--title">{{Preferred[1].name}}</p>
+                <span class="marked--text">{{Preferred[1].price}} ريال </span> <br>
+                <span class="light--text"> {{Preferred[1].description}}</span>
             </div>
             <div class="module--preview">
-                <img [src]="'assets/images/about-4.jpg'" alt="">
+                <img [src]="Preferred[1].image" alt="">
             </div>
         </div>
-        <div class="module">
+
+        <div [routerLink]="['/course', Preferred[2].id]" class="module">
             <div class="module--preview">
-                <img [src]="'assets/images/creative-thinking-3473913-3119215.png'" alt="">
+                <img [src]="Preferred[2].image" alt="">
             </div>
             <div class="module--data">
-                <h2 class="module--header">عنوان وصفى</h2>
-                <p class="module--title">نص وصفى للمحتوى بغرض تجرب الخط والابعاد عل هذا الجزء من الموقع ورؤية التناسق
-                </p>
-                <span class="marked--text">نص مميز وصفى</span> <br>
-                <span class="light--text">خط رفيع مميز للتجربة</span>
+                <h4 class="module--header">{{Preferred[2].name}}</h4>
+                <h4 class="module--header">{{Preferred[2].university.name}} - {{Preferred[2].college.name}}</h4>
+                <p class="module--title">{{Preferred[2].name}}</p>
+                <span class="marked--text">{{Preferred[2].price}} ريال </span> <br>
+                <span class="light--text"> {{Preferred[2].description}}</span>
             </div>
         </div>
-        <div class="module flex--column-reverse">
+        <div [routerLink]="['/course', Preferred[3].id]" class="module flex--column-reverse">
+
             <div class="module--data">
-                <h2 class="module--header">عنوان وصفى</h2>
-                <p class="module--title">نص وصفى للمحتوى بغرض تجرب الخط والابعاد عل هذا الجزء من الموقع ورؤية التناسق
-                </p>
-                <span class="marked--text">نص مميز وصفى</span> <br>
-                <span class="light--text">خط رفيع مميز للتجربة</span>
+                <h4 class="module--header">{{Preferred[3].name}}</h4>
+                <h4 class="module--header">{{Preferred[3].university.name}} - {{Preferred[3].college.name}}</h4>
+                <p class="module--title">{{Preferred[3].name}}</p>
+                <span class="marked--text">{{Preferred[3].price}} ريال </span> <br>
+                <span class="light--text"> {{Preferred[3].description}}</span>
             </div>
             <div class="module--preview">
-                <img [src]="'assets/images/f1805608-34b9-4165-95f4-8ba1849f57b6.jpeg'" alt="">
+                <img [src]="Preferred[3].image" alt="">
             </div>
         </div>
+
+    </section>    
+    <section class="modules">
+        
+        <div [routerLink]="['/course', Preferred[4].id]" class="module">
+            <div class="module--preview">
+                <img [src]="Preferred[4].image" alt="">
+            </div>
+            <div class="module--data">
+                <h4 class="module--header">{{Preferred[4].name}}</h4>
+                <h4 class="module--header">{{Preferred[4].university.name}} - {{Preferred[4].college.name}}</h4>
+                <p class="module--title">{{Preferred[4].name}}</p>
+                <span class="marked--text">{{Preferred[4].price}} ريال </span> <br>
+                <span class="light--text"> {{Preferred[4].description}}</span>
+            </div>
+        </div>
+        <div [routerLink]="['/course', Preferred[5].id]" class="module flex--column-reverse">
+
+            <div class="module--data">
+                <h4 class="module--header">{{Preferred[5].name}}</h4>
+                <h4 class="module--header">{{Preferred[5].university.name}} - {{Preferred[5].college.name}}</h4>
+                <p class="module--title">{{Preferred[5].name}}</p>
+                <span class="marked--text">{{Preferred[5].price}} ريال </span> <br>
+                <span class="light--text"> {{Preferred[5].description}}</span>
+            </div>
+            <div class="module--preview">
+                <img [src]="Preferred[5].image" alt="">
+            </div>
+        </div>
+
+        <!-- <div [routerLink]="['/course', Preferred[6].id]" class="module">
+            <div class="module--preview">
+                <img [src]="Preferred[6].image" alt="">
+            </div>
+            <div class="module--data">
+                <h4 class="module--header">{{Preferred[6].name}}</h4>
+                <h4 class="module--header">{{Preferred[6].university.name}} - {{Preferred[6].college.name}}</h4>
+                <p class="module--title">{{Preferred[6].name}}</p>
+                <span class="marked--text">{{Preferred[6].price}} ريال </span> <br>
+                <span class="light--text"> {{Preferred[6].description}}</span>
+            </div>
+        </div>
+        <div [routerLink]="['/course', Preferred[7].id]" class="module flex--column-reverse">
+
+            <div class="module--data">
+                <h4 class="module--header">{{Preferred[7].name}}</h4>
+                <h4 class="module--header">{{Preferred[7].university.name}} - {{Preferred[7].college.name}}</h4>
+                <p class="module--title">{{Preferred[7].name}}</p>
+                <span class="marked--text">{{Preferred[7].price}} ريال </span> <br>
+                <span class="light--text"> {{Preferred[7].description}}</span>
+            </div>
+            <div class="module--preview">
+                <img [src]="Preferred[7].image" alt="">
+            </div>
+        </div> -->
+
     </section>
 
-    <section class="modules">
-        <div class="module">
-            <div class="module--preview">
-                <img [src]="'assets/images/about-5.jpg'" alt="">
-            </div>
-            <div class="module--data">
-                <h2 class="module--header">عنوان وصفى</h2>
-                <p class="module--title">نص وصفى للمحتوى بغرض تجرب الخط والابعاد عل هذا الجزء من الموقع ورؤية التناسق
-                </p>
-                <span class="marked--text">نص مميز وصفى</span> <br>
-                <span class="light--text">خط رفيع مميز للتجربة</span>
-            </div>
-        </div>
-        <div class="module flex--column-reverse">
-            <div class="module--data">
-                <h2 class="module--header">عنوان وصفى</h2>
-                <p class="module--title">نص وصفى للمحتوى بغرض تجرب الخط والابعاد عل هذا الجزء من الموقع ورؤية التناسق
-                </p>
-                <span class="marked--text">نص مميز وصفى</span> <br>
-                <span class="light--text">خط رفيع مميز للتجربة</span>
-            </div>
-            <div class="module--preview">
-                <img [src]="'assets/images/about-4.jpg'" alt="">
-            </div>
-        </div>
-        <div class="module">
-            <div class="module--preview">
-                <img [src]="'assets/images/creative-thinking-3473913-3119215.png'" alt="">
-            </div>
-            <div class="module--data">
-                <h2 class="module--header">عنوان وصفى</h2>
-                <p class="module--title">نص وصفى للمحتوى بغرض تجرب الخط والابعاد عل هذا الجزء من الموقع ورؤية التناسق
-                </p>
-                <span class="marked--text">نص مميز وصفى</span> <br>
-                <span class="light--text">خط رفيع مميز للتجربة</span>
-            </div>
-        </div>
-        <div class="module flex--column-reverse">
-            <div class="module--data">
-                <h2 class="module--header">عنوان وصفى</h2>
-                <p class="module--title">نص وصفى للمحتوى بغرض تجرب الخط والابعاد عل هذا الجزء من الموقع ورؤية التناسق
-                </p>
-                <span class="marked--text">نص مميز وصفى</span> <br>
-                <span class="light--text">خط رفيع مميز للتجربة</span>
-            </div>
-            <div class="module--preview">
-                <img [src]="'assets/images/f1805608-34b9-4165-95f4-8ba1849f57b6.jpeg'" alt="">
-            </div>
-        </div>
-    </section>
-    <section class="how--to-start">
+   <section class="how--to-start">
         <h2>كيف تبدأ ؟</h2>
         <div class="steps">
             <div class="step step--1">
@@ -204,5 +216,6 @@
             </div>
         </div>
     </section>
+    <app-swipper [slides]="reviews"></app-swipper>
 </main>
 <!-- still working on it -->

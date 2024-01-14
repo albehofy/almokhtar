@@ -6,7 +6,7 @@
     <!-- video -->
     <video class="video-container__video" #video (timeupdate)="updateTimeDisplay()"
         (loadedmetadata)="updateTotalTime()">
-        <source [src]="videoSrc"
+        <source src="{{lesson.videoSrc}}"
         type="video/mp4">
     </video>
  

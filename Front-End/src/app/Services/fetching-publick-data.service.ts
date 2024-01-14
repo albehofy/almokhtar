@@ -30,7 +30,18 @@ gettingCourses(collage:number):Observable<any> {
 gettingCourse(course:number):Observable<any> {
   return this.http.get<any>(`${environment.basUrl}/api/${environment.version}/courses/${course}`, httpOptions)
 }
+gettingLesson(lesson:number):Observable<any> {
+  return this.http.get<any>(`${environment.basUrl}/api/${environment.version}/lessons/${lesson}`, httpOptions)
+}
+
   gettingSettingData():Observable<any>{
     return this.http.get<any>(`${environment.basUrl}/api/${environment.version}/settings`, httpOptions)
+  }
+  gettingReviews():Observable<any>{
+    return this.http.get<any>(`${environment.basUrl}/api/${environment.version}/reviews`, httpOptions)
+  }
+  
+  gettingPreferredCourses(){
+    return this.http.get<any>(`${environment.basUrl}/api/${environment.version}/courses/preferred`, httpOptions)
   }
 }

@@ -19,7 +19,7 @@ export class CourseComponent {
   chapters: Array<any> = [];
   chapterContent: Array<any> = [];
   commentValue: string = ''
-  constructor(private route: ActivatedRoute, private fpd: FetchingPublickDataService, private submitComment: AddingNewCommentService) {
+  constructor( private route: ActivatedRoute, private fpd: FetchingPublickDataService, private submitComment: AddingNewCommentService) {
     this.lessonId = this.route.snapshot.paramMap.get('id');
     this.fpd.gettingCourse(this.lessonId).subscribe(
       {
@@ -43,19 +43,18 @@ export class CourseComponent {
   }
 
   submitNewComment() {
-    if(this.commentValue != ''){
+    if (this.commentValue != '') {
       this.submitComment.submitNewComment(
         {
           "comment": this.commentValue,
           "course_id": this.lessonId
         }
       ).subscribe({
-        next: (response)=>{
+        next: (response) => {
           console.log(response)
         }
       })
     }
-  }
+  }  
 
- 
 }

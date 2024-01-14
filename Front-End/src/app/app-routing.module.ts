@@ -11,6 +11,7 @@ import { LessonComponent } from './Pages/lesson/lesson.component';
 import { UniversityComponent } from './Pages/university/university.component';
 import { SettingsComponent } from './Pages/student/settings/settings.component';
 import { StudentInfoComponent } from './Pages/student/student-info/student-info.component';
+import { QuranKareemComponent } from './Pages/quran-kareem/quran-kareem.component';
 const routes: Routes = [
   { path: "", redirectTo: 'splash', pathMatch: 'full' },
   { path: "splash", component: SplashComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
     path: "", component: LayoutComponent,
     children: [
       { path: "home", component: HomeComponent },
+      { path: "quran-kareem", component: QuranKareemComponent },
       { path: "universities/:id", component: UniversityComponent },
       { path: "colleges/:id", component: CollageComponent },
       { path: "course/:id", component: CourseComponent },
@@ -28,7 +30,7 @@ const routes: Routes = [
         children: [
           { path: 'settings', component: SettingsComponent },
           { path: 'student-info', component: StudentInfoComponent },
-          { path: '**', redirectTo: 'control-panel', pathMatch: 'full' },
+          { path: '**', redirectTo: 'student-info', pathMatch: 'full' },
         ]
       }, 
       // { path: '**', component: notFounded }

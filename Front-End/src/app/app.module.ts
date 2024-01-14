@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatIconModule } from '@angular/material/icon';
@@ -8,6 +8,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';//for mat-form-field module
 import {MatCardModule} from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';//for Accordion module
+import {register} from 'swiper/element/bundle';
 
 import { GlobalEventService } from './Services/global-event.service';
 
@@ -28,6 +29,14 @@ import { VideoPlayerComponent } from './Components/video-player/video-player.com
 import { FooterComponent } from './Components/footer/footer.component';
 import { ActiveCoursesComponent } from './Pages/student/active-courses/active-courses.component';
 import { StudentInfoComponent } from './Pages/student/student-info/student-info.component';
+import { MessageComponent } from './Components/message/message.component';
+import { SubscripeComponent } from './Components/subscripe/subscripe.component';
+import { ChatIconComponent } from './Components/chat-icon/chat-icon.component';
+import { QuranKareemComponent } from './Pages/quran-kareem/quran-kareem.component';
+
+
+register();
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +54,7 @@ import { StudentInfoComponent } from './Pages/student/student-info/student-info.
     VideoPlayerComponent,
     FooterComponent, 
     ActiveCoursesComponent, 
-    StudentInfoComponent
+    StudentInfoComponent, MessageComponent, SubscripeComponent, ChatIconComponent, QuranKareemComponent
   ],
   imports: [
     BrowserModule,
@@ -60,6 +69,7 @@ import { StudentInfoComponent } from './Pages/student/student-info/student-info.
     MatInputModule
   ],
   providers: [GlobalEventService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent], 
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 }) 
 export class AppModule {}

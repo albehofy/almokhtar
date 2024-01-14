@@ -76,7 +76,9 @@ export class LoginComponent  {
       this.loginService.Validatelogin(this.data)
       .subscribe({
         next: res=>{
-          localStorage.setItem('userToken',`${res.result.access_token}`);
+          localStorage.setItem('userToken',`${res.result.access_token}`);          
+          localStorage.setItem('isUserActive',`true`);
+
           this.dialogService.updateDialogState(true);
           this.show = false;
           this.snackbar.open('تم تسجيل الدخول بنجاح', 'ok', { 'duration': 3000 })

@@ -8,7 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
-})
+}) 
 export class LoginService {
   private _islogin: Boolean = false;
   private isDialogOpenSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
@@ -39,11 +39,9 @@ export class LoginService {
   
   updateDialogState(isActive: boolean): void {
     this.isDialogOpenSubject.next(isActive);
-    console.log(isActive)
   }
   
   Validatelogin(data:UserLoginData) {
     return this.http.post<any>(`${environment.basUrl}/api/${environment.version}/login`, data,this.httpOptions)
-    
   }
 }

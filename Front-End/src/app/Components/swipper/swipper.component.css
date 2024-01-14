@@ -1,0 +1,59 @@
+/* swiper-container {
+    width: 100%;
+    padding: 10px;
+    background-color: #ddd;
+}
+
+swiper-slide {
+    width: 32%;
+    min-width: 270px;
+} */
+img {
+    width: 100%;
+}
+.flex {
+    display: flex;
+    justify-content: space-around;
+}
+.partner-area__single {
+    width: 100%;
+    min-width: 260px;
+    height: 221px;
+    padding: 7px;
+    margin:7px auto;
+    background-color: #fff;
+    box-shadow: 0 0 1px #000;
+    text-align: center;
+}
+.partner-area__single h1, .partner-area__single p {
+    padding: 21px 0;
+}
+p.rate {
+    width: 90%;
+    margin: 7px auto;
+    min-width: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rate span{
+    display: block;
+    margin: 0 7px;
+}
+
+
+/* Customize the appearance of the navigation arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff;
+  font-size: 18px;
+  margin-top: -20px;
+}
+
+.swiper-button-next {
+  margin-right: 10px;
+}
+
+.swiper-button-prev {
+  margin-left: 10px;
+}

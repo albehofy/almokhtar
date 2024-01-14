@@ -10,7 +10,7 @@
                 {{chapter.name}}
               </mat-panel-title>
             </mat-expansion-panel-header>
-            <a href="#"  *ngFor=" let lesson of chapter.lessons" [routerLink]="['/lesson', lesson.id]" class="lesson--container">
+            <a href="#"   *ngFor=" let lesson of chapter.lessons" [routerLink]="['/lesson', lesson.id]" class="lesson--container">
               <div>
                 <mat-icon>assignment</mat-icon>
                 <h2 class="lesson--name">{{lesson.name}}</h2>

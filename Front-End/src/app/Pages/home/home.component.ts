@@ -1,5 +1,10 @@
 import { Component, EventEmitter, HostListener } from '@angular/core';
 import { FetchingPublickDataService } from '../../Services/fetching-publick-data.service';
+import { MessageComponent } from '../../Components/message/message.component';
+import { SubscripeComponent } from '../../Components/subscripe/subscripe.component';
+import { MatDialog } from '@angular/material/dialog';
+import { SharePriceService } from '../../Services/share-price.service';
+import { GeneralSettingsService } from '../../Services/general-settings.service';
 
 @Component({
   selector: 'app-home',
@@ -13,11 +18,39 @@ export class HomeComponent {
   isUniveritySelected:boolean = false;
   isCollageSelected:boolean = false;
   isCourseSelected:boolean = false;
+  prcie = 0;
+  links:any = {};
+  reviews = []; 
+  Preferred: any = [{
+    id: 100,
+    name: '', 
+    college: {
+      "name": ''
+    }, 
+    university: {
+      name : ''
+    }, 
+    description: '', 
+    price: '', 
+    iamge: ''
+  }];
 
-
-
-
-  constructor(private fpd:FetchingPublickDataService){
+  constructor(private gs: GeneralSettingsService,private fpd:FetchingPublickDataService, private dialog: MatDialog, private spc: SharePriceService){
+    this.fpd.gettingReviews().subscribe(
+      {
+        next: (response)=>{
+          console.log(response)
+          this.reviews = response.result.data, "reviews";
+        }
+      }
+    )
+    // preferd courses
+    this.fpd.gettingPreferredCourses().subscribe({
+      next: (res)=>{
+        this.Preferred = res.result.data;
+        console.log(res.result.data)
+      }
+    })
     this.fpd.gettingniversities().subscribe(
       {
         next: res=>{
@@ -25,16 +58,44 @@ export class HomeComponent {
           console.log(this.universities)
         }
       }
-    )
+    ); 
+
+    this.fpd.gettingSettingData().subscribe({
+      next:(res)=>{
+        this.links = res.result.links; 
+        console.log(this.links.telegram_communication_channel)
+      }
+    }); 
+
+
   }
 
+  openSubscripeDialog(enterAnimationDuration: string, exitAnimationDuration: string) {
+    let _data = this.dialog.open(SubscripeComponent, {
+      width: '60%',
+      minWidth: "240px",
+      maxWidth: "initial",
+      enterAnimationDuration,
+      exitAnimationDuration,
+    });
+  }
+
+  openMessageDialog(enterAnimationDuration: string, exitAnimationDuration: string) {
+    let _data = this.dialog.open(MessageComponent, {
+      width: '60%',
+      minWidth: "240px",
+      maxWidth: "initial",
+      enterAnimationDuration,
+      exitAnimationDuration,
+    });
+  }
+  
   selectUniversity(event:any){
     this.isUniveritySelected = true;
     this.fpd.gettingcollages(event.target.value).subscribe(
       {
         next: res=>{
           this.collages  = res.result.colleges;
-          console.log(this.collages)
         }
       }
     );
@@ -46,7 +107,6 @@ export class HomeComponent {
       {
         next: res=>{
           this.courses  = res.result.courses;
-          console.log(this.courses)
         }
       }
     );
@@ -54,55 +114,14 @@ export class HomeComponent {
 
   selectCourse(event:any){
     this.isCourseSelected = true;
-  }
-  
-  data = {
-    header: {
-      address: `اكاديمية المختار متخصصون فى شرح المناهج الجامعية `,
-      linkTitle: "بادر بالحجز الان", 
-      background: '/assets/images/slider-2.jpg'
-    },
-    mainForm: {
-      address: "سجل معنا الان",
-      universties: [{
-        name: "university 1",
-        value: "0"
-      }, {
-        name: "university 2",
-        value: "1"
-      },
-      {
-        name: "university 3",
-        value: "2"
-      }], 
-      collages:  [{
-        name: "collage 1",
-        value: "0"
-      }, {
-        name: "collage 2",
-        value: "1"
-      },
-      {
-        name: "collage 3",
-        value: "2"
-      }], 
-      courses:  [{
-        name: "module 1",
-        value: "0"
-      }, {
-        name: "module 2",
-        value: "1"
-      },
-      {
-        name: "module 3",
-        value: "2"
-      }], 
-      telegram:{
-        title:'تواصل مع المشرفين', 
-        link:'telegram-link'
+    this.fpd.gettingCourse(event.target.value).subscribe({
+      next: (res)=>{
+        console.log( res.result.price)
+        this.prcie = res.result.price; 
+        this.spc.updateDialogState(res.result.price); 
       }
-    }
+    })
+    
   }
-background: any;
   
 }

@@ -25,7 +25,7 @@
 }
 
 .section {
-    width: 45%;
+    width: 50%;
     min-width: 270px;
     padding: 7px 49px 27px 21px;
 }
@@ -51,7 +51,7 @@
 }
 
 .universities--container mat-icon {
-    width: 49px;
+    min-width: 49px;
     height: 49px;
     display: flex;
     align-items: center;
@@ -69,4 +69,15 @@
     margin: 14px 0 0;
     font-size: 1.3rem;
     transition: background 400ms;
+}
+
+@media only screen and (max-width: 557px) {
+    .section {
+        min-width: 100%;
+        margin: auto;
+        padding: 7px 7px 27px 21px;
+    }
+    .universities--container a{
+        width: auto;
+    }
 }
