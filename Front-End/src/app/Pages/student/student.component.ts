@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { GettingUserDataService } from '../../Services/getting-user-data.service';
 import { DialogService } from '../../Services/dialog.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-student',
@@ -9,20 +10,25 @@ import { DialogService } from '../../Services/dialog.service';
 })
 export class StudentComponent {
   result = '';
-  constructor( private uD: GettingUserDataService,  private dialogService: DialogService) {
-    this.uD.fetchingApi().subscribe(res => {
-      this.result = res.result;
-      console.log(this.result)
-    }); 
-    
-  }
-
+  name:string=''; 
+  image:string = ''
+  constructor(private dialog:DialogService ,private router: Router, private uD: GettingUserDataService,  private dialogService: DialogService) {
+    if(localStorage.getItem('isUserActive')!= 'true'){
+          this.router.navigate(['/home'])
+        }else{
+          this.uD.fetchingApi().subscribe(res => {
+            this.result = res.result;
+            this.name = res.result.name;
+            this.image = res.result.image
+          }); 
+        }
+      }
+  
+ 
+  
   logout() {
     // throw new Error('Method not implemented.');
-    console.log(localStorage.getItem('accessToken')); 
     localStorage.clear(); 
-    this.dialogService.isDialogOpen$.subscribe(res => {
-      console.log(res)
-   })
+    this.dialogService.updateDialogState(false)
   }
 }

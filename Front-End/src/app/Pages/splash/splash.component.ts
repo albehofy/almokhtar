@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FetchingPublickDataService } from '../../Services/fetching-publick-data.service';
-import { DialogService } from '../../Services/dialog.service';
 
 @Component({
   selector: 'app-splash',
@@ -17,11 +16,15 @@ export class SplashComponent {
       updated_at: ""
     }
   ]
-  constructor(private fbd:FetchingPublickDataService, private dialogService: DialogService) {
-    this.dialogService.isDialogOpen$.subscribe(res => {
-      localStorage.setItem('isUserActive', `${res}`);
-    })
-    
+  logo:string = '';
+
+  constructor(private fbd:FetchingPublickDataService) {
+    this.fbd.gettingSettingData().subscribe({       
+      next:(res)=>{
+        this.logo = res.result.files_settings.site_logo;
+      }
+    } 
+    )
     this.fbd.gettingniversities()
     .subscribe(
       {next: res=>{

@@ -1,14 +1,10 @@
-.about--container .address{
+.about--container .logo{
     display: block;
-    height: 140px;
-    border-radius: 25%;
-    padding: 49px 14px;
-    font-family: foda;
-    font-size: 3rem;
-    text-align: center;
-    color: #25d366;
-    /* background-color: #25d366; */
+    width: 70%;
+    min-width: 250px;
+    margin: 0 auto;
 }
+
 
 .about--container .title,.about--container .copyright, .about--container .author {
     padding: 14px 0;
@@ -73,9 +69,13 @@
 
 @media only screen and (max-width: 557px) {
     .section {
-        min-width: 100%;
+        width: initial;
         margin: auto;
         padding: 7px 7px 27px 21px;
+    }
+
+    .section.border{
+        border-right:none;
     }
     .universities--container a{
         width: auto;

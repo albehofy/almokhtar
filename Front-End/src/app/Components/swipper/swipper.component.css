@@ -1,33 +1,24 @@
-/* swiper-container {
-    width: 100%;
-    padding: 10px;
-    background-color: #ddd;
+
+.container {
+    width: 97%;
+    margin: auto;
 }
 
-swiper-slide {
-    width: 32%;
-    min-width: 270px;
-} */
-img {
-    width: 100%;
-}
-.flex {
-    display: flex;
-    justify-content: space-around;
-}
 .partner-area__single {
     width: 100%;
     min-width: 260px;
-    height: 221px;
+    min-height: 221px;
     padding: 7px;
     margin:7px auto;
     background-color: #fff;
     box-shadow: 0 0 1px #000;
     text-align: center;
 }
+
 .partner-area__single h1, .partner-area__single p {
     padding: 21px 0;
 }
+
 p.rate {
     width: 90%;
     margin: 7px auto;
@@ -36,6 +27,7 @@ p.rate {
     justify-content: center;
     align-items: center;
 }
+
 .rate span{
     display: block;
     margin: 0 7px;
@@ -56,4 +48,17 @@ p.rate {
 
 .swiper-button-prev {
   margin-left: 10px;
+  left:10px;
+}
+.swiper-button {
+    position: absolute; 
+    color: #fff;
+    z-index: 99; 
+    top:50%;
+    background-color:#333;
+    padding: 7px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

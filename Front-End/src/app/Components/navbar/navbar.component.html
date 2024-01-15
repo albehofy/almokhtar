@@ -1,24 +1,26 @@
 <header>
     <nav class="container">
         <a class="nav--logo" href="#" routerLink="splash">المختار</a>
-        <div class="nav--menu">
-            <ul class="nav--list">
+        <div class="nav--menu" [ngClass]="{'none':toggleNavbar}">
+            <ul class="nav--list ">
                 <li><a href="#" routerLink="home"><span>الصفحة الرئيسية</span> <img src="assets/images/home.png" alt=""></a></li>
-                <!-- <li><a href="#" routerLink="splash"><span>الجامعات</span> <img src="assets/images/lecture.png" alt=""></a></li> -->
                 <li><a href="#" routerLink="quran-kareem"><span>القران الكريم</span> <img src="assets/images/quran.png" alt=""></a></li>
             </ul>
         </div>
         <div class="nav--loggin">
             <!-- newItemEvent -->
-            <ul class="nav--loggin" *ngIf="!isUserActive">
+            <ul class="nav--loggin" *ngIf="isUserActive != 'true'">
                 <li><button class="signin" mat-raised-button (click)="openLogginDialog('500','500')">تسجيل الدخول</button></li>
                 <li><button class="register" mat-raised-button (click)="openRegisterDialog('500','500')">تسجيل حساب جديد</button></li>
             </ul>
     
-            <ul *ngIf="isUserActive">
+            <ul *ngIf="isUserActive == 'true'">
                 <li><button class="register" routerLink="profile" mat-raised-button>الملف الشخصى</button></li>
             </ul>
     
         </div>
+        <span class='menu-icon' (click)="toggleNavbar = !toggleNavbar">
+            <i class='bx bx-menu'></i>        
+        </span>
     </nav>
     </header>

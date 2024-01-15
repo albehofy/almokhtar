@@ -14,15 +14,15 @@ export class CollageComponent {
     name:'', 
     id : 0
   }]; 
+  show: Boolean = true; 
   constructor(private fpd: FetchingPublickDataService, private route: ActivatedRoute){
     this.userId = this.route.snapshot.paramMap.get('id');
-    console.log(this.userId)
     this.fpd.gettingCourses(this.userId).subscribe(
       {
         next: res=>{
           this.courses  = res.result.courses;
-          this.collegeName = res.result.name
-          console.log(res.result)
+          this.collegeName = res.result.name; 
+          this.show = false;
         }
       }
     );

@@ -39,7 +39,6 @@ export class HomeComponent {
     this.fpd.gettingReviews().subscribe(
       {
         next: (response)=>{
-          console.log(response)
           this.reviews = response.result.data, "reviews";
         }
       }
@@ -48,14 +47,12 @@ export class HomeComponent {
     this.fpd.gettingPreferredCourses().subscribe({
       next: (res)=>{
         this.Preferred = res.result.data;
-        console.log(res.result.data)
       }
     })
     this.fpd.gettingniversities().subscribe(
       {
         next: res=>{
           this.universities  = res.result.data;
-          console.log(this.universities)
         }
       }
     ); 
@@ -63,7 +60,6 @@ export class HomeComponent {
     this.fpd.gettingSettingData().subscribe({
       next:(res)=>{
         this.links = res.result.links; 
-        console.log(this.links.telegram_communication_channel)
       }
     }); 
 
@@ -116,7 +112,6 @@ export class HomeComponent {
     this.isCourseSelected = true;
     this.fpd.gettingCourse(event.target.value).subscribe({
       next: (res)=>{
-        console.log( res.result.price)
         this.prcie = res.result.price; 
         this.spc.updateDialogState(res.result.price); 
       }

@@ -13,12 +13,13 @@
             <input type="text" class="form--input" id="phone" name="phone" formControlName="phone" matInput [(ngModel)]="result.phone">
           </mat-form-field>
         </div>
+
         <div class="sperator">
           <mat-form-field class="form-field" required>
             <mat-label>Select</mat-label>
             <mat-select class="form--input" id="university" name="university" formControlName="university" [(ngModel)]="result.university">
-              <mat-option value="one">First option</mat-option>
-              <mat-option value="two">Second option</mat-option>
+              <mat-option value="0" disabled selected>اختر الجامعة</mat-option>
+              <mat-option *ngFor="let university of universities" [value]='university.id'>{{university.name}}</mat-option>
             </mat-select>
           </mat-form-field>
         </div>

@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FetchingPublickDataService } from '../../Services/fetching-publick-data.service';
 import { ActivatedRoute } from '@angular/router';
 import { AddingNewCommentService } from '../../Services/adding-new-comment.service';
+import { MatDialog } from '@angular/material/dialog';
+import { CourseMessageComponent } from '../../Components/course-message/course-message.component';
 
 
 @Component({
@@ -18,20 +20,30 @@ export class CourseComponent {
   showAllcommentsButton = 'عرض المزيد';
   chapters: Array<any> = [];
   chapterContent: Array<any> = [];
-  commentValue: string = ''
-  constructor( private route: ActivatedRoute, private fpd: FetchingPublickDataService, private submitComment: AddingNewCommentService) {
+  commentValue: string = '';
+  show: boolean = true;
+  constructor(private dialog: MatDialog, private route: ActivatedRoute, private fpd: FetchingPublickDataService, private submitComment: AddingNewCommentService) {
     this.lessonId = this.route.snapshot.paramMap.get('id');
     this.fpd.gettingCourse(this.lessonId).subscribe(
       {
         next: res => {
-          this.courseName = res.result.name
-          this.chapters = res.result.chapters
-          this.comments = res.result.comments
+          this.courseName = res.result.name;
+          this.chapters = res.result.chapters;
+          this.comments = res.result.comments;
+          this.show = false;
         }
       }
     );
   }
-
+  openMessageDialog(enterAnimationDuration: string, exitAnimationDuration: string) {
+    let _data = this.dialog.open(CourseMessageComponent, {
+      width: '60%',
+      minWidth: "240px",
+      maxWidth: "initial",
+      enterAnimationDuration,
+      exitAnimationDuration,
+    });
+  }
   commentsStatus() {
     if (this.showAllcomments) {
       this.showAllcommentsButton = 'عرض اقل';
@@ -49,12 +61,8 @@ export class CourseComponent {
           "comment": this.commentValue,
           "course_id": this.lessonId
         }
-      ).subscribe({
-        next: (response) => {
-          console.log(response)
-        }
-      })
+      )
     }
-  }  
+  }
 
 }

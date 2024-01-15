@@ -12,7 +12,6 @@ constructor(private fpd: FetchingPublickDataService){
   this.fpd.gettingSettingData().subscribe({
     next:(res)=>{
       this.links = res.result.links; 
-      console.log(this.links)
     }
   }); 
 }

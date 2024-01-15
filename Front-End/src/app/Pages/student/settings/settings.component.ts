@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { MatSelectModule } from '@angular/material/select';
 import { CommonModule } from '@angular/common';
 import {
@@ -8,8 +8,6 @@ import {
   FormBuilder,
   Validators,
   AbstractControl,
-  // FormControl,
-  // Validators,
 } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -18,6 +16,7 @@ import { UserInfo } from '../../../viewModel/user-info';
 import { UpdateUserService } from '../../../Services/update-user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UpdatingPsswordService } from '../../../Services/updating-pssword.service';
+import { FetchingPublickDataService } from '../../../Services/fetching-publick-data.service';
 
 @Component({
   selector: 'app-settings',
@@ -27,8 +26,10 @@ import { UpdatingPsswordService } from '../../../Services/updating-pssword.servi
   styleUrl: './settings.component.css'
 })
 export class SettingsComponent {
+  @Output() newItemEvent = new EventEmitter<string>();  
   public edittingUserdata!: FormGroup;
   public edittingUserPass: FormGroup;
+  universities:Array<any> = [];
   result: UserInfo = {
     created_at: "",
     email: "",
@@ -43,11 +44,18 @@ export class SettingsComponent {
     password: '',
     password_confirmation: ''
   }
-  constructor(private fb: FormBuilder, private uD: GettingUserDataService, private updatingData: UpdateUserService, private updatePassword: UpdatingPsswordService, private snackbar: MatSnackBar) {
+  constructor(private fpd:FetchingPublickDataService, private fb: FormBuilder, private uD: GettingUserDataService, private updatingData: UpdateUserService, private updatePassword: UpdatingPsswordService, private snackbar: MatSnackBar) {
     this.uD.fetchingApi().subscribe(res => {
       this.result = res.result;
-      console.log(this.result)
+      this.setName(res.result.name)
     })
+    this.fpd.gettingniversities().subscribe(
+      {
+        next: res=>{
+          this.universities  = res.result.data;
+        }
+      }
+    ); 
     // intializing User Personal Data for FormGroup
     this.edittingUserdata = this.fb.group({
       name: '',
@@ -65,10 +73,12 @@ export class SettingsComponent {
   }
   isPasswordConffirmed: boolean = true;
 
+  setName(value: string) {
+    this.newItemEvent.emit(value);
+  }
+  selectUniversity(a:any){}
   updatingPersonalData(): void {
     if (this.edittingUserdata.valid) {
-      // console.log(this.data)
-      console.log(`${this.result.email}`)
       this.updatingData.updatingUserData({
         name: this.result.name,
         phone: this.result.phone,
@@ -76,7 +86,6 @@ export class SettingsComponent {
         email: this.result.email
       }).subscribe({
         next: (res) => {
-          console.log(res)
           this.snackbar.open('تم تحديث البيانات بنجاح', 'ok', { 'duration': 3000 })
         }
       })
@@ -92,13 +101,8 @@ export class SettingsComponent {
   
   updatingPassword() {
     if (this.edittingUserPass.valid) {
-      console.log(this.passwordsValues)
       // Perform actions when the form is submitted
-      this.updatePassword.updatingPassword(this.passwordsValues).subscribe({
-        next:(res)=>{console.log(res)}, 
-        error:(err)=>{console.log(err)}, 
-
-      })
+      this.updatePassword.updatingPassword(this.passwordsValues)
     }
   }
 

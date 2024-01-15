@@ -69,8 +69,8 @@
         </div>
     </div>
     <h2 class="courses-header-home">الدورات</h2>
-    
-    <section class="modules">
+    <ng-container *ngIf="Preferred.length > 7">
+    <section class="modules" >
         
         <div [routerLink]="['/course', Preferred[0].id]" class="module">
             <div class="module--preview">
@@ -153,7 +153,7 @@
             </div>
         </div>
 
-        <!-- <div [routerLink]="['/course', Preferred[6].id]" class="module">
+        <div [routerLink]="['/course', Preferred[6].id]" class="module">
             <div class="module--preview">
                 <img [src]="Preferred[6].image" alt="">
             </div>
@@ -177,9 +177,10 @@
             <div class="module--preview">
                 <img [src]="Preferred[7].image" alt="">
             </div>
-        </div> -->
+        </div>
 
     </section>
+</ng-container>
 
    <section class="how--to-start">
         <h2>كيف تبدأ ؟</h2>
@@ -216,6 +217,7 @@
             </div>
         </div>
     </section>
+    <h2 class="special--header">اراء العملاء</h2>
     <app-swipper [slides]="reviews"></app-swipper>
 </main>
 <!-- still working on it -->

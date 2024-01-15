@@ -1,5 +1,10 @@
-<div class="lessons-container">
-<h1 class="lesson--name" style="text-align: center;color: #25d366;">{{lessonName}}</h1>
-<app-video-player [videoSrc]="videoSrc"></app-video-player>
+<div *ngIf="show" class="loading-spinner">
+    <svg class="spinner" viewBox="0 0 50 50">
+      <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="4"></circle>
+    </svg>
+  </div>
+<div class="lessons-container" *ngIf="videoSrc != ''">
+<h1 class="lesson--name" style="text-align: center;color: #25d366;">{{lesson.name}}</h1>
+<app-video-player></app-video-player>
 
 </div>

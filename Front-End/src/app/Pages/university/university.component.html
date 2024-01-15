@@ -9,7 +9,7 @@
         <div class="universities">
             <ng-container  *ngFor="let college of colleges">
             <a href="#" [routerLink]="['/colleges', college.id]" class="university" *ngIf="college.name != ''">
-                    <mat-icon>home</mat-icon>
+                    <mat-icon>business_center</mat-icon>
                     <h2 class="university--name">{{college.name}}</h2>
                 </a>
             </ng-container>

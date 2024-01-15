@@ -2,7 +2,6 @@
     background-color: #f7f7f7;
     min-width: 250px;
     padding: 127px 0 21px;
-    /* position: relative; */
 }
 
 .loading-spinner {
@@ -24,7 +23,6 @@
 
 .path {
     stroke: #007bff;
-    /* Customize the color */
     stroke-linecap: round;
     animation: dash 1.5s ease-in-out infinite;
 }
@@ -55,7 +53,7 @@
 .universities {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     align-items: center;
     flex-wrap: wrap;
 }
@@ -64,15 +62,15 @@
     align-items: center;
     justify-content: space-around;
     width: 45%;
-    min-width: 250px;
+    min-width: 260px;
     padding: 49px 0;
-    margin: 21px auto;
+    margin: 21px;
     text-align: center;
     background-color: #fff;
     color: #000;
     border-bottom: 7px solid #25d366;
     border-radius: 7px;
-    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    box-shadow: #0000002e 0px 2px 4px;
     transition: all 200ms linear;
 }
 .university:hover {
@@ -80,6 +78,21 @@
     color: #fff;
     border-bottom: 7px solid #FFF;
     transform: scale(0.98);
+}
+.university h2 {
+    width: 90%;
+}
+
+@media only screen and (max-width: 751px){
+    .university{
+        width: 95%;
+        font-size: 1rem;
+        padding: 49px 7px;
+    }
+    .university h2 {
+        font-size: 1rem;
+        font-weight: 600;
+    }
 }
 
 /* Loading Animation */

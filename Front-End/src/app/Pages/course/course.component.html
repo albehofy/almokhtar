@@ -1,6 +1,11 @@
 <div class="course">
+  <div *ngIf="show" class="loading-spinner">
+    <svg class="spinner" viewBox="0 0 50 50">
+      <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="4"></circle>
+    </svg>
+  </div>
   <div class="container">
-    <h2 class="course--name">كورس 1</h2>
+    <h2 class="course--name">{{courseName}}</h2>
     <div *ngFor=" let chapter of chapters; let i = index ">
       <div class="chapter" *ngIf="chapters[i].lessons.length > 0">
         <mat-accordion>
@@ -10,13 +15,26 @@
                 {{chapter.name}}
               </mat-panel-title>
             </mat-expansion-panel-header>
-            <a href="#"   *ngFor=" let lesson of chapter.lessons" [routerLink]="['/lesson', lesson.id]" class="lesson--container">
-              <div>
-                <mat-icon>assignment</mat-icon>
-                <h2 class="lesson--name">{{lesson.name}}</h2>
-              </div>
-              <mat-icon>lock_open</mat-icon>
-            </a>
+            <ng-container *ngFor=" let lesson of chapter.lessons">
+              <a *ngIf="lesson.is_free"  [routerLink]="['/lesson', lesson.id]" class="lesson--container">
+                <div>
+                  <mat-icon>assignment</mat-icon>
+                  <h2 class="lesson--name">{{lesson.name}}</h2>
+                </div>
+                <mat-icon *ngIf="lesson.is_free">lock_open</mat-icon>
+                <i *ngIf="!lesson.is_free" class='bx bxs-lock-alt'></i>
+                
+              </a>
+              <a *ngIf="!lesson.is_free" (click)="openMessageDialog('500','500')" [ngStyle]="{'color':'black', 'cursor':'pointer'}" class="lesson--container">
+                <div>
+                  <mat-icon>assignment</mat-icon>
+                  <h2 class="lesson--name">{{lesson.name}}</h2>
+                </div>
+                <mat-icon>lock</mat-icon>
+                
+              </a>
+            </ng-container>
+            
           </mat-expansion-panel>
         </mat-accordion>
       </div>
@@ -26,7 +44,7 @@
       <h3 class="comments-address">التعليقات </h3>
       <div class="adding--new-comment">
         <mat-form-field >
-          <mat-label>Textarea</mat-label>
+          <mat-label>اضافة تعليق جديد</mat-label>
           <textarea matInput [(ngModel)]="commentValue"></textarea>
         </mat-form-field>
         <button (click)="submitNewComment()">اضافة التعليق</button>
@@ -44,6 +62,6 @@
         </mat-card>
       </div>
       </div>
-      <button class="submit" style="width: 75%;" (click)="commentsStatus()">{{showAllcommentsButton}}</button>
+      <button *ngIf="comments.length > 3" class="submit" style="width: 75%;" (click)="commentsStatus()">{{showAllcommentsButton}}</button>
   </div>
 </div>

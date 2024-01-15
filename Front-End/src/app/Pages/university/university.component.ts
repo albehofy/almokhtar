@@ -22,7 +22,6 @@ export class UniversityComponent {
   ]; 
   constructor(private route: ActivatedRoute, private fpd: FetchingPublickDataService) {
     this.userId = this.route.snapshot.paramMap.get('id');
-    console.log(this.userId)
     this.fpd.gettingcollages(this.userId).subscribe(
       {
         next: res => {

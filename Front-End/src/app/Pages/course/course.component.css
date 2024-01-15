@@ -1,11 +1,35 @@
+
+.loading-spinner {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    z-index: 999;
+}
+
+.spinner {
+    animation: rotate 1s linear infinite;
+    width: 50px;
+    height: 50px;
+}
+
+.path {
+    stroke: #007bff;
+    stroke-linecap: round;
+    animation: dash 1.5s ease-in-out infinite;
+}
+
 .course {
     min-height: 450px;
-    padding: 127px 0 49px;
     margin: 7px auto; 
     background-color: #f7f7f7;
 }
 
 .course--name {
+    padding: 127px 0 49px;
     position: relative;
     margin-bottom: 49px;
     font-family: Lalezar; 
@@ -28,18 +52,6 @@
     max-width:950px;
     min-width: 280px;
 }
-
-/* .course-content {
-    padding: 0 20px 49px;
-    margin: 137px auto 49px;
-    min-width: 270px;
-
-} */
-/* .address {
-    padding: 21px;
-    color: #3498db;
-  } */
-
 .chapter,.comments--continer {
     width: 85%;
     min-width: 270px;
@@ -106,7 +118,6 @@ mat-icon {
 }
 .adding--new-comment button {
     height: 57px;
-    /* width: 114px; */
     margin: 7px auto;
     padding:7px;
     font-size: 1rem;
@@ -115,8 +126,8 @@ mat-icon {
     border: 1px solid #fff;
     background-color: #25d366; 
     cursor: pointer;
-    /* border-radius: 8px; */
 }
+
 .comments--continer mat-form-field{
     width: 80%;
     margin:  auto;
@@ -140,6 +151,10 @@ mat-icon {
     overflow-y: hidden;
   }
 
+  .mat-mdc-form-field:not(.mat-form-field-no-animations) .mdc-text-field__input{
+    margin-top: 9px!important;
+  }
+
 @media only screen and (max-width: 571px) {
     .adding--new-comment {
         flex-direction: column;
@@ -152,5 +167,30 @@ mat-icon {
     .comments--continer mat-form-field{
         width: 100%;
         margin:  auto;
+    }
+}
+
+
+/* Loading Animation */
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1, 150;
+        stroke-dashoffset: 0;
+    }
+
+    50% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -35;
+    }
+
+    100% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -124;
     }
 }

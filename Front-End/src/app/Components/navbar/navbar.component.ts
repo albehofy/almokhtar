@@ -11,25 +11,24 @@ import { DialogService } from '../../Services/dialog.service';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
+  toggleNavbar = true; 
   isUserActive = JSON.parse(localStorage.getItem('isUserActive') || '{}')
   constructor(private dialog: MatDialog, private loginService: LoginService, private dialogService: DialogService) {
     this.isUserActive = JSON.parse(localStorage.getItem('isUserActive') || '{}')
     this.dialogService.isDialogOpen$.subscribe(res => {
-      this.isUserActive = res;
-      this.isUserActive =  JSON.parse(localStorage.getItem('isUserActive') || '{}')
+      localStorage.setItem('accessToken',`${res}`)
+      this.isUserActive =  localStorage.getItem('isUserActive')
     })
   }
   openRegisterDialog(enterAnimationDuration: string, exitAnimationDuration: string) {
-    let _data = this.dialog.open(RegisterComponent, {
+    this.dialog.open(RegisterComponent, {
       width: '60%',
       minWidth: "240px",
       maxWidth: "initial",
       enterAnimationDuration,
       exitAnimationDuration,
     });
-    _data.afterClosed().subscribe(item => {
-      console.log(item)
-    })
+
   }
   openLogginDialog(enterAnimationDuration: string, exitAnimationDuration: string) {
     const dialogRef = this.dialog.open(LoginComponent, {
@@ -40,8 +39,5 @@ export class NavbarComponent {
       exitAnimationDuration,
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('Dialog closed:', result);
-    });
   }
 }

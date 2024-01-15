@@ -1,19 +1,14 @@
 <h2 class="active--courses-header">الكورسات المتاحة للطالب </h2>
-<div class="courses--container">
+<div class="courses--container" *ngIf="courses.length == 0">
     <img [class]="'no--courses'" [src]="'assets/images/no-course-results.png'">
     <br>
     <p>لاتوجد اى كورسات متاحة  </p>
     <a href="#">يمكنك الذهاب الى صفحة الكورسات</a>
 </div>
-<!-- 
-<div class="active--courses-container">
-    <div class="course--wrapper">
-        <h2 class="course--name">اسم الكورس</h2>
-        <p class="course--date">صالح حتى : <span class="expired--date">27/12/2023</span></p>
-    </div>
-    <div class="course--wrapper">
-        <h2 class="course--name">اسم الكورس</h2>
-        <p class="course--date">صالح حتى : <span class="expired--date">27/12/2023</span></p>
-    </div>
-    
-</div> -->
+
+<div class="active--courses-container" *ngIf="courses.length > 0">
+    <a class="course--wrapper" *ngFor=" let course of courses" [routerLink]="['/course', course.id]">
+        <h2 class="course--name">{{course.name}}</h2>
+        <p class="course--date">المحاضر : <span class="expired--date">{{course.instructor_name}}</span></p>
+    </a>   
+</div>

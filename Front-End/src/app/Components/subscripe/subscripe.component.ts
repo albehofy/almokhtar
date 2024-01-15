@@ -12,7 +12,6 @@ export class SubscripeComponent {
   constructor(public ref: MatDialogRef<SubscripeComponent>,private spc: SharePriceService){
     this.spc.price$.subscribe({
       next: res=>{
-        console.log(res, "hello Again from Dialog in this's time"); 
         this.price = res
       }
     }) 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { UserInfo } from '../../../viewModel/user-info';
@@ -26,7 +26,8 @@ export class StudentInfoComponent implements OnInit{
     phone: "",
     university: "",
   }
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
 gettingStudentData():Observable<any>{
   return this.http.get<any>(`${environment.basUrl}/api/${environment.version}/profile`, httpOptions)
@@ -37,7 +38,6 @@ gettingStudentData():Observable<any>{
   ngOnInit(): void {
     this.gettingStudentData().subscribe(res=>{
       this.userData = res.result
-      console.log(this.userData)
     })
   }
 }

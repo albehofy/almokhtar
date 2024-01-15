@@ -1,19 +1,36 @@
 .container {
+    padding-top: 149px;
  width : 95%; 
  min-width: 270px;
+ min-height: 95vh;
  display: flex;
  flex-wrap: wrap;
  justify-content: center;
- align-items: center;
 }
-.previw, content {
-    width: 50%;
+.preview, .content {
+    text-align: center;
+    width: 45%;
     min-width: 250px;
     margin: 21px 21px;
 }
+.preview{
+    display: flex;
+    justify-content: center;
+}
 
+.preview img {
+    width: 260px;
+    max-height: 300px;
+}
+
+.content h1 {
+    padding: 21px 0;
+}
+.content p {
+    padding: 21px 0;
+}
 @media only screen and (max-width: 543px){
-    .previw, content {
+    .preview, content {
         width: 95%;
         margin: 21px auto;
     }

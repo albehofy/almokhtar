@@ -8,7 +8,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class MessageComponent {
   constructor(public ref: MatDialogRef<MessageComponent>){}
-  closeLoginDialog() {
+  closeMessageDialog() {
     this.ref.close("canceled!")
   }
 }

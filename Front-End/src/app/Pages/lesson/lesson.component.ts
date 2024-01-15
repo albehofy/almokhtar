@@ -14,7 +14,7 @@ export class LessonComponent {
     name: '', 
     videoSrc:''
   };
-
+  show: boolean = true; 
   videoSrc = '';
   lessonName: string = ''
 
@@ -36,6 +36,7 @@ export class LessonComponent {
           this.lds.updateDialogState(`${res.result.video}`)
           this.lessonName = res.result.name; 
           this.videoSrc = res.result.video;
+          this.show = false;
         }
       }
     );
@@ -52,62 +53,9 @@ export class LessonComponent {
   @HostListener('window:keydown', ['$event'])
   onKeyDown(event: KeyboardEvent) {
     if (event.key === 'F12' || event.key === 'ctrl+shift+i') {
+      event.preventDefault();
       this.f12KeyPressEvent.emit(event);
     }
   }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    if (event.key === 'F12' || event.key === 'ctrl+shift+i') {
-      this.windowResizeEvent.emit(event);
-    }
-  }
-
-
-
-  myVariable: boolean = true;
-
-  ngOnInit() {
-    this.checkInspect();
-
-    this.myVariable = true;
-    console.log(this.myVariable);
-
-    this.rightClickEvent.subscribe((event) => {
-      this.videoSrc = ''
-      console.log('Right-click event globally!', event);
-      // Your custom logic for right-click goes here
-    });
-
-    this.f12KeyPressEvent.subscribe((event) => {
-      console.log('F12 key pressed globally!', event);
-      this.videoSrc = ''
-
-      // Your custom logic for F12 key press goes here
-    });
-
-    this.windowResizeEvent.subscribe((event) => {
-      console.log('resize pressed globally!', event);
-      this.videoSrc = ''
-
-      // Your custom logic for F12 key press goes here
-    });
-  }
-
-  checkInspect() {
-    // Assuming you have a way to detect if DevTools are open
-    if (this.isDevToolsOpen()) {
-      this.myVariable = false;
-
-    }
-  }
-  private isDevToolsOpen(): boolean {
-    // Your logic to detect DevTools state here
-    return false; // Placeholder, replace with actual detection
-  }
-
-
-
-
 
 }

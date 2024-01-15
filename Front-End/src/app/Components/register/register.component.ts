@@ -35,7 +35,6 @@ export class RegisterComponent {
       {
         next: res=>{
           this.universities  = res.result.data;
-          console.log(this.universities)
         }
       }
     )
@@ -78,11 +77,8 @@ export class RegisterComponent {
       university: this.registerForm.get('university')?.value,
       password: this.registerForm.get('password')?.value
     }
-    console.log(this.data)
   }
- logger(){
-  console.log(this.registerForm.get('university'))
- }
+
   onSubmit(): void {
     if (this.registerForm.valid) {
       this.show = true;

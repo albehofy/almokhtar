@@ -206,6 +206,7 @@ margin: 7px 0;
     flex-wrap: wrap;
     border-radius: 8px;
     overflow: hidden;
+    border-bottom: 1px solid #ddd;
 }
 
 .form-local {
@@ -396,7 +397,7 @@ margin: 7px 0;
     margin: auto;
 }
 
-.how--to-start h2 {
+.how--to-start h2, h2.special--header {
     margin: 35px auto 46px;
     height: 175px;
     width: 175px;display: flex;
@@ -484,6 +485,7 @@ margin: 7px 0;
 
     .collage {
         width: 90%;
+        border: none;
     }
     .module .module--data, .module .module--preview {
         height: 290px;

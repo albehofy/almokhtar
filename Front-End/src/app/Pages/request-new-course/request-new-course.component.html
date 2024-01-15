@@ -45,18 +45,17 @@
         <div class="sperator">
             <mat-form-field class="form-field" required>
                 <mat-label>اسم المادة</mat-label>
-                <input type="text" class="form--input" id="course_name" name="course_name" formControlName="course_name"
+                <input  type="text" class="form--input" id="course_name" name="course_name" formControlName="course_name"
                     matInput required (blur)="gettingFormValues()">
             </mat-form-field>
         </div>
 
         <div class="sperator">
-            <button type="button" class="addingNewFile" (click)="fileInput.click()">{{selectedFile.name|| "اضافة
-                الملفات"}}</button>
-            <input hidden (change)="onFileSelected($event)" #fileInput type="file" accept=".pdf, .jpg, .png, jpeg"
-                multiple class="form--input" id="files" name="files" formControlName="files" required
-                (change)="gettingFormValues()">
-        </div>
-        <button type="submit" class="adding--new-user" (click)="onSubmit()" value="تسجيل">ارسال البيانات</button>
+            <input  type="file" accept=".pdf, .jpg, .png, jpeg"
+            multiple class="form--input" required (change)="onFileSelected($event);gettingFormValues()">
+            
+            
+                        </div>
+            <button type="submit" class="adding--new-user" (click)="onSubmit()" value="تسجيل">ارسال البيانات</button>
     </form>
 </div>

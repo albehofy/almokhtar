@@ -24,8 +24,8 @@
 }
 
 .active--courses-container .course--wrapper {
+    display: block;
     width: 100%;
-    /* max-width: 500px; */
     padding: 49px 21px;
     margin: 21px auto;
     display: flex;
