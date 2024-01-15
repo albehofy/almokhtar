@@ -7,7 +7,7 @@
 .settings--header {
     margin: 49px 0 0;
     padding: 21px;
-    color: #25d366;
+    color: #1eb153;
 }
 
 .settings--header span {
@@ -52,7 +52,7 @@ mat-label {
 }
 
 .adding--new-user {
-    background-color: #25d366;
+    background-color: #1eb153;
 }
 
 .cancel {

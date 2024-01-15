@@ -4,7 +4,7 @@
     width: 100%;
     display: flex;
     justify-content: flex-start;
-    border-bottom: 1px solid #25D366;
+    border-bottom: 1px solid #1eb153;
 }
 
 .student--welcome .student--avatar {
@@ -15,14 +15,14 @@
     align-items: center;
     justify-content: center;
     margin: 0 35px;
-    background-color: #25D366;
+    background-color: #1eb153;
     font-family: Lalezar;
     user-select: none;
     color: #fff;
 }
 
 .student--welcome .student--info {
-    font-family: HONORSansArabicUI;
+    font-family: IBMPlexSansArabic;
     margin-top: 14px;
     font-size: 1.2em;
 }
@@ -79,12 +79,12 @@
 
 .navbar a.active {
     background: #bfe7c22e;
-    color: #25D366;
+    color: #1eb153;
 }
 
 .navbar a.active::before {
     content: "";
-    background-color: #25D366;
+    background-color: #1eb153;
     position: absolute;
     height: 5px;
     width: 100%;

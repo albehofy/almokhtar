@@ -2,14 +2,10 @@
 /* You can add global styles to this file, and also import other style files */
 /* #c5ccf9  blue */
 @font-face {
-    font-family: "HONORSansArabicUI";
-    src: url("/assets/fonts/HONORSansArabicUI-L.ttf");
+    font-family: "IBMPlexSansArabic";
+    src: url("/assets/fonts/IBMPlexSansArabic-L.ttf");
 }
 
-@font-face {
-    font-family: "IBMPlexSansArabic";
-    src: url("/assets/fonts/IBMPlexSansArabic-Regular.ttf");
-}
 
 @font-face {
     font-family: Lalezar;
@@ -17,40 +13,11 @@
 }
 
 @font-face {
-    font-family: "ArefRuqaa";
-    src: url("/assets/fonts/ArefRuqaa-Bold-1.ttf");
-}
-
-@font-face {
     font-family: "foda";
     src: url("/assets/fonts/Foda-Free-Font.ttf");
 }
 
-@font-face {
-    font-family: Kufam;
-    src: url('/assets/fonts/Kufam-MediumItalic.ttf');
-}
 
-
-:root{
-    --color-primary: #7380ec;
-    --color-danger: #ff7782;
-    --color-success: #41f1b6;
-    --color-warning: #ffbb55;
-    --color-white: #fff;
-    --color-info: #7d8da1;
-    --color-dark: #363949;
-    --color-light: rgba(132, 139, 200, 0.18);
-    --color-dark-varient: #677483;
-    --color-background: #f6f6f9;
-    
-    --card-border-radius: 2rem;
-    --border-radius-1: 0.4rem;
-    --border-radius-2: 1.2rem;
-
-    --card-padding: 1.8rem;
-    --box-shadow: 0 2rem 3rem var(--color-light)    
-}
 
 *,
 *::after,
@@ -104,7 +71,7 @@ select {
     margin-top: 7px;
     font-size: 18px;
     border-radius: 3px;
-    border: 1px solid #25D366;
+    border: 1px solid #1eb153;
     outline: 1px solid transparent;
 }
 
@@ -123,6 +90,6 @@ input:focus {
     text-align: center;
     border-radius: 8px;
     cursor: pointer;
-    background-color: #25D366;
+    background-color: #1eb153;
     color: #fff;
 }

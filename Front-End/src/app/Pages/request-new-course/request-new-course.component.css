@@ -53,7 +53,7 @@
       padding: 21px 0;
       text-align: center;
       font-family: foda;
-      color: #25d366;
+      color: #1eb153;
   }
   
   mat-dialog-content {
@@ -90,7 +90,7 @@
     } */
   
     .adding--new-user {
-      background-color: #25d366;
+      background-color: #1eb153;
     }
   
     .cancel {
@@ -127,7 +127,7 @@
   
   .adding--new-user {
     margin-top: 21px;
-    background-color: #25d366;
+    background-color: #1eb153;
     color: #fff;
   }
   @keyframes rotate {
@@ -142,6 +142,6 @@
       text-align: center;
       font-family: foda;
       font-size: 1.2rem;
-      color: #25d366;
+      color: #1eb153;
     }
   }

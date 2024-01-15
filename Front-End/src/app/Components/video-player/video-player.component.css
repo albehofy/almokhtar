@@ -151,7 +151,7 @@ input:focus {
     direction: ltr;
   }
   .video-container__controls .control:hover i {
-    color: #25d366;
+    color: #1eb153;
     direction: ltr;
   }
   .video-container__controls .control i {
@@ -214,7 +214,7 @@ input:focus {
     height: 14px;
     width: 4px;
     border-radius: 0;
-    background-color: #25d366;
+    background-color: #1eb153;
     cursor: pointer;
     direction: ltr;
   }
@@ -242,7 +242,7 @@ input:focus {
 
   .video-container__controls .control--videoRate{
     position: relative;
-    color: #25d366;
+    color: #1eb153;
     font-size: 1rem;
     font-weight: 700;
   } 

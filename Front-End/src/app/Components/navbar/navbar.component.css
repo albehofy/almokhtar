@@ -62,16 +62,16 @@ nav {
 }
 
 .register {
-    border: 1px solid #25d366;
+    border: 1px solid #1eb153;
     background-color: transparent;
-    color: #25d366;
+    color: #1eb153;
     transition: all 350ms ease;
 }
 
 .signin,
 .register:hover {
-    border: 1px solid #25d366;
-    background-color: #25d366;
+    border: 1px solid #1eb153;
+    background-color: #1eb153;
     color: #FFF;
 }
 
@@ -123,7 +123,7 @@ nav {
         height: 50px;
         text-align: center;
         line-height: 50px;
-        background-color: #25d366;
+        background-color: #1eb153;
         color: #FFF;
         cursor: pointer;
         z-index: 999;

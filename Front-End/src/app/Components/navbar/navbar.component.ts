@@ -11,7 +11,7 @@ import { DialogService } from '../../Services/dialog.service';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  toggleNavbar = true; 
+  toggleNavbar = false; 
   isUserActive = JSON.parse(localStorage.getItem('isUserActive') || '{}')
   constructor(private dialog: MatDialog, private loginService: LoginService, private dialogService: DialogService) {
     this.isUserActive = JSON.parse(localStorage.getItem('isUserActive') || '{}')

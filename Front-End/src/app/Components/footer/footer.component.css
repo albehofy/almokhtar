@@ -2,9 +2,9 @@
 footer {
     margin: 0;
     background-color: #03030f;
-    height: 50vh;
-    min-height: 300px;
-    color: #25D366;
+    height: 60vh;
+    min-height: 375px;
+    color: #1eb153;
     padding-top: 35px;
 }
 
@@ -27,7 +27,7 @@ footer h3 {
     height: 50px;
     font-size: 1.2rem;
     margin: 10px;
-    color: #25D366;
+    color: #1eb153;
     line-height: 50px;
     border-radius: 50%;
     background-color: #fff;

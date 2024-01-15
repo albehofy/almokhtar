@@ -27,7 +27,7 @@
 }
 
 .section.border {
-    border-right: 2px solid #25d366;
+    border-right: 2px solid #1eb153;
 }
 
 .universities--container a{
@@ -42,7 +42,7 @@
 }
 
 .universities--container a:hover{
-    background-color: #25d366;
+    background-color: #1eb153;
     color: #fff;
 }
 
@@ -53,7 +53,7 @@
     align-items: center;
     justify-content: center;
     margin: 0 0 0 21px;
-    background-color: #25d366;
+    background-color: #1eb153;
     color: #fff;
     /* padding: 14px; */
     border-radius: 50%;

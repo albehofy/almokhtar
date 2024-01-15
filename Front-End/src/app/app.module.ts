@@ -35,6 +35,8 @@ import { ChatIconComponent } from './Components/chat-icon/chat-icon.component';
 import { QuranKareemComponent } from './Pages/quran-kareem/quran-kareem.component';
 import { CourseMessageComponent } from './Components/course-message/course-message.component';
 import { VideoSubscribeMessageComponent } from './Components/video-subscribe-message/video-subscribe-message.component';
+import { AllCoursesComponent } from './Pages/all-courses/all-courses.component';
+import { NotFoundedComponent } from './Pages/not-founded/not-founded.component';
 
 
 register();
@@ -56,7 +58,7 @@ register();
     VideoPlayerComponent,
     FooterComponent, 
     ActiveCoursesComponent, 
-    StudentInfoComponent, MessageComponent, SubscripeComponent, ChatIconComponent, QuranKareemComponent, CourseMessageComponent, VideoSubscribeMessageComponent
+    StudentInfoComponent, MessageComponent, SubscripeComponent, ChatIconComponent, QuranKareemComponent, CourseMessageComponent, VideoSubscribeMessageComponent, AllCoursesComponent, NotFoundedComponent
   ],
   imports: [
     BrowserModule,

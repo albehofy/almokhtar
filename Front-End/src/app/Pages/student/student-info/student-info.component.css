@@ -3,7 +3,7 @@
 }
 .wrapper{
     width: 50%;
-    border-left: 3px solid #25d366;
+    border-left: 3px solid #1eb153;
     max-width: 720px;
     margin: 21px;
 }
@@ -11,7 +11,7 @@
     text-align: center;
     padding: 21px 35px 35px;
     font-family: foda;
-    color: #25d366;
+    color: #1eb153;
 }
 
 .student--info-wrapper {
@@ -33,7 +33,7 @@
 .address {
     display: block;
     min-width: 150px;
-    color: #25d366;
+    color: #1eb153;
     font-size: 1.3rem;
 
 }
@@ -51,7 +51,7 @@
         min-width: 250px;
         margin: 21px;
     border-left: none;
-        /* border-bottom: 3px solid #25d366; */
+        /* border-bottom: 3px solid #1eb153; */
     }
     
     .student--info-wrapper {

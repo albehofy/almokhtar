@@ -30,7 +30,7 @@
     /* padding: 7px 0;
     margin: 35px auto;
     font-family: ArefRuqaa;
-    border: 5px outset #25D366;
+    border: 5px outset #1eb153;
     text-align: center;
     border-radius: 7px; */
 }
@@ -41,7 +41,7 @@
     margin: auto;
     width: 270px;
     padding: 21px;
-    background-color: #25D366;
+    background-color: #1eb153;
     color: #FFF;
     font-size: 1.3em;
     text-decoration: none;
@@ -64,8 +64,8 @@
     margin: 35px auto auto;
     padding: 14px 0;
     outline: transparent;
-    border: 1px solid #25D366;
-    background-color: #25D366;
+    border: 1px solid #1eb153;
+    background-color: #1eb153;
     color: #FFF;
     cursor: pointer;
     /* box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, #038387 0px 8px 16px -8px; */
@@ -83,7 +83,7 @@
 
 .card {
     width: 300px;
-    background-color: #25D366;
+    background-color: #1eb153;
 }
 
 .subsribe {
@@ -185,7 +185,7 @@ margin: 7px 0;
     background-color: #FFF;
     display: block;
     width: 170px;
-    color: #25D366;
+    color: #1eb153;
     margin: auto;
       margin-top: auto;
     text-align: center;
@@ -230,7 +230,7 @@ margin: 7px 0;
     margin: 14px auto;
     padding: 14px;
     font-size: 1.7em;
-    font-family: HONORSansArabicUI;
+    font-family: IBMPlexSansArabic;
     color: #000;
 }
 
@@ -293,7 +293,7 @@ margin: 7px 0;
     width: 270px;
     height: 270px;
     border-radius: 50%;
-    background-color: #57f190;
+    background-color: #1eb153;
     color: #FFF;
     font-size: 2.7em;
     font-family: foda;
@@ -340,7 +340,7 @@ margin: 7px 0;
     text-align: center;
     padding: 35px 0;
     font-size: 2rem;
-    color: #25D366;
+    color: #1eb153;
     font-family: foda;
 }
 .module {
@@ -403,7 +403,7 @@ margin: 7px 0;
     width: 175px;display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #57f190;
+    background-color: #1eb153;
     color: #FFF;
     padding: 21px 21px;
     text-align: center;
@@ -460,7 +460,7 @@ margin: 7px 0;
 }
 
 .step--2 .step--number {
-    background-color: #73ffa8;
+    background-color: #1eb153;
 }
 
 .step--3 {

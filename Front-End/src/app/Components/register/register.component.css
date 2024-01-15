@@ -53,7 +53,7 @@
     padding: 21px 0;
     text-align: center;
     font-family: foda;
-    color: #25d366;
+    color: #1eb153;
 }
 
 mat-dialog-content {
@@ -106,7 +106,7 @@ option * {
 }
 
 .adding--new-user {
-    background-color: #25d366;
+    background-color: #1eb153;
 }
 
 .cancel {
@@ -135,7 +135,7 @@ input[type='submit']:focus {
         text-align: center;
         font-family: foda;
         font-size: 1.2rem;
-        color: #25d366;
+        color: #1eb153;
     }
 
     .mat-dialog-actions button {

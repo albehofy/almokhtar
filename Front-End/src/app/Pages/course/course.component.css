@@ -34,13 +34,13 @@
     margin-bottom: 49px;
     font-family: Lalezar; 
     font-size: 2.1rem;
-    color: #25d366;
+    color: #1eb153;
 }
 .course--name::after {
     content: "";
     width: 85%;
     height: 2px;
-    background-color: #25d366;
+    background-color: #1eb153;
     position: absolute;
     left: 0;
     top: 50%;
@@ -104,7 +104,7 @@ mat-icon {
     font-size: 2.1rem;
     padding: 49px 0 21px;
     text-align: center;
-    color: #25d366;
+    color: #1eb153;
     font-family: foda;
 }
 
@@ -112,7 +112,7 @@ mat-icon {
     display: flex;
     align-items: center;
     background-color: #fff;
-    color: #25d366;
+    color: #1eb153;
     margin: 21px auto;
     padding: 21px 14px!important;
 }
@@ -124,7 +124,7 @@ mat-icon {
     text-align: center;
     color: #fff;
     border: 1px solid #fff;
-    background-color: #25d366; 
+    background-color: #1eb153; 
     cursor: pointer;
 }
 
