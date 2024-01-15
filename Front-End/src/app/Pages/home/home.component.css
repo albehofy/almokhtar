@@ -199,7 +199,7 @@ margin: 7px 0;
     width: 80%;
     min-height: 580px;
     position: relative;
-    top: -200px;
+    top: -350px;
     left: -50%;
     transform: translate(50%);
     display: flex;
@@ -289,6 +289,9 @@ margin: 7px 0;
     text-align: center;
 }
 
+.almokhtar--special-showing a.sign--2-container{
+    display: block;
+}
 .almokhtar--special-showing  .sign--2 {
     width: 270px;
     height: 270px;

@@ -23,11 +23,11 @@ const routes: Routes = [
     children: [
       { path: "home", component: HomeComponent },
       { path: "quran-kareem", component: QuranKareemComponent },
+      { path: "all-courses", component: AllCoursesComponent },
       { path: "universities/:id", component: UniversityComponent },
       { path: "colleges/:id", component: CollageComponent },
       { path: "course/:id", component: CourseComponent },
       { path: "lesson/:id", component: LessonComponent },
-      {path: 'all-courses', component: AllCoursesComponent},
       {
         path: "profile", component: StudentComponent,
         children: [
@@ -36,11 +36,9 @@ const routes: Routes = [
           { path: '**', redirectTo: 'student-info', pathMatch: 'full' },
         ]
       }, 
-      { path: '**', component: NotFoundedComponent }
-
     ]
   },
-
+  { path: '**', component: NotFoundedComponent }
 ];
 
 @NgModule({

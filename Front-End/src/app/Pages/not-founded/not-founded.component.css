@@ -1,4 +1,31 @@
+
 .not-founded{
+    display: flex;
+    flex-wrap: wrap;
     min-height: 90vh;
     margin: 4rem 0;
+    padding-top: 79px;
+}
+.not-founded > div{
+    width: 50%;
+    min-width: 270px;
+    margin: auto;
+    text-align: center;
+    font-family: Lalezar;
+}
+p{
+    margin: 14px auto;
+}
+ul {
+    min-width: 270px;
+    max-width:500px;
+    margin: auto;
+    padding: 7px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    list-style: circle;
+}
+li {
+    margin: 0 14px!important;
 }
