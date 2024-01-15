@@ -27,7 +27,7 @@
                 </select>
 
                 <select name="course" id="course" (change)="selectCourse($event)">
-                    <option value="0" selected>المادة</option>
+                    <option value="0" selected disabled>المادة</option>
                     <option *ngFor="let course of courses" [value]='course.id'>{{course.name}}</option>
                 </select>
                 <button type="submit" class="submit" (click)="openSubscripeDialog('500','500')">إحجز الان</button>
@@ -60,8 +60,7 @@
             <p class="top"> كورسات علمية </p>
             <p class="bottom">شروحات مميزة</p>
         </div>
-        <a href="sign--2-container" [routerLink]="['/all-courses', '']">
-
+        <a href="" class="sign--2-container" routerLink='/all-courses'>
             <div class="sign--2">
                 <p class="">كورسات <br> المختار</p>
             </div>

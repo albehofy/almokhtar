@@ -30,6 +30,9 @@ gettingCourses(collage:number):Observable<any> {
 gettingCourse(course:number):Observable<any> {
   return this.http.get<any>(`${environment.basUrl}/api/${environment.version}/courses/${course}`, httpOptions)
 }
+gettingAllCourses():Observable<any> {
+    return this.http.get<any>(`${environment.basUrl}/api/${environment.version}/courses`, httpOptions)
+  }
 gettingLesson(lesson:number):Observable<any> {
   return this.http.get<any>(`${environment.basUrl}/api/${environment.version}/lessons/${lesson}`, httpOptions)
 }

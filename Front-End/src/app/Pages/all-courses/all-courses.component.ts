@@ -9,17 +9,39 @@ import { FetchingPublickDataService } from '../../Services/fetching-publick-data
 export class AllCoursesComponent {
   universities:Array<any> = [];
   universityId:any;
+  courses:Array<any> = []
   constructor(private fpd:FetchingPublickDataService){
     this.fpd.gettingniversities().subscribe(
       {
         next: res=>{
           this.universities  = res.result.data;
+          console.log(this.universities)
         }
       }
     ); 
+    this.fpd.gettingAllCourses().subscribe({
+      next:(res)=>{
+        this.courses= res.result.data;
+      }
+    })
   }
     filterCourses(college:any){
+    this.universityId = college.target.value
+    if(this.universityId != "-1")  {
       console.log(college)
+    this.fpd.gettingcollages(this.universityId).subscribe({
+      next:(res)=>{
+        this.courses= res.result;
+        console.log(this.courses)
+      }
+    })
+    }else{
+        this.fpd.gettingAllCourses().subscribe({
+      next:(res)=>{
+        this.courses= res.result.data;
+      }
+    })
+    }
     }
 
 }
