@@ -17,8 +17,15 @@ export class SplashComponent {
     }
   ]
   logo:string = '';
-
+  show: boolean = true; 
+  splash:boolean = false; 
   constructor(private fbd:FetchingPublickDataService) {
+    window.setTimeout(()=>{
+      if(this.logo !=''){
+        this.show = false;
+        this.splash = true; 
+      }
+    },2000)
     this.fbd.gettingSettingData().subscribe({       
       next:(res)=>{
         this.logo = res.result.files_settings.site_logo;

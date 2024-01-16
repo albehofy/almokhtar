@@ -1,0 +1,31 @@
+<div class="container" style="position:relative">
+
+    <div #swiperContainer class="swiper-container">
+        <div class="swiper-wrapper">
+      <div class="swiper-slide" *ngFor="let slide of slides">
+        <div [routerLink]="['/course', slide.id]" class="module">
+            <div class="module--preview">
+                <img [src]="slide.image" alt="{{slide.name}}">
+            </div>
+            <div class="module--data">
+                <h4 class="module--header">{{slide.name}}</h4>
+                <h4 class="module--header">{{slide.university.name}} - {{slide.college.name}}</h4>
+                <p class="module--title">{{slide.name}}</p>
+                <span class="marked--text">{{slide.price}} ريال </span> <br>
+                <span class="light--text"> {{slide.description}}</span>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <!-- Navigation arrows -->
+    <div class="swiper-button-next swiper-button">
+        <mat-icon>keyboard_arrow_right</mat-icon>
+    </div>
+    <div class="swiper-button-prev swiper-button">
+        <mat-icon >keyboard_arrow_left</mat-icon>
+
+    </div>
+  </div>
+  
+    </div>

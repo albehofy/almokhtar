@@ -1,0 +1,88 @@
+
+.container {
+    width: 97%;
+    margin: auto;
+}
+.module {
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+    border: 0.5px solid #ddd;
+    
+}
+.module .module--data, .module .module--preview {
+    height: 201px;
+    overflow: hidden;
+}
+
+
+.module .module--data {
+    padding-top:21px;
+    height: 270px;
+}
+
+
+.module .module--data .module--header {
+    padding-top: 14px;
+    padding-bottom: 14px;
+    text-align: center;
+    font-size: 21px;
+    text-transform: capitalize;
+    font-family: Lalezar;
+}
+
+.module .module--data .module--title {
+    padding: 7px 14px;
+    font-size: 1em;
+}
+
+.module .module--data .marked--text {
+    display: inline-block;
+    padding:  7px;
+    font-family: Lalezar;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #ff4949;;
+}
+.module .module--data .light--text {
+    font-size: 0.9em;
+}
+.module--preview img {
+    width: 100%;
+    height: 100%;
+    transition: all 500ms ease;
+}
+
+.module:hover img {
+    transform: scale(1.2);
+}
+
+
+/* Customize the appearance of the navigation arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff;
+  font-size: 18px;
+  margin-top: -20px;
+}
+
+.swiper-button-next {
+  margin-right: 10px;
+}
+
+.swiper-button-prev {
+  margin-left: 10px;
+  left:10px;
+}
+.swiper-button {
+    position: absolute; 
+    color: #fff;
+    z-index: 99; 
+    top:50%;
+    background-color:#1eb153;
+    padding: 7px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

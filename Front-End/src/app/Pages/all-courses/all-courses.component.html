@@ -1,14 +1,31 @@
+<div *ngIf="show" class="loading-spinner">
+  <svg class="spinner" viewBox="0 0 50 50">
+      <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="4"></circle>
+  </svg>
+</div>
+
 <div class="container">
   <div class="controller">
-    <div>
-      <!-- <a href="#" routerLink= "/request-new-course"> <mat-icon>control_point</mat-icon>طلب اضافة جامعة جديدة </a>  -->
-    </div>
-    <div class="sperator">
       <select class="form--input" id="university" name="university"
-        (change)="filterCourses($event)">
-        <option value="-1"  selected>عرض جميع الكورسات</option>
-        <option *ngFor="let university of universities" [value]='university.id'>{{university.name}}</option>
-      </select>
+      (change)="filterCourses($event)">
+      <option value="-1"  selected>عرض جميع الكورسات</option>
+      <option *ngFor="let university of universities" [value]='university.id'>{{university.name}}</option>
+    </select>
+
+    <a href="#" class="" routerLink= "/request-new-course"> <mat-icon>control_point</mat-icon>اضافة كورس جديدة </a> 
+  </div>
+  <div class="content">
+    <div class="course">
+      <ng-container *ngFor="let course of courses" class="course">
+        <a href="#" *ngIf="course.name != ''" [routerLink]="['/course', course.id]" class="course">
+            <img class="course-image" [src]="course.image" alt="Card Image">
+            <div class="card-header">{{course.name}}</div>
+            <div class="course-data">
+                <h4><strong>المحاضر</strong>{{course.instructor_name}}</h4>
+            </div>
+            <div class="course-price">السعر : {{course.price}} ريال</div>
+        </a>
+    </ng-container>
     </div>
   </div>
 </div>

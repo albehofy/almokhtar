@@ -9,7 +9,11 @@ import { FetchingPublickDataService } from '../../Services/fetching-publick-data
 export class AllCoursesComponent {
   universities:Array<any> = [];
   universityId:any;
-  courses:Array<any> = []
+  courses:Array<any> = [{
+    name: 'name', 
+    price: 250,
+  }]
+  show: boolean = true; 
   constructor(private fpd:FetchingPublickDataService){
     this.fpd.gettingniversities().subscribe(
       {
@@ -32,13 +36,15 @@ export class AllCoursesComponent {
     this.fpd.gettingcollages(this.universityId).subscribe({
       next:(res)=>{
         this.courses= res.result;
-        console.log(this.courses)
+        console.log(this.courses); 
+        this.show = false;
       }
     })
     }else{
         this.fpd.gettingAllCourses().subscribe({
       next:(res)=>{
         this.courses= res.result.data;
+        this.show = false;
       }
     })
     }
