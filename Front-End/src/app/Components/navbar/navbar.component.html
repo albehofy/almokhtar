@@ -1,6 +1,8 @@
 <header>
     <nav class="container">
-        <a class="nav--logo" href="#" routerLink="splash">المختار</a>
+        <a class="nav--logo" href="#" routerLink="splash">
+            <img [src]="'assets/images/logo--name.png'" alt="almokhtar">
+        </a>
         <div class="nav--menu" [ngClass]="{'none':toggleNavbar}">
             <ul class="nav--list ">
                 <li><a href="#" routerLink="home"><span>الصفحة الرئيسية</span> <img src="assets/images/home.png" alt=""></a></li>

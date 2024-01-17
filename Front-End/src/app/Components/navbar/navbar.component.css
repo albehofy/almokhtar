@@ -28,6 +28,15 @@ nav {
     transition: 300ms;
     font-family: foda;
     font-size: 1.7em;
+    overflow: hidden;
+    max-height: 100%;
+}
+.nav--logo img {
+    display: block;
+    max-height: 100%;
+    overflow: hidden;
+    margin-right: -21px;
+    padding: 7px;
 }
 
 .nav--menu {

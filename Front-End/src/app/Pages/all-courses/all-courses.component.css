@@ -37,7 +37,6 @@ select .content {
 }
 .insider-loading{
   padding-top: 50px;
-  /* margin-top: 50px; */
   align-items: flex-start!important;
   position: absolute!important;
   top: 0;
@@ -69,8 +68,6 @@ select .content {
   stroke-linecap: round;
   animation: dash 1.5s ease-in-out infinite;
 }
-
-
 
 .collage {
   padding: 127px 0 49px;

@@ -7,9 +7,10 @@ import { FetchingPublickDataService } from '../../Services/fetching-publick-data
   styleUrl: './quran-kareem.component.css'
 })
 export class QuranKareemComponent {
-  message = ''; 
-  image = '';
-  link ='';
+  message:string = ''; 
+  image:string = '';
+  link:string ='';
+  show: Boolean = true; 
   constructor(private fpd: FetchingPublickDataService){
     this.fpd.gettingSettingData().subscribe({
       next:(res)=>{
@@ -17,6 +18,7 @@ export class QuranKareemComponent {
         console.log(this.image)
         this.message = res.result.general_settings.quran_page_message; 
         this.link = res.result.links.telegram;
+        this.show = false; 
       }
     })
   }
