@@ -339,6 +339,7 @@ margin: 7px 0;
 .sign--3 p.bottom {
     background-color: #fcc9f749;
 }
+
 .courses-header-home {
     text-align: center;
     padding: 35px 0;
@@ -346,52 +347,6 @@ margin: 7px 0;
     color: #1eb153;
     font-family: foda;
 }
-/* .module {
-    width: 25%;
-    cursor: pointer;
-    text-align: center;
-    border: 0.5px solid #ddd;
-    
-}
-.module .module--data, .module .module--preview {
-    height: 340px;
-    overflow: hidden;
-}
-
-.module .module--data .module--header {
-    padding-top: 49px;
-    padding-bottom: 14px;
-    text-align: center;
-    font-size: 21px;
-    text-transform: capitalize;
-    font-family: Lalezar;
-}
-
-.module .module--data .module--title {
-    padding: 7px 14px;
-    font-size: 1em;
-}
-
-.module .module--data .marked--text {
-    display: inline-block;
-    padding:  7px;
-    font-family: Lalezar;
-    font-weight: bold;
-    font-size: 1.2em;
-    color: #ff4949;;
-}
-.module .module--data .light--text {
-    font-size: 0.9em;
-}
-.module--preview img {
-    width: 100%;
-    height: 100%;
-    transition: all 500ms ease;
-}
-
-.module:hover img {
-    transform: scale(1.2);
-} */
 
 .how--to-start {
     padding: 28px 0;

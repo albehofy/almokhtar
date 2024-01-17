@@ -5,30 +5,33 @@
 }
 .module {
     width: 100%;
+    min-width: 250px;
     cursor: pointer;
     text-align: center;
     border: 0.5px solid #ddd;
     
 }
-.module .module--data, .module .module--preview {
+.module .module--preview {
     height: 201px;
     overflow: hidden;
 }
 
 
 .module .module--data {
+    min-height: 275px;
     padding-top:21px;
-    height: 270px;
+    overflow: hidden;
+    position: relative;
 }
 
 
 .module .module--data .module--header {
-    padding-top: 14px;
-    padding-bottom: 14px;
+    padding: 14px;
     text-align: center;
     font-size: 21px;
     text-transform: capitalize;
     font-family: Lalezar;
+    word-wrap: break-word;
 }
 
 .module .module--data .module--title {
@@ -37,12 +40,19 @@
 }
 
 .module .module--data .marked--text {
-    display: inline-block;
-    padding:  7px;
+    display: block;
+    width: 100%;
+    margin: 0;
     font-family: Lalezar;
     font-weight: bold;
     font-size: 1.2em;
-    color: #ff4949;;
+    color: #ff4949;
+    text-align: center;
+    padding-bottom: 14px;
+    position: absolute;
+    bottom: 0;
+    
+
 }
 .module .module--data .light--text {
     font-size: 0.9em;
@@ -57,7 +67,19 @@
     transform: scale(1.2);
 }
 
-
+/* swiper */
+.swiper-slide {
+    padding: 10px; 
+    margin: 0; 
+    word-break: break-word;
+  }
+  .swiper-container {
+    overflow: hidden;
+  }
+  .swiper-container {
+    overflow: hidden;
+  }
+    
 /* Customize the appearance of the navigation arrows */
 .swiper-button-next,
 .swiper-button-prev {
@@ -71,9 +93,11 @@
 }
 
 .swiper-button-prev {
-  margin-left: 10px;
-  left:10px;
+  left:-5px;
 }
+.swiper-button-next {
+    right:-10px;
+  }
 .swiper-button {
     position: absolute; 
     color: #fff;

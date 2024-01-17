@@ -13,37 +13,47 @@ export class SwiperCoursesComponent {
 
   // convert number into array with length to llop on this's array in html 
   getNumberArray(limit: number): number[] {
-    return Array.from({length: limit}, (_, index) => index + 1);
+    return Array.from({ length: limit }, (_, index) => index + 1);
   }
   ngAfterViewInit(): void {
     const swiper = new Swiper(this.swiperContainer?.nativeElement, {
-      slidesPerView: 1.2,
-    // spaceBetween: 75,
-    breakpoints: {
-      285: {
-        slidesPerView: 1,
+      slidesPerView: 1,
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
       },
-      320: {
-        slidesPerView: 1.5,
-      },
-      768: {
-        slidesPerView: 2.75,
-      },
-      1280: {
-        slidesPerView: 3.08,
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 5, // Smaller space between slides
+        },
+        480: {
+          slidesPerView: 1.5,
+          spaceBetween: 5, // Smaller space between slides
+        },
+        768: {
+          slidesPerView: 2.75,
+          spaceBetween: 5, // Smaller space between slides
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 5, // Smaller space between slides
+        },
+        1200: {
+          slidesPerView: 4,
+          spaceBetween: 5, // Smaller space between slides
+        },
       }
-    },
-    // navigation: true,
-    scrollbar: {
-      el: '.swiper-scrollbar',
-      enabled: true,
-      draggable: true
-    },
-    pagination: {
-      el: '.swiper-pagination',
-    },
-
-      spaceBetween: 10,
+      ,
+      scrollbar: {
+        el: '.swiper-scrollbar',
+        draggable: true,
+      },
+      pagination: {
+        el: '.swiper-pagination', 
+        clickable: true,
+      },
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',

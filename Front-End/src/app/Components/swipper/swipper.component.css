@@ -8,6 +8,7 @@
     width: 100%;
     min-width: 260px;
     min-height: 221px;
+    height: 270px;
     padding: 7px;
     margin:7px auto;
     background-color: #fff;
@@ -33,8 +34,6 @@ p.rate {
     margin: 0 7px;
 }
 
-
-/* Customize the appearance of the navigation arrows */
 .swiper-button-next,
 .swiper-button-prev {
   color: #fff;
@@ -47,14 +46,16 @@ p.rate {
 }
 
 .swiper-button-prev {
-  margin-left: 10px;
-  left:10px;
+  left:-5px;
 }
+.swiper-button-next {
+    right:-10px;
+  }
 .swiper-button {
     position: absolute; 
     color: #fff;
     z-index: 99; 
-    top:50%;
+    top:70%;
     background-color:#1eb153;
     padding: 7px;
     cursor: pointer;

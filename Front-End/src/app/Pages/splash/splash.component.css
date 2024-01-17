@@ -24,6 +24,7 @@
 .about--container .logo{
     display: block;
     width: 65%;
+    max-width: 300px;
     min-width: 250px;
     margin: 10px auto;
 }

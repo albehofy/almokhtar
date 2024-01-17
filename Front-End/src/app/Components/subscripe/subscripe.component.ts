@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { SharePriceService } from '../../Services/share-price.service';
+import { FetchingPublickDataService } from '../../Services/fetching-publick-data.service';
 
 @Component({
   selector: 'app-subscripe',
@@ -9,7 +10,13 @@ import { SharePriceService } from '../../Services/share-price.service';
 })
 export class SubscripeComponent {
   price = 0; 
-  constructor(public ref: MatDialogRef<SubscripeComponent>,private spc: SharePriceService){
+  telegramLink = ''
+  constructor(private fpd:FetchingPublickDataService,public ref: MatDialogRef<SubscripeComponent>,private spc: SharePriceService){
+    this.fpd.gettingSettingData().subscribe({
+      next:(res)=>{
+        this.telegramLink = res.result.links.telegram; 
+      }
+    });
     this.spc.price$.subscribe({
       next: res=>{
         this.price = res
@@ -19,5 +26,4 @@ export class SubscripeComponent {
   closeLoginDialog() {
     this.ref.close("canceled!")
   }
-  telegramLink = ''
 }

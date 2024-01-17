@@ -38,6 +38,7 @@ import { VideoSubscribeMessageComponent } from './Components/video-subscribe-mes
 import { AllCoursesComponent } from './Pages/all-courses/all-courses.component';
 import { NotFoundedComponent } from './Pages/not-founded/not-founded.component';
 import { SwiperCoursesComponent } from './Components/swiper-courses/swiper-courses.component';
+import { AboutComponent } from './Components/about/about.component';
 
 
 register();
@@ -59,7 +60,7 @@ register();
     VideoPlayerComponent,
     FooterComponent, 
     ActiveCoursesComponent, 
-    StudentInfoComponent, MessageComponent, SubscripeComponent, ChatIconComponent, QuranKareemComponent, CourseMessageComponent, VideoSubscribeMessageComponent, AllCoursesComponent, NotFoundedComponent, SwiperCoursesComponent
+    StudentInfoComponent, MessageComponent, SubscripeComponent, ChatIconComponent, QuranKareemComponent, CourseMessageComponent, VideoSubscribeMessageComponent, AllCoursesComponent, NotFoundedComponent, SwiperCoursesComponent, AboutComponent
   ],
   imports: [
     BrowserModule,

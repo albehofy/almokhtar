@@ -17,9 +17,13 @@ export class SwipperComponent implements AfterViewInit {
   }
   ngAfterViewInit(): void {
     const swiper = new Swiper(this.swiperContainer?.nativeElement, {
-      slidesPerView: 1.2,
-    // spaceBetween: 75,
-    breakpoints: {
+      slidesPerView: 1,
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },    
+      breakpoints: {
       285: {
         slidesPerView: 1,
       },
@@ -33,17 +37,15 @@ export class SwipperComponent implements AfterViewInit {
         slidesPerView: 3.08,
       }
     },
-    // navigation: true,
-    scrollbar: {
-      el: '.swiper-scrollbar',
-      enabled: true,
-      draggable: true
-    },
-    pagination: {
-      el: '.swiper-pagination',
-    },
-
-      spaceBetween: 10,
+      // navigation: true,
+      scrollbar: {
+        el: '.swiper-scrollbar',
+        draggable: true,
+      },
+      pagination: {
+        el: '.swiper-pagination', 
+        clickable: true,
+      },
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',

@@ -7,16 +7,22 @@
 <div class="container">
   <div class="controller">
       <select class="form--input" id="university" name="university"
-      (change)="filterCourses($event)">
+      (change)="filterCoursesByUniversity($event)">
       <option value="-1"  selected>عرض جميع الكورسات</option>
       <option *ngFor="let university of universities" [value]='university.id'>{{university.name}}</option>
     </select>
 
-    <a href="#" class="" routerLink= "/request-new-course"> <mat-icon>control_point</mat-icon>اضافة كورس جديدة </a> 
+    <a href="#"  routerLink= "/request-new-course"> <mat-icon>control_point</mat-icon>اضافة كورس جديدة </a> 
   </div>
   <div class="content">
-    <div class="course">
-      <ng-container *ngFor="let course of courses" class="course">
+    <div *ngIf="insiderShow" class="insider-loading">
+      <svg class="spinner" viewBox="0 0 50 50">
+          <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="4"></circle>
+      </svg>
+    </div>
+    <ng-container *ngIf="courses.length > 0">
+    <div *ngFor="let course of courses">
+  
         <a href="#" *ngIf="course.name != ''" [routerLink]="['/course', course.id]" class="course">
             <img class="course-image" [src]="course.image" alt="Card Image">
             <div class="card-header">{{course.name}}</div>
@@ -25,7 +31,18 @@
             </div>
             <div class="course-price">السعر : {{course.price}} ريال</div>
         </a>
-    </ng-container>
+    
     </div>
-  </div>
+  </ng-container>
+  <div class="not-founded" *ngIf="courses.length == 0">
+    <div>
+      <h1>ناسف هذا الكورس غير متوفر له اى شروحات فى الوقت</h1>
+      <p>الحالى ولكن يمكنك التواصل معنا وسيتم العمل على شرحةوتوفير الكورس خلال 48 ساعه ويمكنك ارسال الطلب لاضافة الكورس وارفاق الملفات من خلال الرابط التالي</p>
+      <a href="#" class="request--new-course" routerLink= "/request-new-course">" طلب اضافة كورس جديد"</a>
+    </div>
+    <div>
+        <img src="./assets/images/404.gif" class="img-fluid" alt="girls lost his own ice cream to denoted on not founded request">
+    </div>
+</div>
+</div>
 </div>
