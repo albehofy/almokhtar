@@ -18,6 +18,8 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-right: 14px;
+    padding-left: 14px;
 }
 
 .nav--logo {
@@ -30,6 +32,7 @@ nav {
     font-size: 1.7em;
     overflow: hidden;
     max-height: 100%;
+    max-width: 150px;
 }
 .nav--logo img {
     display: block;
@@ -84,6 +87,16 @@ nav {
     color: #FFF;
 }
 
+.user {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.user img {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
 @media screen and (min-width: 1040px) {
     .container {
         margin-left: auto;
@@ -101,10 +114,6 @@ nav {
     display: none;
 }
 @media screen and (max-width:1023px) {
-    nav {
-        justify-content: space-around;
-    }
-
     .nav--loggin {
         justify-content: center;
         font-size: 14px;
@@ -158,9 +167,8 @@ nav {
 
 @media only screen and (max-width: 768px) {
     nav {
-        justify-content: space-between;
         flex-wrap: wrap;
-        padding: 7px 7px;
+        padding: 7px 14px;
         height: auto;
     }
 
@@ -171,7 +179,6 @@ nav {
     }
 
     nav .nav--loggin {
-        min-width: 50%;
         padding: 14px 7px;
         margin: auto;
         justify-content: center;

@@ -31,13 +31,16 @@
   }
   
 .preview, .content {
-    width: 45%;
-    min-width: 250px;
-    margin: 21px 21px;
+  font-family: lalezar;
+  min-width: 250px;
+  margin: 21px 21px;
+  justify-content: center;
+}
+.content h2 {
+  font-family: foda;
 }
 .preview{
     display: flex;
-    justify-content: center;
 }
 
 .preview img {
@@ -54,13 +57,17 @@
     text-align: center;
 }
 .content p {
+  width: 75%;
+  margin: auto;
+  min-width: 260px;
     padding: 21px 0;
 }
 @media only screen and (max-width: 543px){
-    .preview, content {
+  .preview, content {
         width: 95%;
         margin: 21px auto;
     }
+
 }
 
 @keyframes rotate {

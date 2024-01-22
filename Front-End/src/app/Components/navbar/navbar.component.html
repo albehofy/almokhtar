@@ -9,18 +9,20 @@
                 <li><a href="#" routerLink="quran-kareem"><span>القران الكريم</span> <img src="assets/images/quran.png" alt=""></a></li>
             </ul>
         </div>
-        <div class="nav--loggin">
-            <!-- newItemEvent -->
+        <div class="nav--loggin" >
             <ul class="nav--loggin" *ngIf="isUserActive != 'true'">
                 <li><button class="signin" mat-raised-button (click)="openLogginDialog('500','500')">تسجيل الدخول</button></li>
                 <li><button class="register" mat-raised-button (click)="openRegisterDialog('500','500')">تسجيل حساب جديد</button></li>
             </ul>
     
-            <ul *ngIf="isUserActive == 'true'">
-                <li><button class="register" routerLink="profile" mat-raised-button>الملف الشخصى</button></li>
+            <ul class="user" *ngIf="isUserActive == 'true'">
+                
+                <li class="user">
+            <img class="user" routerLink="profile" [src]="'assets/images/user.svg'" alt="almokhtar">
+                                    </li>
             </ul>
-    
         </div>
+    
         <span class='menu-icon' (click)="toggleNavbar = !toggleNavbar">
             <i class='bx bx-menu'></i>        
         </span>

@@ -5,7 +5,8 @@
       <div class="swiper-slide" *ngFor="let slide of slides">
         <div class="partner-area__single">
             <h1>{{slide.name}}</h1>
-            <p>{{slide.message}}</p>
+            <p class="review" style="height: 200px; width: 100%;" *ngIf="slide.message !=''">{{slide.message}}</p>
+            <img class="review" style="width: 100%; height: 200px;" *ngIf="slide.message ==''" src="{{slide.image}}" alt="slide.name review">
             <p class="rate">
                 <i class='bx bx-star' *ngFor="let rate of getNumberArray(5 - slide.rating)"></i>
                 <i class='bx bxs-star'*ngFor="let rate of getNumberArray( slide.rating)"></i>

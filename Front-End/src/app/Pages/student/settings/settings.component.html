@@ -1,5 +1,5 @@
 <div class="container">
-    <h2 class="settings--header"> <span>*</span> الاعدادات العامة</h2>
+        <h2 class="settings--header"> <span>*</span> الاعدادات العامة</h2>
     <form  [formGroup]="edittingUserdata" class="form">
         <div class="seprator">
           <mat-form-field class="form-field">
@@ -29,7 +29,7 @@
             <input type="email" class="form--input" id="email" name="email" formControlName="email" matInput [(ngModel)]="result.email">
           </mat-form-field>
         </div>
-        <button class="submit" (click)="updatingPersonalData()"> تحديث البيانات</button>
+        <button class="submit--settings" (click)="updatingPersonalData()"> تحديث البيانات</button>
       </form>
     <h2 class="settings--header"><span>*</span>  اعدادات الامان</h2>
     <form [formGroup]="edittingUserPass" class="form" (ngSubmit)="updatingPassword()">
@@ -55,7 +55,7 @@
       <div *ngIf="edittingUserPass.hasError('passwordMismatch') && edittingUserPass.get('confirmPassword')!.dirty" class="warning">
         Passwords do not match.
       </div> 
-      <button type="submit" [disabled]="edittingUserPass.invalid" class="submit">Submit</button>
+      <button type="submit" [disabled]="edittingUserPass.invalid" class="submit--settings">تغيير كلمة السر</button>
 
     </form>
 </div>

@@ -1,6 +1,6 @@
 .student--welcome {
     margin-top: 97px;
-    padding: 21px 0;
+    padding: 35px 0;
     width: 100%;
     display: flex;
     justify-content: flex-start;
@@ -22,7 +22,7 @@
 }
 
 .student--welcome .student--info {
-    font-family: IBMPlexSansArabic;
+    font-family: lalezar;
     margin-top: 14px;
     font-size: 1.2em;
 }
@@ -69,7 +69,7 @@
     position: relative;
     height: 3.7rem;
     transition: all 300ms ease;
-    padding: 0 2rem;
+    padding: 0 1.2rem;
     
 }
 
@@ -94,6 +94,13 @@
 
 @media only screen and (max-width: 446px) {
     .student--welcome {
-    margin-top: 149px;
+        text-align: right;
+    margin-top: 149px 7px 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
+    .student--welcome img {
+        border-radius: 50%;
     }
 }

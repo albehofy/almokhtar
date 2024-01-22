@@ -8,10 +8,12 @@ import { FetchingPublickDataService } from '../../Services/fetching-publick-data
 })
 export class ChatIconComponent {
   telegramLink : string =''
+  whatsapp:string=''; 
   constructor(private fpd:FetchingPublickDataService){
     this.fpd.gettingSettingData().subscribe({
       next:(res)=>{
-        this.telegramLink = res.result.links.telegram; 
+        this.telegramLink = res.result.links.telegram;
+        this.whatsapp = res.result.general_settings.whatsapp_number
       }
     });
   }

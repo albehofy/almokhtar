@@ -8,7 +8,7 @@
         <div class="container">
             <ng-container *ngFor="let course of courses" class="course">
                 <a href="#" *ngIf="course.name != ''" [routerLink]="['/course', course.id]" class="course">
-                    <img class="course-image" [src]="course.image" alt="Card Image">
+                    <img *ngIf="course.image" class="course-image" [src]="course.image" alt="Card Image">
                     <div class="card-header">{{course.name}}</div>
                     <div class="course-data">
                         <h4><strong>المحاضر</strong>{{course.instructor_name}}</h4>

@@ -26,10 +26,10 @@ import { FetchingPublickDataService } from '../../../Services/fetching-publick-d
   styleUrl: './settings.component.css'
 })
 export class SettingsComponent {
-  @Output() newItemEvent = new EventEmitter<string>();  
+  @Output() newItemEvent = new EventEmitter<string>();
   public edittingUserdata!: FormGroup;
   public edittingUserPass: FormGroup;
-  universities:Array<any> = [];
+  universities: Array<any> = [];
   result: UserInfo = {
     created_at: "",
     email: "",
@@ -44,18 +44,19 @@ export class SettingsComponent {
     password: '',
     password_confirmation: ''
   }
-  constructor(private fpd:FetchingPublickDataService, private fb: FormBuilder, private uD: GettingUserDataService, private updatingData: UpdateUserService, private updatePassword: UpdatingPsswordService, private snackbar: MatSnackBar) {
+  imageValue: any = '';
+  constructor(private fpd: FetchingPublickDataService, private fb: FormBuilder, private uD: GettingUserDataService, private updatingData: UpdateUserService, private updatePassword: UpdatingPsswordService, private snackbar: MatSnackBar) {
     this.uD.fetchingApi().subscribe(res => {
       this.result = res.result;
       this.setName(res.result.name)
     })
     this.fpd.gettingniversities().subscribe(
       {
-        next: res=>{
-          this.universities  = res.result.data;
+        next: res => {
+          this.universities = res.result.data;
         }
       }
-    ); 
+    );
     // intializing User Personal Data for FormGroup
     this.edittingUserdata = this.fb.group({
       name: '',
@@ -65,7 +66,7 @@ export class SettingsComponent {
     });
 
     this.edittingUserPass = this.fb.group({
-      oldPassword: ['',[Validators.required, Validators.minLength(6)]],
+      oldPassword: ['', [Validators.required, Validators.minLength(6)]],
       newPassword: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', Validators.required],
     }, { validator: this.passwordMatchValidator });
@@ -76,7 +77,28 @@ export class SettingsComponent {
   setName(value: string) {
     this.newItemEvent.emit(value);
   }
-  selectUniversity(a:any){}
+  selectUniversity(a: any) { }
+
+  gettingImageValue(event: any) {
+    this.imageValue = event.target.value;
+    console.log(this.imageValue)
+  }
+  uploadingPhoto() {
+    console.log("clicked")
+    if (this.imageValue != '') {
+      this.updatingData.updatingUserImage(this.imageValue).subscribe({
+        next: (res) => {
+          this.snackbar.open('تم تحديث البيانات بنجاح', 'ok', { 'duration': 3000 })
+        },
+        error: (res) => {
+          this.snackbar.open('عذرا حدث خطأ برجاء المحاولة مرة اخرى', 'ok', { 'duration': 3000 })
+        }
+
+      })
+    } else {
+      console.log(this.imageValue)
+    }
+  }
   updatingPersonalData(): void {
     if (this.edittingUserdata.valid) {
       this.updatingData.updatingUserData({
@@ -98,11 +120,15 @@ export class SettingsComponent {
     const confirmPassword = control.get('confirmPassword')!.value;
     return newPassword === confirmPassword ? null : { 'passwordMismatch': true };
   }
-  
+
   updatingPassword() {
     if (this.edittingUserPass.valid) {
       // Perform actions when the form is submitted
-      this.updatePassword.updatingPassword(this.passwordsValues)
+      this.updatePassword.updatingPassword(this.passwordsValues).subscribe({
+        next: (res) => {
+          this.snackbar.open('تم تحديث البيانات بنجاح', 'ok', { 'duration': 3000 })
+        }
+      })
     }
   }
 

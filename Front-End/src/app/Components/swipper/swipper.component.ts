@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular/core';
+import {  Component, ElementRef, Input, ViewChild } from '@angular/core';
 import Swiper from 'swiper';
 
 @Component({
@@ -6,38 +6,46 @@ import Swiper from 'swiper';
   templateUrl: './swipper.component.html',
   styleUrls: ['./swipper.component.css']
 })
-export class SwipperComponent implements AfterViewInit {
+export class SwipperComponent  {
   @Input() slides: any[] = [];
 
   @ViewChild('swiperContainer') swiperContainer?: ElementRef;
 
-  // convert number into array with length to llop on this's array in html 
   getNumberArray(limit: number): number[] {
-    return Array.from({length: limit}, (_, index) => index + 1);
+    return Array.from({ length: limit }, (_, index) => index + 1);
   }
+
   ngAfterViewInit(): void {
     const swiper = new Swiper(this.swiperContainer?.nativeElement, {
       slidesPerView: 1,
       loop: true,
       autoplay: {
-        delay: 3000,
+        delay: 5000,
         disableOnInteraction: false,
-      },    
+      },
       breakpoints: {
-      285: {
-        slidesPerView: 1,
-      },
-      320: {
-        slidesPerView: 1.5,
-      },
-      768: {
-        slidesPerView: 2.75,
-      },
-      1280: {
-        slidesPerView: 3.08,
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 5, // Smaller space between slides
+        },
+        480: {
+          slidesPerView: 1.5,
+          spaceBetween: 5, // Smaller space between slides
+        },
+        768: {
+          slidesPerView: 2.75,
+          spaceBetween: 5, // Smaller space between slides
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 5, // Smaller space between slides
+        },
+        1200: {
+          slidesPerView: 4,
+          spaceBetween: 5, // Smaller space between slides
+        },
       }
-    },
-      // navigation: true,
+      ,
       scrollbar: {
         el: '.swiper-scrollbar',
         draggable: true,
@@ -52,4 +60,5 @@ export class SwipperComponent implements AfterViewInit {
       },
     });
   }
+
 }

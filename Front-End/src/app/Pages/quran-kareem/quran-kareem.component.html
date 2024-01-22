@@ -4,16 +4,15 @@
     </svg>
 </div>
 <div class="container">
-    <div class="preview">
-        <img [src]="image" alt="learning al-quran al-kareem ">
-    </div>
     <div class="content">
-        <h1>تحفيظ القران الكريم </h1>
-        <h2>دورات تاسيس اللغه العربية لغير الناطقين بها</h2>
-        
+        <h1>{{name}} </h1>
+        <h2>{{description}}</h2>
         <p>
             {{message}} 
-            <a href="https://t.me/almokhtarcourses" target="_blank" style="display:inline-block; background-color: #1eb153; color:#fff; cursor: pointer; margin: auto 14px; text-align: center;padding: 7px 14px;margin: 7px;"><i class='bx bxl-telegram'></i></a>
+            <a href="https://t.me/{{telegramLinkContacts}}" target="_blank" style="display:inline-block; background-color: #1eb153; color:#fff; cursor: pointer; margin: auto 14px; text-align: center;padding: 7px 14px;margin: 7px;"><i class='bx bxl-telegram'></i></a>
         </p>
+    </div>
+    <div class="preview">
+        <img [src]="image" alt="learning al-quran al-kareem ">
     </div>
 </div>

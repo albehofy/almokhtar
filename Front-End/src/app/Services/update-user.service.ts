@@ -20,4 +20,9 @@ export class UpdateUserService {
 
   updatingUserData(data:any):Observable<any>{
     return this.http.put<any>(`${environment.basUrl}/api/${environment.version}/profile`,data, httpOptions)
-  }}
+  }
+  
+  updatingUserImage(image:any):Observable<any>{
+    return this.http.post<any>(`${environment.basUrl}/api/${environment.version}/profile/image`,image, httpOptions)
+  }
+}

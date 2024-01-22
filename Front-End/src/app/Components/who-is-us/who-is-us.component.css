@@ -1,0 +1,98 @@
+.platform--goals h2 {
+    font-family: Lalezar;
+  
+  }
+  
+  .platform--goals {
+    width: 97%;
+    min-width: 260px;
+    margin: 0 auto 21px;
+    font-size: 1.2rem;
+    line-height: 120%;
+    color: #130539;
+    font-family: 'Lalezar';
+    line-height: 170%;
+  }
+  
+  .who--is-us,
+  .our--sign,
+  .our--goals {
+    width: 75%;
+    padding: 14px;
+    min-width: 265px;
+    margin: 21px auto;
+    text-align: center;
+    font-weight: 500;
+  }
+  
+  .goals--wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  
+
+  
+  .platform--goals h2 {
+    font-size: 2rem;
+    padding: 0 14px 7px;
+    margin-bottom: 21px;
+    color: #1eb153;
+    font-family: foda;
+  }
+
+  .goals-special-title {
+    font-family: foda;
+    color: tomato;
+    padding: 0 7px 7px;
+    text-align: center;
+    margin: 0px auto;
+  }
+  
+  .goals--address-partial {
+    margin-top: 21px;
+  }
+  
+  ul,p {
+    text-align: right;
+    list-style: none;
+    margin: auto;
+    text-align: center;
+  }
+  
+  ul li {
+    padding: 7px;
+  }
+  
+  .center--special-link {
+    background-color: #25d366;
+    color: #fff;
+    cursor: pointer;
+    margin:auto 14px;
+    text-align: center;
+    padding: 3px 14px;
+  }
+  
+  /* Media Query for mobile responsiveness */
+  @media (max-width: 768px) {
+    .platform--goals {
+      flex-direction: column;
+    }
+  
+    .content {
+      margin-top: -50px !important;
+      margin-bottom: 21px !important;
+    }
+  
+    .content h2 {
+      text-align: center;
+    }
+  
+    .platform--goals img,
+    .content {
+      width: 75%;
+      margin: auto;
+      margin-top: 10px;
+    }
+  }

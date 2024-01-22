@@ -13,6 +13,7 @@
         <a href="#" routerLink="/home"> <mat-icon>home</mat-icon>الرئيسية</a> <br>
         <div *ngFor="let university of universities; let index = index" > 
         <a href="#" [routerLink]="['/universities', university.id]" *ngIf="university.name !=''"> <mat-icon>school</mat-icon>{{university.name}}</a></div>
+        <a href="#" routerLink="quran-kareem"> <img style="display: block;padding: 7px;width: 50px;height: 50px;" src="assets/images/quran.png" alt="quran-kareem"> <span>القران الكريم</span></a><br>
         <a href="#" routerLink= "/request-new-course"> <mat-icon>control_point</mat-icon>طلب اضافة جامعة جديدة </a> 
         <br>
     </div>

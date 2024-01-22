@@ -22,6 +22,7 @@ export class CourseComponent {
   chapterContent: Array<any> = [];
   commentValue: string = '';
   show: boolean = true;
+  courseTelegramLink:string = '';
   constructor(private dialog: MatDialog, private route: ActivatedRoute, private fpd: FetchingPublickDataService, private submitComment: AddingNewCommentService) {
     this.lessonId = this.route.snapshot.paramMap.get('id');
     this.fpd.gettingCourse(this.lessonId).subscribe(
@@ -31,6 +32,9 @@ export class CourseComponent {
           this.chapters = res.result.chapters;
           this.comments = res.result.comments;
           this.show = false;
+          this.courseTelegramLink = res.result.courseTelegramLink== undefined? '':res.result.courseTelegramLink
+          console.log(res);
+          
         }
       }
     );

@@ -6,7 +6,7 @@
 
 .settings--header {
     margin: 49px 0 0;
-    padding: 21px;
+    padding: 21px 0;
     color: #1eb153;
 }
 
@@ -41,16 +41,6 @@ mat-label {
 }
 
 
-.submit {
-    padding: 7px 28px;
-    font-size: 1.3rem;
-    margin: 7px 14px;
-    border: transparent;
-    outline: transparent;
-    color: #FFF;
-    cursor: pointer;
-}
-
 .adding--new-user {
     background-color: #1eb153;
 }
@@ -60,15 +50,20 @@ mat-label {
 }
 
 
-input[type='submit'] {
-    width: initial;
-    display: inline;
-    padding: initial;
-    margin-top: initial;
-    font-size: initial;
-    border-radius: initial;
-    border: initial;
-    outline: initial;
+.submit--settings {
+    display: block;
+    border: 1px solid #fff;
+    outline-color: transparent;
+    padding: 7px 28px;
+    font-size: 1.3rem;
+    width: 95%;
+    min-width: 240px;
+    margin: 14px auto;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #1eb153;
+    color: #fff;
 }
 
 input[type='submit']:focus {
@@ -83,5 +78,8 @@ input[type='submit']:focus {
 @media only screen and (max-width: 576px) {
     .form{
         width: 91%;
+    }
+    .navbar a {
+        padding: 0 1rem;
     }
 }

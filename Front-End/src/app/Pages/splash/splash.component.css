@@ -12,9 +12,9 @@
   
   .logo--splash {
     animation: scale 1300ms linear infinite ;
-    width: auto;
-    max-width: 75%;
-    max-height: 350px;
+    width: 50%;
+    max-width: 300px;
+    /* max-height: 350px; */
     border-radius: 7px;
     overflow: hidden;
   }
@@ -36,7 +36,7 @@
 }
 
 .pages {
-    padding-top: 127px;
+    padding-top: 171px;
     min-height: 100vh;
     display: flex;
     align-items: flex-start;
@@ -69,7 +69,7 @@
     color: #fff;
 }
 
-.universities--container mat-icon {
+.universities--container mat-icon, .universities--container img {
     min-width: 49px;
     height: 49px;
     display: flex;
@@ -78,7 +78,6 @@
     margin: 0 0 0 21px;
     background-color: #1eb153;
     color: #fff;
-    /* padding: 14px; */
     border-radius: 50%;
 }
 .lessons--container a {

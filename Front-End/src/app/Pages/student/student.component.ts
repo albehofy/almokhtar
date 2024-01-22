@@ -12,6 +12,7 @@ export class StudentComponent {
   result = '';
   name:string=''; 
   image:string = ''
+  id:string =''
   constructor(private dialog:DialogService ,private router: Router, private uD: GettingUserDataService,  private dialogService: DialogService) {
     if(localStorage.getItem('isUserActive')!= 'true'){
           this.router.navigate(['/home'])
@@ -19,6 +20,7 @@ export class StudentComponent {
           this.uD.fetchingApi().subscribe(res => {
             this.result = res.result;
             this.name = res.result.name;
+            this.id = res.result.id
             this.image = res.result.image
           }); 
         }

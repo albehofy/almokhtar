@@ -27,12 +27,6 @@
     font-size: 2.9em;
     font-family: foda;
     margin-bottom: 45px;
-    /* padding: 7px 0;
-    margin: 35px auto;
-    font-family: ArefRuqaa;
-    border: 5px outset #1eb153;
-    text-align: center;
-    border-radius: 7px; */
 }
 
 .header-container .data button {
@@ -50,11 +44,7 @@
     cursor: pointer;
 }
 
-/* .header-container p {
-    padding: 21px 0;
-    text-align: center;
-    font-size: 1.7em;
-} */
+
 .subsribe,
 .subsribe-md {
     font-size: 21px;
@@ -68,7 +58,6 @@
     background-color: #1eb153;
     color: #FFF;
     cursor: pointer;
-    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, #038387 0px 8px 16px -8px; */
 }
 
 .header-container img {
@@ -96,7 +85,6 @@
 
 /* main */
 main {
-    /* padding: 21px; */
     min-height: 100vh;
 
 }
@@ -302,6 +290,8 @@ margin: 7px 0;
     font-family: foda;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     transition: all 500ms ease;
+    animation: scale 1300ms linear infinite ;
+
 }
 
 .sign--1{
@@ -470,7 +460,7 @@ margin: 7px 0;
  }   
  .almokhtar--special-showing{
     width: 100%;
-    transform: translateY(-150px)
+    transform: translateY(-150px); 
  }
  .almokhtar--special-showing > div{
     width: 42%;
@@ -593,3 +583,9 @@ margin: 7px 0;
         margin: 14px auto;
     }
 }
+
+@keyframes scale {
+    100% {
+        transform: scale(1.099);
+    }
+  }
