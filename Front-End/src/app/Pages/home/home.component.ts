@@ -39,7 +39,12 @@ export class HomeComponent {
     this.fpd.gettingReviews().subscribe(
       {
         next: (response)=>{
-          this.reviews = response.result.data, "reviews";
+          this.reviews = response.result.data;
+          response.result.data.forEach((review: any) =>{
+            review.message = review.message != null ? review.message : ''; 
+            console.log(review);
+          })
+          console.log(this.reviews)
         }
       }
     )

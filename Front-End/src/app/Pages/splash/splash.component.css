@@ -20,7 +20,18 @@
   }
   
 
-  
+  a.call--us {
+    display: block;
+    text-align: center;
+    /* width: 90%; */
+    font-size: 1.7rem;
+    line-height: 50px;
+    text-align: center;
+    /* background-color: #1eb153; */
+    /* color: #fff; */
+    /* box-shadow: 1px 1px 3px #ddd; */
+    z-index: 9;
+}
 .about--container .logo{
     display: block;
     width: 65%;

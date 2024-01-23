@@ -17,6 +17,7 @@ export class SplashComponent {
     }
   ]
   logo:string = '';
+  telegramLink:string ='';
   show: boolean = true; 
   splash:boolean = false; 
   constructor(private fbd:FetchingPublickDataService) {
@@ -29,6 +30,8 @@ export class SplashComponent {
     this.fbd.gettingSettingData().subscribe({       
       next:(res)=>{
         this.logo = res.result.files_settings.site_logo;
+        this.telegramLink = res.result.links.telegram;
+
       }
     } 
     )

@@ -6,14 +6,15 @@
     <div class="section about--container">
         <img [src]="logo" class="logo" alt="logo(almokhtar for courses)">
         <p class="title">منصة تعليمية متخصصة فى شرح مناهج الجامعات السعودية</p>
+        <a [href]="telegramLink" target="_blank" class="call--us">للتواصل معنا اضغط هنا <i class='bx bxl-telegram'></i></a>
         <p class="copyright">جميع الحقوق محفوظة لمنصة المختار&copy;2021</p>
         <p class="author">تم تطويرة بواسطة <a href="https://www.linkedin.com/in/albhoffy/" target="_blank">Mohamed Reda</a></p>
     </div>
     <div class="section border universities--container">
         <a href="#" routerLink="/home"> <mat-icon>home</mat-icon>الرئيسية</a> <br>
+        <a href="#" routerLink="/quran-kareem"> <img style="display: block;padding: 7px;width: 50px;height: 50px;" src="assets/images/quran.png" alt="quran-kareem"> <span>القران الكريم</span></a><br>
         <div *ngFor="let university of universities; let index = index" > 
         <a href="#" [routerLink]="['/universities', university.id]" *ngIf="university.name !=''"> <mat-icon>school</mat-icon>{{university.name}}</a></div>
-        <a href="#" routerLink="quran-kareem"> <img style="display: block;padding: 7px;width: 50px;height: 50px;" src="assets/images/quran.png" alt="quran-kareem"> <span>القران الكريم</span></a><br>
         <a href="#" routerLink= "/request-new-course"> <mat-icon>control_point</mat-icon>طلب اضافة جامعة جديدة </a> 
         <br>
     </div>
