@@ -3,7 +3,7 @@ footer {
     margin: 0;
     background-color: #03030f;
     height: 60vh;
-    min-height: 375px;
+    min-height: 451px;
     color: #1eb153;
     padding-top: 35px;
 }
@@ -20,7 +20,9 @@ footer h3 {
     align-items: center;
     justify-content: center;
 }
-
+.contact-us {
+    flex-wrap: wrap;
+}
 .contact-us a{
     display: block;
     min-width: 50px;

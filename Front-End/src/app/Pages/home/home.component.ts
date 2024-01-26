@@ -42,9 +42,7 @@ export class HomeComponent {
           this.reviews = response.result.data;
           response.result.data.forEach((review: any) =>{
             review.message = review.message != null ? review.message : ''; 
-            console.log(review);
           })
-          console.log(this.reviews)
         }
       }
     )
